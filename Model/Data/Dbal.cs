@@ -6,7 +6,7 @@ using Model.Data;
 using Model.Business;
 using System.Data;
 
-namespace ModelLayer.model.data
+namespace Model.Data
 {
     public class Dbal
     {
