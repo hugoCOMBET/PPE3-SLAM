@@ -1,8 +1,9 @@
 ﻿using CsvHelper;
 using Model.Business;
-using ModelLayer.model.data;
+using Model.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -21,7 +22,14 @@ namespace Model.Data
         }
         public void Insert(Clients unClient)
         {
-            string query = " Client VALUES " + "(" + unClient.getIdClient() + ",'" + unClient.getNomClient().Replace("'", "''") + unClient.getPrenomClient().Replace("'", "''") + unClient.getPhotoClient().Replace("'", "''") + unClient.getAdresseClient().Replace("'", "''") + unClient.getDateNaissanceClient() + unClient.getEmailClient().Replace("'", "''") + unClient.getTelPortableCLient().Replace("'", "''")+"');";
+            string query = " Client VALUES " + "(" + unClient.getIdClient() 
+                + ",'" + unClient.getNomClient().Replace("'", "''") 
+                + unClient.getPrenomClient().Replace("'", "''") 
+                + unClient.getPhotoClient().Replace("'", "''") 
+                + unClient.getAdresseClient().Replace("'", "''") 
+                + unClient.getDateNaissanceClient() 
+                + unClient.getEmailClient().Replace("'", "''") 
+                + unClient.getTelPortableCLient().Replace("'", "''")+"');";
             this._dbal.Insert(query);
         }
         public void Update(Clients unClient)
@@ -53,30 +61,53 @@ namespace Model.Data
 
                 var record = new Clients();
                 var records = csv.EnumerateRecords(record);
-                foreach (Clients pays in records)
+                foreach (Clients Client in records)
                 {
-                    Insert(pays);
+                    Insert(Client);
                 }
             }
         }
-        //public List<Pays> SelectAll()
-        //{
-        //    List<Pays> listeAll = new List<Pays>();
-        //    foreach (DataRow r in _dbal.SelectAll("Pays").Rows)
-        //    {
-        //        listeAll.Add(new Pays((int)r["id"], (string)r["nom"]));
-        //    }
-        //    return listeAll;
-        //}
-        //public Pays SelectByName(string nom)
-        //{
-        //    DataRow r = _dbal.SelectByField("Pays", "nomPays like '" + nom + "'").Rows[0];
-        //    return new Pays((int)r["ID"], (string)r["nomPays"]);
-        //}
-        //public Pays SelectById(int id)
-        //{
-        //    DataRow r = _dbal.SelectById("Pays", id);
-        //    return new Pays((int)r["ID"], (string)r["nomPays"]);
-        //}
+        public List<Clients> SelectAll()
+        {
+            List<Clients> listeAll = new List<Clients>();
+            foreach (DataRow r in _dbal.SelectAll("Client").Rows)
+            {
+                listeAll.Add(new Clients
+                    ((int)r["id"],
+                    (string)r["nom"],
+                    (string)r["prenom"],
+                    (string)r["photo"],
+                    (string)r["adresse"],
+                    (DateTime)r["DateNaissance"],
+                    (string)r["Email"],
+                    (string)r["TelephonePortable"]));
+            }
+            return listeAll;
+        }
+        public Clients SelectByName(string nom)
+        {
+            DataRow r = _dbal.SelectByField("Client", "nom like '" + nom + "'").Rows[0];
+            return new Clients
+                ((int)r["id"],
+                (string)r["nom"],
+                (string)r["prenom"],
+                (string)r["photo"],
+                (string)r["adresse"],
+                (DateTime)r["DateNaissance"],
+                (string)r["Email"],
+                (string)r["TelephonePortable"]);
+        }
+        public Clients SelectById(int id)
+        {
+            DataRow r = _dbal.SelectById("Client", id);
+            return new Clients((int)r["id"],
+                (string)r["nom"],
+                (string)r["prenom"],
+                (string)r["photo"],
+                (string)r["adresse"],
+                (DateTime)r["DateNaissance"],
+                (string)r["Email"],
+                (string)r["TelephonePortable"]);
+        }
     }
 }

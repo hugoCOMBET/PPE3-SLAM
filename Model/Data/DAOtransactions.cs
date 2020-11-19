@@ -8,5 +8,11 @@ namespace Model.Data
 {
     class DAOtransactions
     {
+        private Dbal _dbal;
+
+        public DAOtransactions(Dbal dbal)
+        {
+            _dbal = dbal;
+        }
     }
 }

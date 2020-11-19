@@ -6,18 +6,24 @@ using System.Threading.Tasks;
 
 namespace Model.Business
 {
-    class Utilisateurs
+    public class Utilisateurs
     {
         #region attribut privé
         private string _login;
         private string _motDePasse;
         #endregion
 
-        #region constructeur
+        #region constructeurs
         public Utilisateurs(string LeLogin, string LeMotDePasse)
         {
             _login = LeLogin;
             _motDePasse = LeMotDePasse;
+        }
+
+        public Utilisateurs()
+        {
+            _login = "";
+            _motDePasse = "";
         }
         #endregion
 

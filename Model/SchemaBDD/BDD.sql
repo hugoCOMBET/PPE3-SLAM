@@ -12,11 +12,11 @@ create table Client(
 id int,
 nom varchar(30),
 prenom varchar(30),
-photo blob,
+photo varchar(200),
 adresse varchar(150),
 DateNaissance date,
 Email varchar(150),
-TelephonePortable char(10),
+TelephonePortable char(10), 
 primary key(id)
 ) engine InnoDB;
 
