@@ -7,14 +7,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model.Business;
 
-namespace ReservTechLSRGames.Model.Buisness
+namespace Model.Data
 {
     public class daoPositionObstacle
     {
-        private DBAL _DBAL;
+        private Dbal _DBAL;
 
-        public daoPositionObstacle(DBAL unDBAL)
+        public daoPositionObstacle(Dbal unDBAL)
         {
             _DBAL = unDBAL;
         }
