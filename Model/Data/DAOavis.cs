@@ -1,5 +1,4 @@
-﻿using CsvHelper;
-using ModelLayers.Business;
+﻿using Model.Business;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,18 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ModelLayers.Data
+namespace Model.Data
 {
         public class DAOavis
         {
             #region Attributs
-            private dbal _dbal;
+            private Dbal _dbal;
             //private DAOclient _DAOclient;
             private DAOsalles _DAOsalles;
             #endregion
 
             #region Constructeur
-            public void DAOAvis(dbal dbal, DAOsalles DAOsalles)
+            public void DAOAvis(Dbal dbal, DAOsalles DAOsalles)
             {
                 _dbal = dbal;
                 //_DAOclient = DAOclient;
@@ -34,7 +33,7 @@ namespace ModelLayers.Data
             {
                 string AvisInsert;
 
-                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.IdClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
+                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.idClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
                 _dbal.Insert(AvisInsert);
             }
 
@@ -52,23 +51,6 @@ namespace ModelLayers.Data
 
                 AvisUpdate = ("avis set idAvis ='" + unavis.IdAvis + "', idClient = '" + unavis.IdClient + "', idSalle ='" + unavis.IdSalle + "', avis = '" + unavis.Avis.Replace("'", "''") + "'");
                 _dbal.Update(AvisUpdate);
-            }
-
-            public void InsertFromCSV(string chemin)
-            {
-                using (var reader = new StreamReader(chemin))
-                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                {
-                    csv.Configuration.Delimiter = ";";
-                    csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-                    var record = new avis();
-                    IEnumerable<avis> records = csv.EnumerateRecords(record);
-
-                    foreach (avis avis in records)
-                    {
-                        insert(avis);
-                    }
-                }
             }
 
             public List<avis> SelectAll()
