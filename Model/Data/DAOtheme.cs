@@ -1,5 +1,4 @@
-﻿using CsvHelper;
-using ModelLayers.Business;
+﻿using Model.Business;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,16 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelLayers.Data
+namespace Model.Data
 {
     public class DAOtheme
     {
         #region Attributs
-        private dbal _dbal;
+        private Dbal _dbal;
         #endregion
 
         #region contructeurs
-        public DAOtheme(dbal dbal)
+        public DAOtheme(Dbal dbal)
         {
             _dbal = dbal;
         }
@@ -47,23 +46,6 @@ namespace ModelLayers.Data
 
             ThemeUpdate = ("pays set id ='" + untheme.IdTheme + "' , nom = '" + untheme.Theme.Replace("'", "''") + "'");
             _dbal.Update(ThemeUpdate);
-        }
-
-        public void InsertFromCSV(string chemin)
-        {
-            using (var reader = new StreamReader(chemin))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-                var record = new theme();
-                IEnumerable<theme> records = csv.EnumerateRecords(record);
-
-                foreach (theme theme in records)
-                {
-                    insert(theme);
-                }
-            }
         }
 
         public List<theme> SelectAll()

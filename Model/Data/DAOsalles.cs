@@ -1,4 +1,4 @@
-﻿using ModelLayers.Business;
+﻿using Model.Business;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,22 +7,18 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CsvHelper.Configuration;
-using CsvHelper.TypeConversion;
-using CsvHelper;
-using CsvHelper.Expressions;
 
 
-namespace ModelLayers.Data
+namespace Model.Data
 {
     public class DAOsalles
     {
         #region Attributs
-        public dbal _dbal;
+        public Dbal _dbal;
         #endregion
 
         #region Constructeurs
-        public DAOsalles(dbal dbal)
+        public DAOsalles(Dbal dbal)
         {
             _dbal = dbal;
         }
@@ -54,22 +50,6 @@ namespace ModelLayers.Data
             _dbal.Update(SalleUpdate);
         }
 
-        public void InsertFromCSV(string chemin)
-        {
-            using (var reader = new StreamReader(chemin))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-                var record = new salles();
-                IEnumerable<salles> records = csv.EnumerateRecords(record);
-
-                foreach (salles salle in records)
-                {
-                    insert(salle);
-                }
-            }
-        }
 
         public List<salles> SelectAll()
         {

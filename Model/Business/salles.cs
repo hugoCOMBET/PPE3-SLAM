@@ -4,36 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelLayers.Business
+namespace Model.Business
 {
     public class salles
     {
         #region Attributs
         private int _idSalle;
         private string _ville;
-        private int _idTheme;
+        private theme _leTheme;
         #endregion
 
         #region Constructeurs
-        public salles(int idSalle, string ville, int idTheme)
+        public salles(int idSalle, string ville, theme leTheme)
         {
             _idSalle = idSalle;
             _ville = ville;
-            _idTheme = idTheme;
+            _leTheme = leTheme;
         }
 
         public salles()
         {
             _idSalle = -1;
             _ville = "";
-            _idTheme = -1;
+            _leTheme = leTheme;
         }
         #endregion
 
         #region Accesseurs
         public int IdSalle { get => _idSalle; set => _idSalle = value; }
         public string Ville { get => _ville; set => _ville = value; }
-        public int IdTheme { get => _idTheme; set => _idTheme = value; }
+        public theme leTheme { get => _leTheme; set => _leTheme = value; }
         #endregion
     }
 }
