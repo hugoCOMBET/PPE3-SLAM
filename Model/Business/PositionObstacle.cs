@@ -4,33 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservTechLSRGames
+namespace Model.Business
 {
     public class PositionObstacle
     {
         private int _idPositionObstacle;
-        private string _nomObstacle;
+        private Obstacle _monObstacle;
         private int _idReservation;
         private int _positionObstacle;
 
         public PositionObstacle()
         {
             _idPositionObstacle = 0;
-            _nomObstacle = "";
+            _monObstacle = new Obstacle();
             _idReservation = 0;
             _positionObstacle = 0;
         }
 
-        public PositionObstacle(int unIdPositionObstacle , string unNomObstacle, int unIdReservation, int unePositionObstacle)
+        public PositionObstacle(int unIdPositionObstacle , Obstacle unNomObstacle, int unIdReservation, int unePositionObstacle)
         {
             _idPositionObstacle = unIdPositionObstacle;
-            _nomObstacle = unNomObstacle;
+            _monObstacle = unNomObstacle;
             _idReservation = unIdReservation;
             _positionObstacle = unePositionObstacle;
         }
 
         public int IdPositionObstacle { get => _idPositionObstacle; set => _idPositionObstacle = value; }
-        public string NomObstacle { get => _nomObstacle; set => _nomObstacle = value; }
+        public Obstacle MonObstacle { get => _monObstacle; set => _monObstacle = value; }
 
         public int IdReservation { get => _idReservation; set => _idReservation = value; }
 

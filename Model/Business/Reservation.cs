@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model.Business;
 
-namespace ReservTechLSRGames
+namespace Model.Business
 {
     public class Reservation
     {
         private int _idReservation;
-        private int _idClient;
-        private int _idSalle;
+        private Clients _monClient;
+        private Salle _idSalle;
         private int _idTransaction;
         private DateTime _dateReservation;
         private int _nbJoueurs;
@@ -19,7 +20,7 @@ namespace ReservTechLSRGames
         public Reservation()
         {
             _idReservation = 0;
-            _idClient = 0;
+            _monClient = new Clients();
             _idSalle = 0;
             _idTransaction = 0;
             _dateReservation = new DateTime();
@@ -27,10 +28,10 @@ namespace ReservTechLSRGames
             _nbObstacles = 0;
         }
 
-        public Reservation (int unIdReservation, int unIdClient, int unIdSalle, int unIdTransaction, DateTime uneDateReservation,int unNbJoueurs, int unNbObstacle)
+        public Reservation (int unIdReservation, Clients unIdClient, int unIdSalle, int unIdTransaction, DateTime uneDateReservation,int unNbJoueurs, int unNbObstacle)
         {
             _idReservation = unIdReservation;
-            _idClient = unIdClient;
+            _monClient = unIdClient;
             _idSalle = unIdSalle;
             _idTransaction = unIdTransaction;
             _dateReservation = uneDateReservation;
@@ -40,7 +41,7 @@ namespace ReservTechLSRGames
 
         public int IdReservation { get => _idReservation; set => _idReservation = value; }
 
-        public int IdClient { get => _idClient; set => _idClient = value; }
+        public Clients MonClient { get => _monClient; set => _monClient = value; }
 
         public int IdSalle { get => _idSalle; set => _idSalle = value; }
 
