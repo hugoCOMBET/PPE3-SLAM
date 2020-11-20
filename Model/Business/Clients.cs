@@ -6,115 +6,115 @@ using System.Threading.Tasks;
 
 namespace Model.Business
 {
-    class Clients
+    public class Clients
     {
         #region attribut privé
-        private int _idClient;
-        private string _nomClient;
-        private string _prenomClient;
-        private string _photoClient;
-        private string _adresseClient;
-        private DateTime _dateNaissClient;
-        private string _emailClient;
-        private string _telPortableCLient;
+        private int _id;
+        private string _nom;
+        private string _prenom;
+        private string _photo;
+        private string _adresse;
+        private DateTime _DateNaissance;
+        private string _Email;
+        private string _TelephonePortable;
         #endregion
 
         #region constructeurs
         public Clients(int UnIdClient, string UnClient, string UnPrenomClient, string UnePhotoClient, string UneAdresseClient, DateTime UneDateNaissClient, string unEmailClient, string unNumTelephoneClient)
         {
-            _idClient = UnIdClient;
-            _nomClient = UnClient;
-            _prenomClient = UnPrenomClient;
-            _photoClient = UnePhotoClient;
-            _adresseClient = UneAdresseClient;
-            _dateNaissClient = UneDateNaissClient;
-            _emailClient = unEmailClient;
-            _telPortableCLient = unNumTelephoneClient;
+            _id = UnIdClient;
+            _nom = UnClient;
+            _prenom = UnPrenomClient;
+            _photo = UnePhotoClient;
+            _adresse = UneAdresseClient;
+            _DateNaissance = UneDateNaissClient;
+            _Email = unEmailClient;
+            _TelephonePortable = unNumTelephoneClient;
         }
 
         public Clients()
         {
-            _idClient = 0;
-            _nomClient = "";
-            _prenomClient = "";
-            _photoClient = "";
-            _adresseClient = "";
-            _dateNaissClient = new DateTime();
-            _emailClient = "";
-            _telPortableCLient = "";
+            _id = 0;
+            _nom = "";
+            _prenom = "";
+            _photo = "";
+            _adresse = "";
+            _DateNaissance = new DateTime();
+            _Email = "";
+            _TelephonePortable = "";
         }
         #endregion
 
         #region getteurs/setteurs
         public int getIdClient()
         {
-            return _idClient;
+            return _id;
         }
         public void setIdClient(int unIdClient)
         {
-            _idClient = unIdClient;
+            _id = unIdClient;
         }
         public string getNomClient()
         {
-            return _nomClient;
+            return _nom;
         }
         public void setNomClient(string unNomClient)
         {
-            _nomClient = unNomClient;
+            _nom = unNomClient;
         }
 
         public string getPrenomClient()
         {
-            return _prenomClient;
+            return _prenom;
         }
         public void setPrenomClient(string unPrenomClient)
         {
-            _prenomClient = unPrenomClient;
+            _prenom = unPrenomClient;
         }
 
         public string getPhotoClient()
         {
-            return _photoClient;
+            return _photo;
         }
         public void setPhotoClient(string unePhotoClient)
         {
-            _photoClient = unePhotoClient;
+            _photo = unePhotoClient;
         }
 
         public string getAdresseClient()
         {
-            return _adresseClient;
+            return _adresse;
         }
         public void setAdresseClient(string uneAdresseClient)
         {
-            _adresseClient = uneAdresseClient;
+            _adresse = uneAdresseClient;
         }
 
         public DateTime getDateNaissanceClient()
         {
-            return _dateNaissClient;
+            return _DateNaissance;
         }
         public void setDateNaissanceClient(DateTime uneDateNaissClient)
         {
-            _dateNaissClient = uneDateNaissClient;
+            _DateNaissance = uneDateNaissClient;
         }
 
         public string getEmailClient()
         {
-            return _emailClient;
+            return _Email;
         }
         public void setEmailClient(string unEmailClient)
         {
-            _emailClient = unEmailClient;
+            _Email = unEmailClient;
         }
 
         public string getTelPortableCLient()
         {
-            return _telPortableCLient;
+            return _TelephonePortable;
         }
         public void setTelPortableCLient(string unTelPortableClient)
         {
-            _telPortableCLient = unTelPortableClient;
+            _TelephonePortable = unTelPortableClient;
         }
         #endregion
     }

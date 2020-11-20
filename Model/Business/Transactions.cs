@@ -12,16 +12,21 @@ namespace Model.Business
         private int _idTransaction;
         private Clients _idClient;
         private double _montantTransaction;
-        private int _idReservation;
         #endregion
 
-        #region constructeur
-        public Transactions(int UnIdTransaction, Clients UnClient, double UnMontantTransaction, int UnIdReservation)
+        #region constructeurs
+        public Transactions(int UnIdTransaction, Clients UnClient, double UnMontantTransaction)
         {
             _idTransaction = UnIdTransaction;
             _idClient = UnClient;
             _montantTransaction = UnMontantTransaction;
-            _idReservation = UnIdReservation;
+            
+        }
+        public Transactions()
+        {
+            _idTransaction = 0;
+            _idClient = new Clients();
+            _montantTransaction = 0;
         }
         #endregion
 
@@ -49,14 +54,6 @@ namespace Model.Business
         public void setMontantTransaction(double unMontantTransaction)
         {
             _montantTransaction = unMontantTransaction;
-        }
-        public int getIdReservation()
-        {
-            return _idReservation;
-        }
-        public void setIdReservation(int unIdReservation)
-        {
-            _idReservation = unIdReservation;
         }
         #endregion
     }

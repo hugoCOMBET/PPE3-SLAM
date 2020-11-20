@@ -74,9 +74,9 @@ namespace Model.Data
                 ((string)r["Login"],
                 (string)r["MotDePasse"]);
         }
-        public Utilisateurs SelectById(string login)
+        public Utilisateurs SelectById(int id)
         {
-            DataRow r = _dbal.SelectById("Utilisateur", login);
+            DataRow r = _dbal.SelectById("Utilisateur", id);
             return new Utilisateurs
                 ((string)r["Login"],
                 (string)r["MotDePasse"]);

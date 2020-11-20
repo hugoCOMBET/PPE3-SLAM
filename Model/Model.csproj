@@ -96,22 +96,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\avis.cs" />
     <Compile Include="Business\Clients.cs" />
+    <Compile Include="Business\Obstacle.cs" />
+    <Compile Include="Business\PositionObstacle.cs" />
+    <Compile Include="Business\Reservation.cs" />
+    <Compile Include="Business\salles.cs" />
+    <Compile Include="Business\theme.cs" />
     <Compile Include="Business\Transactions.cs" />
     <Compile Include="Business\Utilisateurs.cs" />
+    <Compile Include="Data\DAOavis.cs" />
     <Compile Include="Data\DAOclients.cs" />
+    <Compile Include="Data\daoObstacle.cs" />
+    <Compile Include="Data\daoPositionObstacle.cs" />
+    <Compile Include="Data\daoReservation.cs" />
+    <Compile Include="Data\DAOsalles.cs" />
+    <Compile Include="Data\DAOtheme.cs" />
     <Compile Include="Data\DAOtransactions.cs" />
     <Compile Include="Data\DAOutilisateurs.cs" />
     <Compile Include="Data\Dbal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ImportCSV\" />
-    <Folder Include="SchemaBDD\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ImportCSV\Client.csv" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SchemaBDD\BDD.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Model.Data
 {
-    class DAOclients
+    public class DAOclients
     {
         private Dbal _dbal;
 
