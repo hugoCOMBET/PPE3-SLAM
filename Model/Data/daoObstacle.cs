@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using Model.Business;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservTechLSRGames.Model.Buisness
+namespace Model.Data
 {
     public class daoObstacle
     {
-        private DBAL _DBAL;
+        private Dbal _DBAL;
 
-        public daoObstacle(DBAL unDBAL)
+        public daoObstacle(Dbal unDBAL)
         {
             _DBAL = unDBAL;
         }

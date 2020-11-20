@@ -45,22 +45,7 @@ namespace Model.Data
             string query = "Transactions WHERE idTransaction = " + uneTransaction.getIdTransactions() + ";";
             this._dbal.Delete(query);
         }
-        public void InsertByFile(string Chemin)
-        {
-            using (var reader = new StreamReader(Chemin))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-
-                var record = new Transactions();
-                var records = csv.EnumerateRecords(record);
-                foreach (Transactions Transactions in records)
-                {
-                    Insert(Transactions);
-                }
-            }
-        }
+        
         public List<Transactions> SelectAll()
         {
             List<Transactions> listeAll = new List<Transactions>();
