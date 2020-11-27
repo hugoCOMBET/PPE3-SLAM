@@ -1,5 +1,5 @@
 ﻿using CsvHelper;
-using ModelLayers.Business;
+using Model.Business;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,18 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ModelLayers.Data
+namespace Model.Data
 {
         public class DAOavis
         {
             #region Attributs
-            private dbal _dbal;
+            private Dbal _dbal;
             //private DAOclient _DAOclient;
             private DAOsalles _DAOsalles;
             #endregion
 
             #region Constructeur
-            public void DAOAvis(dbal dbal, DAOsalles DAOsalles)
+            public void DAOAvis(Dbal dbal, DAOsalles DAOsalles)
             {
                 _dbal = dbal;
                 //_DAOclient = DAOclient;
@@ -76,7 +76,7 @@ namespace ModelLayers.Data
                 List<avis> listAvis = new List<avis>();
                 foreach (DataRow r in _dbal.SelectAll("avis").Rows)
                 {
-                    listAvis.Add(new avis((int)r["idAvis"], (int)r["idClient"], (int)r["idSalle"], (string)r["avis"]));
+                    listAvis.Add(new avis((int)r["idAvis"], (Clients)r["idClient"], (salles)r["idSalle"], (string)r["avis"]));
                 }
                 return listAvis;
             }
@@ -84,13 +84,13 @@ namespace ModelLayers.Data
             public avis SelectByName(string avis)
             {
                 DataRow r = _dbal.SelectByField("avis", "avis like '" + avis + "'").Rows[0];
-                return new avis((int)r["idAvis"], (int)r["idClient"], (int)r["idSalle"], (string)r["avis"]);
+                return new avis((int)r["idAvis"], (Clients)r["idClient"], (salles)r["idSalle"], (string)r["avis"]);
             }
 
             public avis SelectById(int idAvis)
             {
                 DataRow r = _dbal.SelectById("avis", idAvis);
-                return new avis((int)r["idAvis"], (int)r["idClient"], (int)r["idSalle"], (string)r["avis"]);
+                return new avis((int)r["idAvis"], (Clients)r["idClient"], (salles)r["idSalle"], (string)r["avis"]);
             }
             #endregion
         }

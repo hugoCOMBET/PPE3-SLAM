@@ -1,4 +1,4 @@
-﻿using ModelLayers.Business;
+﻿using Model.Business;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,16 +13,16 @@ using CsvHelper;
 using CsvHelper.Expressions;
 
 
-namespace ModelLayers.Data
+namespace Model.Data
 {
     public class DAOsalles
     {
         #region Attributs
-        public dbal _dbal;
+        public Dbal _dbal;
         #endregion
 
         #region Constructeurs
-        public DAOsalles(dbal dbal)
+        public DAOsalles(Dbal dbal)
         {
             _dbal = dbal;
         }
@@ -76,7 +76,7 @@ namespace ModelLayers.Data
             List<salles> listSalles = new List<salles>();
             foreach (DataRow r in _dbal.SelectAll("salles").Rows)
             {
-                listSalles.Add(new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]));
+                listSalles.Add(new salles((int)r["idSalle"], (string)r["ville"], (theme)r["idSalle"]));
             }
             return listSalles;
         }
@@ -84,13 +84,13 @@ namespace ModelLayers.Data
         public salles SelectByName(string salle)
         {
             DataRow r = _dbal.SelectByField("salles", "nom like '" + salle + "'").Rows[0];
-            return new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]);
+            return new salles((int)r["idSalle"], (string)r["ville"], (theme)r["idSalle"]);
         }
 
         public salles SelectById(int idSalle)
         {
             DataRow r = _dbal.SelectById("salles", idSalle);
-            return new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]);
+            return new salles((int)r["idSalle"], (string)r["ville"], (theme)r["idSalle"]);
         }
         #endregion
     }

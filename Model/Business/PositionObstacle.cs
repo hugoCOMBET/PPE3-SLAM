@@ -4,24 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservTechLSRGames
+namespace Model.Business
 {
     public class PositionObstacle
     {
         private int _idPositionObstacle;
-        private string _nomObstacle;
-        private int _idReservation;
+        private Obstacle _nomObstacle;
+        private Reservation _idReservation;
         private int _positionObstacle;
 
         public PositionObstacle()
         {
             _idPositionObstacle = 0;
-            _nomObstacle = "";
-            _idReservation = 0;
+            _nomObstacle = new Obstacle();
+            _idReservation = new Reservation();
             _positionObstacle = 0;
         }
 
-        public PositionObstacle(int unIdPositionObstacle , string unNomObstacle, int unIdReservation, int unePositionObstacle)
+        public PositionObstacle(int unIdPositionObstacle , Obstacle unNomObstacle, Reservation unIdReservation, int unePositionObstacle)
         {
             _idPositionObstacle = unIdPositionObstacle;
             _nomObstacle = unNomObstacle;
@@ -30,10 +30,8 @@ namespace ReservTechLSRGames
         }
 
         public int IdPositionObstacle { get => _idPositionObstacle; set => _idPositionObstacle = value; }
-        public string NomObstacle { get => _nomObstacle; set => _nomObstacle = value; }
-
-        public int IdReservation { get => _idReservation; set => _idReservation = value; }
-
-        public int unePositionObstacle { get => _positionObstacle; set => _positionObstacle = value; }
+        public Obstacle NomObstacle { get => _nomObstacle; set => _nomObstacle = value; }
+        public Reservation IdReservation { get => _idReservation; set => _idReservation = value; }
+        public int PositionObstacle { get => _positionObstacle; set => _positionObstacle = value; }
     }
 }

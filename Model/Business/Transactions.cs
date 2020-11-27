@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.Business
 {
-    class Transactions
+    public class Transactions
     {
         #region attribut privé
         private int _idTransaction;

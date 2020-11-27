@@ -1,5 +1,5 @@
 ﻿using CsvHelper;
-using ModelLayers.Business;
+using Model.Business;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,16 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelLayers.Data
+namespace Model.Data
 {
     public class DAOtheme
     {
         #region Attributs
-        private dbal _dbal;
+        private Dbal _dbal;
         #endregion
 
         #region contructeurs
-        public DAOtheme(dbal dbal)
+        public DAOtheme(Dbal dbal)
         {
             _dbal = dbal;
         }
