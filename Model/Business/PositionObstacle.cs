@@ -9,6 +9,7 @@ namespace Model.Business
     public class PositionObstacle
     {
         private int _idPositionObstacle;
+
         private Obstacle _nomObstacle;
         private Reservation _idReservation;
         private int _positionObstacle;
@@ -24,7 +25,7 @@ namespace Model.Business
         public PositionObstacle(int unIdPositionObstacle , Obstacle unNomObstacle, Reservation unIdReservation, int unePositionObstacle)
         {
             _idPositionObstacle = unIdPositionObstacle;
-            _nomObstacle = unNomObstacle;
+            _monObstacle = unNomObstacle;
             _idReservation = unIdReservation;
             _positionObstacle = unePositionObstacle;
         }

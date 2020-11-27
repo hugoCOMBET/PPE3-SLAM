@@ -34,7 +34,7 @@ namespace Model.Data
             {
                 string AvisInsert;
 
-                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.IdClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
+                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.idClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
                 _dbal.Insert(AvisInsert);
             }
 

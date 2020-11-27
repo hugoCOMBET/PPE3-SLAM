@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model.Business;
 
 namespace Model.Business
 {
@@ -12,6 +13,7 @@ namespace Model.Business
         private Clients _LeClient;
         private salles _LaSalle;
         private Transactions _LaTransaction;
+
         private DateTime _dateReservation;
         private int _nbJoueurs;
         private int _nbObstacles;
@@ -33,6 +35,7 @@ namespace Model.Business
             _LeClient = unIdClient;
             _LaSalle = unIdSalle;
             _LaTransaction = unIdTransaction;
+
             _dateReservation = uneDateReservation;
             _nbJoueurs = unNbJoueurs;
             _nbObstacles = unNbObstacle;

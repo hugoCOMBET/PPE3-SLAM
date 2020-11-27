@@ -16,11 +16,12 @@ namespace Model.Business
         #endregion
 
         #region Constructeurs
+
         public avis(int idAvis, Clients idClient, salles idSalle, string avis)
         {
             _idAvis = idAvis;
-            _idClient = idClient;
-            _idSalle = idSalle;
+            _leClient = leClient;
+            _laSalle = laSalle;
             _avis = avis;
         }
 
