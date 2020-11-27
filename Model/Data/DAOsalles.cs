@@ -50,13 +50,12 @@ namespace Model.Data
             _dbal.Update(SalleUpdate);
         }
 
-
         public List<salles> SelectAll()
         {
             List<salles> listSalles = new List<salles>();
             foreach (DataRow r in _dbal.SelectAll("salles").Rows)
             {
-                listSalles.Add(new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]));
+                listSalles.Add(new salles((int)r["idSalle"], (string)r["ville"], (theme)r["idSalle"]));
             }
             return listSalles;
         }
@@ -64,13 +63,13 @@ namespace Model.Data
         public salles SelectByName(string salle)
         {
             DataRow r = _dbal.SelectByField("salles", "nom like '" + salle + "'").Rows[0];
-            return new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]);
+            return new salles((int)r["idSalle"], (string)r["ville"], (theme)r["idSalle"]);
         }
 
         public salles SelectById(int idSalle)
         {
             DataRow r = _dbal.SelectById("salles", idSalle);
-            return new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]);
+            return new salles((int)r["idSalle"], (string)r["ville"], (theme)r["idSalle"]);
         }
         #endregion
     }

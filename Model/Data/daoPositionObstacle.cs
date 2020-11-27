@@ -35,32 +35,13 @@ namespace Model.Data
             _DBAL.Delete(" PositionObstacle WHERE idPositionObstacle = '" + unePositionObstacle.IdPositionObstacle + "' ;");
         }
 
-
-        public void InsertByFile(string chemin)
-        {
-            using (var reader = new StreamReader(chemin))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-                //var records = csv.GetRecords<Pays>();
-                var record = new PositionObstacle();
-                var records = csv.EnumerateRecords(record);
-
-                foreach (var item in records)
-                {
-                    this.Insert(item);
-                }
-            }
-        }
-
         public List<PositionObstacle> SelectAll()
         {
             List<PositionObstacle> uneListePositionObstacle = new List<PositionObstacle>();
             DataTable uneDataTable = _DBAL.SelectAll("PositionObstacle");
             foreach (DataRow dtr in uneDataTable.Rows)
             {
-                PositionObstacle unePositionObstacle = new PositionObstacle((int)dtr["idPositionObstacle"],(string)dtr["nomObstacle"],(int)dtr["idReservation"], (int)dtr["positionObstacle"]);
+                PositionObstacle unePositionObstacle = new PositionObstacle((int)dtr["idPositionObstacle"],(Obstacle)dtr["nomObstacle"],(Reservation)dtr["idReservation"], (int)dtr["positionObstacle"]);
                 uneListePositionObstacle.Add(unePositionObstacle);
             }
             return uneListePositionObstacle;
@@ -69,7 +50,7 @@ namespace Model.Data
         public PositionObstacle SelectById(int idPositionObstacle)
         {
             DataRow UneDataRow = _DBAL.SelectById("PositionObstacle", idPositionObstacle);
-            PositionObstacle unePositionObstacle = new PositionObstacle((int)UneDataRow["idPositionObstacle"], (string)UneDataRow["nomObstacle"], (int)UneDataRow["idReservation"], (int)UneDataRow["PositionObstacle"]);
+            PositionObstacle unePositionObstacle = new PositionObstacle((int)UneDataRow["idPositionObstacle"], (Obstacle)UneDataRow["nomObstacle"], (Reservation)UneDataRow["idReservation"], (int)UneDataRow["PositionObstacle"]);
             return unePositionObstacle;
         }
     }

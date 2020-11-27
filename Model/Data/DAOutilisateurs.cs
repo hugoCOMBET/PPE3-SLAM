@@ -40,22 +40,7 @@ namespace Model.Data
             string query = "Utilisateur WHERE Login = " + unUtilisateur.getLogin() + ";";
             this._dbal.Delete(query);
         }
-        public void InsertByFile(string Chemin)
-        {
-            using (var reader = new StreamReader(Chemin))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
 
-                var record = new Utilisateurs();
-                var records = csv.EnumerateRecords(record);
-                foreach (Utilisateurs unUtilisateur in records)
-                {
-                    Insert(unUtilisateur);
-                }
-            }
-        }
         public List<Utilisateurs> SelectAll()
         {
             List<Utilisateurs> listeAll = new List<Utilisateurs>();

@@ -11,29 +11,29 @@ namespace Model.Business
         #region Attributs
         private int _idSalle;
         private string _ville;
-        private theme _leTheme;
+        private theme _LeTheme;
         #endregion
 
         #region Constructeurs
-        public salles(int idSalle, string ville, theme leTheme)
+        public salles(int idSalle, string ville, theme idTheme)
         {
             _idSalle = idSalle;
             _ville = ville;
-            _leTheme = leTheme;
+            _LeTheme = idTheme;
         }
 
         public salles()
         {
             _idSalle = -1;
             _ville = "";
-            _leTheme = leTheme;
+            _LeTheme = new theme();
         }
         #endregion
 
         #region Accesseurs
         public int IdSalle { get => _idSalle; set => _idSalle = value; }
         public string Ville { get => _ville; set => _ville = value; }
-        public theme leTheme { get => _leTheme; set => _leTheme = value; }
+        public theme IdTheme { get => _LeTheme; set => _LeTheme = value; }
         #endregion
     }
 }
