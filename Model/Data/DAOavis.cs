@@ -54,23 +54,6 @@ namespace Model.Data
                 _dbal.Update(AvisUpdate);
             }
 
-            public void InsertFromCSV(string chemin)
-            {
-                using (var reader = new StreamReader(chemin))
-                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                {
-                    csv.Configuration.Delimiter = ";";
-                    csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-                    var record = new avis();
-                    IEnumerable<avis> records = csv.EnumerateRecords(record);
-
-                    foreach (avis avis in records)
-                    {
-                        insert(avis);
-                    }
-                }
-            }
-
             public List<avis> SelectAll()
             {
                 List<avis> listAvis = new List<avis>();

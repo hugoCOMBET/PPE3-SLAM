@@ -35,25 +35,6 @@ namespace Model.Data
             _DBAL.Delete(" PositionObstacle WHERE idPositionObstacle = '" + unePositionObstacle.IdPositionObstacle + "' ;");
         }
 
-
-        public void InsertByFile(string chemin)
-        {
-            using (var reader = new StreamReader(chemin))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-                //var records = csv.GetRecords<Pays>();
-                var record = new PositionObstacle();
-                var records = csv.EnumerateRecords(record);
-
-                foreach (var item in records)
-                {
-                    this.Insert(item);
-                }
-            }
-        }
-
         public List<PositionObstacle> SelectAll()
         {
             List<PositionObstacle> uneListePositionObstacle = new List<PositionObstacle>();

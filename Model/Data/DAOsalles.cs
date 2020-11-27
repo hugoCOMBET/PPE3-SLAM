@@ -54,23 +54,6 @@ namespace Model.Data
             _dbal.Update(SalleUpdate);
         }
 
-        public void InsertFromCSV(string chemin)
-        {
-            using (var reader = new StreamReader(chemin))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-                var record = new salles();
-                IEnumerable<salles> records = csv.EnumerateRecords(record);
-
-                foreach (salles salle in records)
-                {
-                    insert(salle);
-                }
-            }
-        }
-
         public List<salles> SelectAll()
         {
             List<salles> listSalles = new List<salles>();

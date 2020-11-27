@@ -51,22 +51,7 @@ namespace Model.Data
             string query = "Client WHERE ID = " + unClient.getIdClient() + ";";
             this._dbal.Delete(query);
         }
-        public void InsertByFile(string Chemin)
-        {
-            using (var reader = new StreamReader(Chemin))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
 
-                var record = new Clients();
-                var records = csv.EnumerateRecords(record);
-                foreach (Clients Client in records)
-                {
-                    Insert(Client);
-                }
-            }
-        }
         public List<Clients> SelectAll()
         {
             List<Clients> listeAll = new List<Clients>();
