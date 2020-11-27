@@ -34,7 +34,7 @@ namespace Model.Data
             {
                 string AvisInsert;
 
-                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.idClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
+                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.LeClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
                 _dbal.Insert(AvisInsert);
             }
 
@@ -50,7 +50,7 @@ namespace Model.Data
             {
                 string AvisUpdate;
 
-                AvisUpdate = ("avis set idAvis ='" + unavis.IdAvis + "', idClient = '" + unavis.IdClient + "', idSalle ='" + unavis.IdSalle + "', avis = '" + unavis.Avis.Replace("'", "''") + "'");
+                AvisUpdate = ("avis set idAvis ='" + unavis.IdAvis + "', idClient = '" + unavis.LeClient + "', idSalle ='" + unavis.IdSalle + "', avis = '" + unavis.Avis.Replace("'", "''") + "'");
                 _dbal.Update(AvisUpdate);
             }
 

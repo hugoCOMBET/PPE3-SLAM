@@ -9,7 +9,6 @@ namespace Model.Business
     public class PositionObstacle
     {
         private int _idPositionObstacle;
-
         private Obstacle _nomObstacle;
         private Reservation _idReservation;
         private int _positionObstacle;
@@ -25,7 +24,7 @@ namespace Model.Business
         public PositionObstacle(int unIdPositionObstacle , Obstacle unNomObstacle, Reservation unIdReservation, int unePositionObstacle)
         {
             _idPositionObstacle = unIdPositionObstacle;
-            _monObstacle = unNomObstacle;
+            _nomObstacle = unNomObstacle;
             _idReservation = unIdReservation;
             _positionObstacle = unePositionObstacle;
         }
@@ -33,6 +32,6 @@ namespace Model.Business
         public int IdPositionObstacle { get => _idPositionObstacle; set => _idPositionObstacle = value; }
         public Obstacle NomObstacle { get => _nomObstacle; set => _nomObstacle = value; }
         public Reservation IdReservation { get => _idReservation; set => _idReservation = value; }
-        public int PositionObstacle { get => _positionObstacle; set => _positionObstacle = value; }
+        public int Position { get => _positionObstacle; set => _positionObstacle = value; }
     }
 }

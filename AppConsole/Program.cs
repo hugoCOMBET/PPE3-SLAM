@@ -17,13 +17,6 @@ namespace AppConsole
             monClient = new Clients();
             myDaoClient = new DAOclients(monDbal);
 
-            myDaoClient.InsertByFile("D:\\hugoCOMBET\\visualStudio\\PPE3\\PPE3-SLAM\\Model\\ImportCSV\\Client.csv");
-
-            List<Clients> listeClients = myDaoClient.SelectAll();
-            foreach (Clients C in listeClients)
-            {
-                Console.WriteLine(C.getPrenomClient());
-            }
         }
     }
 }

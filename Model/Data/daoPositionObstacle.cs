@@ -22,12 +22,12 @@ namespace Model.Data
 
         public void Insert(PositionObstacle unePositionObstacle)
         {
-            _DBAL.Insert(" PositionObstacle values ('"+unePositionObstacle.IdPositionObstacle+"','" + unePositionObstacle.NomObstacle + "', " + unePositionObstacle.IdReservation + "," + unePositionObstacle.unePositionObstacle + ");");
+            _DBAL.Insert(" PositionObstacle values ('"+unePositionObstacle.IdPositionObstacle+"','" + unePositionObstacle.NomObstacle + "', " + unePositionObstacle.IdReservation + "," + unePositionObstacle.Position + ");");
         }
 
         public void Update(PositionObstacle unePositionObstacle)
         {
-            _DBAL.Update("  PositionObstacle SET idPositionObstacle = "+unePositionObstacle.IdPositionObstacle+",nomObstacle = '" + unePositionObstacle.NomObstacle + "', idReservation = " + unePositionObstacle.IdReservation + " , positionObstacle = " + unePositionObstacle.unePositionObstacle + " WHERE nomObstacle = '" + unePositionObstacle.NomObstacle + "';");
+            _DBAL.Update("  PositionObstacle SET idPositionObstacle = "+unePositionObstacle.IdPositionObstacle+",nomObstacle = '" + unePositionObstacle.NomObstacle + "', idReservation = " + unePositionObstacle.IdReservation + " , positionObstacle = " + unePositionObstacle.Position + " WHERE nomObstacle = '" + unePositionObstacle.NomObstacle + "';");
         }
 
         public void Delete(PositionObstacle unePositionObstacle)
