@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="viewModel\viewModelAgenda.cs" />
     <Compile Include="viewModel\RelayCommand.cs" />
     <Compile Include="viewModel\viewModelBase.cs" />
     <Compile Include="Window1.xaml.cs">
@@ -102,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{59aef437-e322-4ab5-a38e-09958020d626}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
