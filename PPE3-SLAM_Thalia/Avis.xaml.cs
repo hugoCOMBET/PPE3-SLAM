@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace AppDirecteur_PPE3
+namespace PPE3_SLAM_Thalia
 {
     /// <summary>
     /// Logique d'interaction pour Avis.xaml

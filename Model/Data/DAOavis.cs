@@ -15,15 +15,15 @@ namespace Model.Data
         {
             #region Attributs
             private Dbal _dbal;
-            //private DAOclient _DAOclient;
+            private DAOclients _DAOclient;
             private DAOsalles _DAOsalles;
             #endregion
 
             #region Constructeur
-            public void DAOAvis(Dbal dbal, DAOsalles DAOsalles)
+            public DAOavis(Dbal dbal, DAOclients DAOclient, DAOsalles DAOsalles)
             {
                 _dbal = dbal;
-                //_DAOclient = DAOclient;
+                _DAOclient = DAOclient;
                 _DAOsalles = DAOsalles;
             }
             #endregion
