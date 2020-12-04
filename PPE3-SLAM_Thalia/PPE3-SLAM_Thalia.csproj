@@ -67,7 +67,6 @@
     <Compile Include="viewModel\RelayCommand.cs" />
     <Compile Include="viewModel\viewModelAvis.cs" />
     <Compile Include="viewModel\viewModelBase.cs" />
-    <Compile Include="viewModel\viewModelMainWindow.cs" />
     <Compile Include="viewModel\viewModelStatistiques.cs" />
     <Compile Include="viewModel\viewModelThemeObstacles.cs" />
     <Page Include="Avis.xaml">

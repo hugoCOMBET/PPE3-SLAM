@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using PPE3_SLAM_Thalia.viewModel;
+using Model.Data;
 
 namespace PPE3_SLAM_Thalia
 {
@@ -20,6 +20,19 @@ namespace PPE3_SLAM_Thalia
     /// </summary>
     public partial class Avis : Window
     {
-        
+        public Avis(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation)
+        {
+            InitializeComponent();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult mbr_confirmation;
+            mbr_confirmation = MessageBox.Show("Êtes-vous sur de vouloir quitter ?", "Fermeture", MessageBoxButton.YesNo);
+            if (mbr_confirmation == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

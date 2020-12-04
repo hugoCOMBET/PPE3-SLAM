@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPE3_SLAM_Thalia"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing_1">
     <Grid x:Name="mainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="1363*"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="lbl_p0" Content="Direction et Sous-direction" Grid.Column="1" HorizontalAlignment="Left" Margin="180,50,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Height="55" Width="471"/>
-        <Button x:Name="btn_Avis" Content="Avis" Command="{Binding AvisCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="180,222,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btn_Stat" Content="Thèmes et obstacles"  Command="{Binding ThemeCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="346,222,0,0" VerticalAlignment="Top" Width="125"/>
-        <Button x:Name="btn_Obs" Content="Statistiques"  Command="{Binding StatCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="559,222,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="lbl_Choix" Content="Choisissez la page que vous voulez visionner" HorizontalAlignment="Left" VerticalAlignment="Top" Width="245" Grid.Column="1" Margin="293,147,0,0"/>
+        <RadioButton x:Name="rdb_Avis" Content="Avis" Grid.Column="1" HorizontalAlignment="Left" Margin="351,255,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdb_themeObs" Content="Thèmes et obstacles" Grid.Column="1" HorizontalAlignment="Left" Margin="351,225,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdb_stat" Content="Statistiques" Grid.Column="1" HorizontalAlignment="Left" Margin="351,194,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_valider" Content="Valider" Grid.Column="1" HorizontalAlignment="Left" Margin="376,299,0,0" VerticalAlignment="Top" Width="75" Click="btn_valider_Click"/>
 
     </Grid>
 </Window>
