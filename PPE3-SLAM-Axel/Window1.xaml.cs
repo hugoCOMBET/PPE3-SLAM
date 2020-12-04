@@ -28,7 +28,7 @@ namespace PPE3_SLAM_Axel
         {
             
             InitializeComponent();
-            int n = unDaoSalles.SelectCount("idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = 5 and hour(DateReservation) = '10 % ');");
+            long n = unDaoSalles.SelectCount("idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = 5 and hour(DateReservation) = '10 % ');");
             if ((string)quatre_un.Content == "4")
             {
                 quatre_un.Foreground = Brushes.Yellow;
