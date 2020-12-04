@@ -71,6 +71,14 @@ namespace Model.Data
             DataRow r = _dbal.SelectById("salles", idSalle);
             return new salles((int)r["idSalle"], (string)r["ville"], (theme)r["idSalle"]);
         }
+
+        public int SelectCount(string fieldtestcondition)
+        {
+            int i = 0;
+            DataRow uneDataRow = _dbal.SelectCount("Salle", fieldtestcondition);
+            i = (int)uneDataRow["NbSalles"];
+            return i;
+        }
         #endregion
     }
 }

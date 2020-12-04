@@ -95,7 +95,7 @@
             <Button x:Name="trois_dix" Grid.Column="3" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="trois_onze" Grid.Column="3" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="trois_douze" Grid.Column="3" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_un" Grid.Column="4" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
+            <Button x:Name="quatre_un" Grid.Column="4" Grid.Row="1" Content="4" Background="Green" Foreground="White" />
             <Button x:Name="quatre_deux" Grid.Column="4" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="quatre_trois" Grid.Column="4" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="quatre_quatre" Grid.Column="4" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>

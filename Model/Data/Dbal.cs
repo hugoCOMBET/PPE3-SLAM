@@ -144,5 +144,10 @@ namespace Model.Data
         {
             return this.RQuery("select * from " + table + " where id='" + id + "'").Tables[0].Rows[0];
         }
+
+        public DataRow SelectCount( string table, string fieldTestCondition)
+        {
+            return this.RQuery("select count(idSalle) as NbSalles from " + table + " where " + fieldTestCondition).Tables[0].Rows[0];
+        }
     }
 }
