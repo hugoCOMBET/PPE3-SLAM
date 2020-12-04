@@ -8,5 +8,6 @@ namespace AppDirecteur_PPE3.viewModel
 {
     class viewModelAvis
     {
+
     }
 }

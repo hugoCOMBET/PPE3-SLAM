@@ -11,11 +11,11 @@
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="1363*"/>
         </Grid.ColumnDefinitions>
-        <RadioButton x:Name="rdb_stat" Content="Statistiques des salles" Grid.Column="1" HorizontalAlignment="Left" Margin="251,139,0,0" VerticalAlignment="Top" Height="32" Width="254" FontSize="24"/>
-        <RadioButton x:Name="rdb_theme_obstacles" Content="Thèmes et obstacles des salles" Grid.Column="1" HorizontalAlignment="Left" Margin="251,193,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <RadioButton x:Name="rdb_avis" Content="Avis clientèle" Grid.Column="1" HorizontalAlignment="Left" Margin="251,242,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <Button x:Name="btn_valider_p0" Content="Valider" Grid.Column="1" HorizontalAlignment="Left" Margin="337,342,0,0" VerticalAlignment="Top" Width="126" FontSize="18"/>
         <Label x:Name="lbl_p0" Content="Direction et Sous-direction" Grid.Column="1" HorizontalAlignment="Left" Margin="180,50,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Height="55" Width="471"/>
+        <Button x:Name="btn_Avis" Content="Avis" Command="{Binding AvisCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="180,222,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_Stat" Content="Thèmes et obstacles"  Command="{Binding ThemeCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="346,222,0,0" VerticalAlignment="Top" Width="125"/>
+        <Button x:Name="btn_Obs" Content="Statistiques"  Command="{Binding StatCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="559,222,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lbl_Choix" Content="Choisissez la page que vous voulez visionner" HorizontalAlignment="Left" VerticalAlignment="Top" Width="245" Grid.Column="1" Margin="293,147,0,0"/>
 
     </Grid>
 </Window>

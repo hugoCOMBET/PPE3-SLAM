@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Model.Data;
 
 namespace PPE3_SLAM_Thalia
 {
@@ -20,10 +21,10 @@ namespace PPE3_SLAM_Thalia
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation)
         {
             InitializeComponent();
-            //mainGrid.DataContext = new viewModel.viewModelBase();
+            mainGrid.DataContext = new viewModel.viewModelMainWindow(avis, client, salle, theme, reservation);
         }
     }
 }

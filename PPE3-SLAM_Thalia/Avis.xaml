@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPE3_SLAM_Thalia"
         mc:Ignorable="d"
-        Title="Avis" Height="474" Width="805">
+        Title="avis" Height="474" Width="805">
     <Grid>
         <Button x:Name="btn_Stat_pAvis" Content="Statistiques" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btn_Avis_pAvis" Content="Avis" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="#FFFBFBFB"/>

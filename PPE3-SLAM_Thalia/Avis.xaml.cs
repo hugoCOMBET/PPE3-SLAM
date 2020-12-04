@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PPE3_SLAM_Thalia.viewModel;
 
 namespace PPE3_SLAM_Thalia
 {

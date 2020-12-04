@@ -26,14 +26,15 @@ namespace PPE3_SLAM_Thalia
             //C'est ici, dans la méthode Application_Startup, qu'on instancie nos objets Dbal et Dao
             thedbal = new Dbal("LSRGames");
             thedaotheme = new DAOtheme(thedbal);
-            thedaoavis = new DAOavis(thedbal, thedaoclient, thedaosalles);
             thedaosalles = new DAOsalles(thedbal);
             thedaoclient = new DAOclients(thedbal);
             thedaoreservation = new daoReservation(thedbal);
+            thedaoavis = new DAOavis(thedbal, thedaoclient, thedaosalles);
+
 
             // Create the startup window
             //là, on lance la fenêtre souhaitée en instanciant la classe de notre fenêtre
-            MainWindow wnd = new MainWindow();
+            MainWindow wnd = new MainWindow(thedaoavis,thedaoclient, thedaosalles, thedaotheme, thedaoreservation);
             //et on utilise la méthode Show() de notre objet fenêtre pour afficher la fenêtre
             //exemple: MainWindow lafenetre = new MainWindow(); (et on y passe en paramètre Dbal et Dao au besoin)
             wnd.Show();
