@@ -26,11 +26,11 @@ namespace Model.Data
 
 
         #region Autres méthodes
-        public void insert(salles unesalle)
+        public void insert(salles unesalle,theme untheme)
         {
             string SalleInsert;
 
-            SalleInsert = ("salle (idSalle, ville, idTheme) values (" + unesalle.IdSalle + ",'" + unesalle.Ville.Replace("'", "''") + "'," + unesalle.IdTheme + ")");
+            SalleInsert = ("salle (idSalle, ville, idTheme) values (" + unesalle.IdSalle + ",'" + unesalle.Ville.Replace("'", "''") + "'," + untheme.IdTheme + ")");
             _dbal.Insert(SalleInsert);
         }
 
@@ -42,11 +42,11 @@ namespace Model.Data
             _dbal.Delete(SalleDelete);
         }
 
-        public void update(salles unesalle)
+        public void update(salles unesalle,theme untheme)
         {
             string SalleUpdate;
 
-            SalleUpdate = ("salles set id ='" + unesalle.IdSalle + "' , nom = '" + unesalle.Ville.Replace("'", "''") + unesalle.IdTheme + "'");
+            SalleUpdate = ("salles set id ='" + unesalle.IdSalle + "' , nom = '" + unesalle.Ville.Replace("'", "''") + untheme.IdTheme + "'");
             _dbal.Update(SalleUpdate);
         }
 

@@ -20,20 +20,19 @@ namespace PPE3_SLAM_HUGO
         //au lancement de la solution, Dbal et Dao seront donc instanciés et passés aux différentes fenêtres
 
         private Dbal thedbal;
-        private dao thedaopays;
-        private DaoFromage thedaofromage;
+        private DAOclients thedaoClient;
+        private DAOtransactions thedaoTransaction;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             //C'est ici, dans la méthode Application_Startup, qu'on instancie nos objets Dbal et Dao
-
             thedbal = new Dbal("dbclubfromage");
-            thedaopays = new DaoPays(thedbal);
-            thedaofromage = new DaoFromage(thedbal, thedaopays);
+            thedaoClient = new DAOclients(thedbal);
+            thedaoTransaction = new DAOtransactions(thedbal);
 
             // Create the startup window
             //là, on lance la fenêtre souhaitée en instanciant la classe de notre fenêtre
-            GestionComptable wnd = new GestionComptable(thedaopays, thedaofromage);
+            MainWindow wnd = new MainWindow(thedaoTransaction, thedaoClient);
             //et on utilise la méthode Show() de notre objet fenêtre pour afficher la fenêtre
             //exemple: MainWindow lafenetre = new MainWindow(); (et on y passe en paramètre Dbal et Dao au besoin)
             wnd.Show();

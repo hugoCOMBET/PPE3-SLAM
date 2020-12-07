@@ -21,38 +21,52 @@ namespace Model.Data
             _DBAL = unDBAL;
         }
 
-        public void Insert(Reservation uneReservation)
+        public void Insert(Reservations uneReservation)
         {
-            _DBAL.Insert(" Reservation VALUES (" + uneReservation.IdReservation + "," + uneReservation.LeClient+","+uneReservation.LaSalle+","+uneReservation.LaTransaction+",'"+uneReservation.DateReservation+"',"+uneReservation.NbJoueurs+","+uneReservation.NbObstacles+");");
+            _DBAL.Insert(" Reservation VALUES (" + uneReservation.IdReservation + "," + uneReservation.LeClient.getIdClient() + ","+uneReservation.LaSalle.IdSalle +","+uneReservation.LaTransaction.getIdTransactions()+",'"+uneReservation.DateReservation.ToString("yyyy-MM-dd") + "',"+uneReservation.NbJoueurs+","+uneReservation.NbObstacles+");");
         }
 
-        public void Update(Reservation uneReservation)
+        public void Update(Reservations uneReservation)
         {
-            _DBAL.Update(" Reservation SET idReservation = "+uneReservation.IdReservation+",idClient = "+uneReservation.LeClient + ",idSalle = "+uneReservation.LaSalle + ",idTransaction = "+uneReservation.LaTransaction + ",dateReservation = " + uneReservation.DateReservation + ", nbJoueurs = " + uneReservation.NbJoueurs + ", nbObstacles = " + uneReservation.NbObstacles + "WHERE idReservation = " + uneReservation.IdReservation + ";");
+            _DBAL.Update(" Reservation SET idReservation = "+uneReservation.IdReservation+",idClient = "+uneReservation.LeClient.getIdClient() + ",idSalle = "+uneReservation.LaSalle.IdSalle + ",idTransaction = "+uneReservation.LaTransaction.getIdTransactions() + ",dateReservation = " + uneReservation.DateReservation.ToString("yyyy-MM-dd") + ", nbJoueurs = " + uneReservation.NbJoueurs + ", nbObstacles = " + uneReservation.NbObstacles + "WHERE idReservation = " + uneReservation.IdReservation + ";");
         }
 
 
-        public void Delete(Reservation uneReservation)
+        public void Delete(Reservations uneReservation)
         {
             _DBAL.Delete(" Reservation WHERE idReservation = "+uneReservation.IdReservation + ";");
         }
 
-        public List<Reservation> SelectAll()
+        public List<Reservations> SelectAll()
         {
-            List<Reservation> uneListeReservation = new List<Reservation>();
+            List<Reservations> uneListeReservation = new List<Reservations>();
             DataTable uneDataTable = _DBAL.SelectAll("Reservation");
             foreach(DataRow dtr in uneDataTable.Rows )
             {
-                Reservation uneReservation = new Reservation((int)dtr["idReservation"], (Clients)dtr["idClient"], (salles)dtr["idSalle"], (Transactions)dtr["idTransaction"], (DateTime)dtr["dateReservation"], (int)dtr["nbJoueurs"], (int)dtr["nbObstacles"]);
+                Reservations uneReservation = new Reservations
+                    ((int)dtr["idReservation"], 
+                    (Clients)dtr["idClient"], 
+                    (salles)dtr["idSalle"], 
+                    (Transactions)dtr["idTransaction"], 
+                    (DateTime)dtr["dateReservation"], 
+                    (int)dtr["nbJoueurs"], 
+                    (int)dtr["nbObstacles"]);
                 uneListeReservation.Add(uneReservation);
             }
             return uneListeReservation;
         }
 
-        public Reservation SelectById(int idReservation)
+        public Reservations SelectById(int idReservation)
         {
             DataRow UneDataRow = _DBAL.SelectById("Reservation", idReservation);
-            Reservation uneReservation = new Reservation((int)UneDataRow["idReservation"], (Clients)UneDataRow["idClient"], (salles)UneDataRow["idSalle"], (Transactions)UneDataRow["idTransaction"], (DateTime)UneDataRow["dateReservation"], (int)UneDataRow["nbJoueurs"], (int)UneDataRow["nbObstacles"]);
+            Reservations uneReservation = new Reservations
+                ((int)UneDataRow["idReservation"], 
+                (Clients)UneDataRow["idClient"], 
+                (salles)UneDataRow["idSalle"], 
+                (Transactions)UneDataRow["idTransaction"], 
+                (DateTime)UneDataRow["dateReservation"], 
+                (int)UneDataRow["nbJoueurs"], 
+                (int)UneDataRow["nbObstacles"]);
             return uneReservation;
         }
     }

@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Model.Data
 {
-    class DAOtransactions
+    public class DAOtransactions
     {
         private Dbal _dbal;
 
@@ -22,19 +22,19 @@ namespace Model.Data
             _dbal = dbal;
         }
 
-        public void Insert(Transactions uneTransaction)
+        public void Insert(Transactions uneTransaction,Clients unClient)
         {
             string query = " Transactions VALUES " 
                 + "(" + uneTransaction.getIdTransactions()
-                + ",'" + uneTransaction.getIdClient()
+                + ",'" + unClient.getIdClient()
                 + ",'" + uneTransaction.getMontantTransaction();
             this._dbal.Insert(query);
         }
-        public void Update(Transactions uneTransaction)
+        public void Update(Transactions uneTransaction,Clients unClient)
         {
             string query = "Transactions SET idTransaction = " 
                 + uneTransaction.getIdTransactions()
-                + ", idClient = '" + uneTransaction.getIdClient()
+                + ", idClient = '" + unClient.getIdClient()
                 + ", MontantTransaction = '" + uneTransaction.getMontantTransaction()
                 + "' WHERE idTransaction = " + uneTransaction.getIdTransactions();
             this._dbal.Update(query);

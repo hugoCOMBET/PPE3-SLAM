@@ -22,12 +22,12 @@ namespace Model.Data
         }
         public void Insert(Clients unClient)
         {
-            string query = " Client VALUES " + "(" + unClient.getIdClient() 
-                + ",'" + unClient.getNomClient().Replace("'", "''") 
-                + unClient.getPrenomClient().Replace("'", "''") 
-                + unClient.getPhotoClient().Replace("'", "''") 
-                + unClient.getAdresseClient().Replace("'", "''") 
-                + unClient.getDateNaissanceClient() 
+            string query = " Client VALUES " + "(" + unClient.getIdClient()
+                + ",'" + unClient.getNomClient().Replace("'", "''")
+                + unClient.getPrenomClient().Replace("'", "''")
+                + unClient.getPhotoClient().Replace("'", "''")
+                + unClient.getAdresseClient().Replace("'", "''")
+                + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd")
                 + unClient.getEmailClient().Replace("'", "''") 
                 + unClient.getTelPortableCLient().Replace("'", "''")+"');";
             this._dbal.Insert(query);
@@ -39,7 +39,7 @@ namespace Model.Data
                 + "prenom = '" + unClient.getPrenomClient().Replace("'", "''")
                 + "photo = '" + unClient.getPhotoClient().Replace("'", "''"
                 + "adresse ='" + unClient.getAdresseClient().Replace("'", "''") 
-                + "DateNaissance ='" + unClient.getDateNaissanceClient() 
+                + "DateNaissance ='" + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd")
                 + "Email = '" + unClient.getEmailClient().Replace("'", "''") 
                 + "TelephonePortable = '" + unClient.getTelPortableCLient().Replace("'", "''") 
                 + "' WHERE id = " + unClient.getIdClient() + " ;");

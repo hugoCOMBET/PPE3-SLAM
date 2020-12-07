@@ -7,18 +7,17 @@ using Model.Business;
 
 namespace Model.Business
 {
-    public class Reservation
+    public class Reservations
     {
         private int _idReservation;
         private Clients _LeClient;
         private salles _LaSalle;
         private Transactions _LaTransaction;
-
         private DateTime _dateReservation;
         private int _nbJoueurs;
         private int _nbObstacles;
 
-        public Reservation()
+        public Reservations()
         {
             _idReservation = 0;
             _LeClient = new Clients();
@@ -29,7 +28,7 @@ namespace Model.Business
             _nbObstacles = 0;
         }
 
-        public Reservation (int unIdReservation, Clients unIdClient, salles unIdSalle, Transactions unIdTransaction, DateTime uneDateReservation,int unNbJoueurs, int unNbObstacle)
+        public Reservations(int unIdReservation, Clients unIdClient, salles unIdSalle, Transactions unIdTransaction, DateTime uneDateReservation,int unNbJoueurs, int unNbObstacle)
         {
             _idReservation = unIdReservation;
             _LeClient = unIdClient;

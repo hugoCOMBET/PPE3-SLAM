@@ -29,28 +29,12 @@ namespace Model.Data
             #endregion
 
             #region Autres méthodes
-            public void insert(avis unavis)
+            public void insert(avis unavis,Clients unClient,salles uneSalle)
             {
                 string AvisInsert;
 
-                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.LeClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
+                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unClient.getIdClient() + "," + uneSalle.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
                 _dbal.Insert(AvisInsert);
-            }
-
-            public void delete(avis unavis)
-            {
-                string AvisDelete;
-
-                AvisDelete = ("avis where id ='" + unavis.IdAvis + "'");
-                _dbal.Delete(AvisDelete);
-            }
-
-            public void update(avis unavis)
-            {
-                string AvisUpdate;
-
-                AvisUpdate = ("avis set idAvis ='" + unavis.IdAvis + "', idClient = '" + unavis.LeClient + "', idSalle ='" + unavis.IdSalle + "', avis = '" + unavis.Avis.Replace("'", "''") + "'");
-                _dbal.Update(AvisUpdate);
             }
 
             public List<avis> SelectAll()
@@ -61,12 +45,6 @@ namespace Model.Data
                     listAvis.Add(new avis((int)r["idAvis"], (Clients)r["idClient"], (salles)r["idSalle"], (string)r["avis"]));
                 }
                 return listAvis;
-            }
-
-            public avis SelectByName(string avis)
-            {
-                DataRow r = _dbal.SelectByField("avis", "avis like '" + avis + "'").Rows[0];
-                return new avis((int)r["idAvis"], (Clients)r["idClient"], (salles)r["idSalle"], (string)r["avis"]);
             }
 
             public avis SelectById(int idAvis)

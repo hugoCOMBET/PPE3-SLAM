@@ -10,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Model.Data;
 
 namespace PPE3_SLAM_HUGO
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour GérerCréditClient.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GérerCréditClient : Window
     {
-        public MainWindow( DAOtransactions laTransaction,DAOclients lesClient)
+        public GérerCréditClient()
         {
             InitializeComponent();
-            AppComptableSecretariat.DataContext = new viewModel.viewModelPPE3Hugo(laTransaction, lesClient);
         }
     }
 }

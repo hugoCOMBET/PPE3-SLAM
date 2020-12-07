@@ -21,7 +21,7 @@ namespace Model.Data
 
         public void Insert(PositionObstacle unePositionObstacle)
         {
-            _DBAL.Insert(" PositionObstacle values ('"+unePositionObstacle.IdPositionObstacle+"','" + unePositionObstacle.NomObstacle + "', " + unePositionObstacle.IdReservation + "," + unePositionObstacle.Position + ");");
+            _DBAL.Insert(" PositionObstacle values ('"+unePositionObstacle.IdPositionObstacle+"','" + unePositionObstacle.NomObstacle.NomObstacle + "', " + unePositionObstacle.IdReservation + "," + unePositionObstacle.Position + ");");
         }
 
         public void Update(PositionObstacle unePositionObstacle)
@@ -40,7 +40,7 @@ namespace Model.Data
             DataTable uneDataTable = _DBAL.SelectAll("PositionObstacle");
             foreach (DataRow dtr in uneDataTable.Rows)
             {
-                PositionObstacle unePositionObstacle = new PositionObstacle((int)dtr["idPositionObstacle"],(Obstacle)dtr["nomObstacle"],(Reservation)dtr["idReservation"], (int)dtr["positionObstacle"]);
+                PositionObstacle unePositionObstacle = new PositionObstacle((int)dtr["idPositionObstacle"],(Obstacle)dtr["nomObstacle"],(Transactions)dtr["idReservation"], (int)dtr["positionObstacle"]);
                 uneListePositionObstacle.Add(unePositionObstacle);
             }
             return uneListePositionObstacle;
@@ -49,7 +49,7 @@ namespace Model.Data
         public PositionObstacle SelectById(int idPositionObstacle)
         {
             DataRow UneDataRow = _DBAL.SelectById("PositionObstacle", idPositionObstacle);
-            PositionObstacle unePositionObstacle = new PositionObstacle((int)UneDataRow["idPositionObstacle"], (Obstacle)UneDataRow["nomObstacle"], (Reservation)UneDataRow["idReservation"], (int)UneDataRow["PositionObstacle"]);
+            PositionObstacle unePositionObstacle = new PositionObstacle((int)UneDataRow["idPositionObstacle"], (Obstacle)UneDataRow["nomObstacle"], (Transactions)UneDataRow["idReservation"], (int)UneDataRow["PositionObstacle"]);
             return unePositionObstacle;
         }
     }
