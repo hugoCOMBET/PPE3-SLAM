@@ -142,7 +142,7 @@
             <Button x:Name="sept_neuf" Grid.Column="7" Grid.Row="9" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="sept_dix" Grid.Column="7" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="sept_onze" Grid.Column="7" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_douze" Grid.Column="7" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
+            <Button x:Name="sept_douze" Grid.Column="7" Grid.Row="12" Content="4" Background="Green" Foreground="White" Click="sept_douze_Click"/>
             <!--#endregion-->
 
         </Grid>

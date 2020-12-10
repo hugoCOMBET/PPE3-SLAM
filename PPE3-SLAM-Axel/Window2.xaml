@@ -8,9 +8,34 @@
         Title="Choix des salles" Height="450" Width="800">
     <Grid  x:Name="ChoixSallesGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <ListBox x:Name="listSallesView" ItemsSource="{Binding ListFromages}" SelectedItem="{Binding SelectedFromage}" IsSynchronizedWithCurrentItem="True" Grid.Column="0" />
+        <GridSplitter Grid.Column="1"/>
+        <Grid x:Name="displaySalle" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Numéro de la salle :" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+            <Label x:Name="idSalle" Content="{Binding Name}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
+            <Label Content="Ville :" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+            <Label x:Name="nomVille"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
+            <Label Content="Thème :" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+            <Label x:Name="dateCreation"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
+            
+            <Button x:Name="Selection" Content="Choisir" Command="{Binding ChoixCommand}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="10"/>
+            
+        </Grid>
 
     </Grid>
 </Window>
