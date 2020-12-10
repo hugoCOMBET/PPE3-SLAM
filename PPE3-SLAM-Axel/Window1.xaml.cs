@@ -24,7 +24,7 @@ namespace PPE3_SLAM_Axel
        
         //Création d'une liste de bouton
         List<Button> uneListebouton = new List<Button>();
-        Window2 choixSalle = new Window2();
+        
 
         public Window1(daoReservation unDaoReservation, DAOsalles unDaoSalles)
         {
@@ -292,10 +292,7 @@ namespace PPE3_SLAM_Axel
             }
         }
 
-        private void sept_douze_Click(object sender, RoutedEventArgs e)
-        {
-            choixSalle.Show();
-        }
+        
     }
 
     

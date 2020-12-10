@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Model.Data;
+using Model.Business;
 
 namespace PPE3_SLAM_Axel
 {
@@ -19,7 +21,7 @@ namespace PPE3_SLAM_Axel
     /// </summary>
     public partial class Window2 : Window
     {
-        public Window2()
+        public Window2(DAOsalles unDaoSalle, DAOtheme unDaoTheme)
         {
             InitializeComponent();
         }
