@@ -72,10 +72,10 @@ namespace Model.Data
             return new salles((int)r["idSalle"], (string)r["ville"], (theme)r["idSalle"]);
         }
 
-        public long SelectCount(string fieldtestcondition)
+        public long SelectCount(string attribut,string fieldtestcondition)
         {
             long i = 0;
-            DataRow uneDataRow = _dbal.SelectCount("Salle", fieldtestcondition);
+            DataRow uneDataRow = _dbal.SelectCount(attribut,"Salle", fieldtestcondition);
             i = (long)uneDataRow["NbSalles"];
             return i;
         }

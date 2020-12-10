@@ -17,7 +17,7 @@ namespace Model.Data
         private string password;
 
         //Constructor
-        public Dbal(string database, string uid = "root", string password = "5MichelAnnecy", string server = "localhost")
+        public Dbal(string database, string uid = "root", string password = "", string server = "localhost")
         {
             Initialize(database, uid, password, server);
         }
@@ -145,9 +145,9 @@ namespace Model.Data
             return this.RQuery("select * from " + table + " where id='" + id + "'").Tables[0].Rows[0];
         }
 
-        public DataRow SelectCount( string table, string fieldTestCondition)
+        public DataRow SelectCount(string attribut, string table, string fieldTestCondition)
         {
-            return this.RQuery("select count(idSalle) as NbSalles from " + table + " where " + fieldTestCondition).Tables[0].Rows[0];
+            return this.RQuery("select count("+attribut+") as NbSalles from " + table + " where " + fieldTestCondition).Tables[0].Rows[0];
         }
     }
 }
