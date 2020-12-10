@@ -21,7 +21,7 @@ namespace PPE3_SLAM_Axel
     /// </summary>
     public partial class Window1 : Window
     {
-
+       
         //Création d'une liste de bouton
         List<Button> uneListebouton = new List<Button>();
 
@@ -130,34 +130,42 @@ namespace PPE3_SLAM_Axel
             {
                 position = btn.Name.ToString().IndexOf('_');
                 extraction = btn.Name.ToString().Substring(0, position);
+                
                 switch(extraction)
                 {
                     case "un":
+                        // btn.Content = position.ToString();
                         RequeteSQLCount(uneListedeBouton, unDaoSalles, 2);
                         break;
 
                     case "deux":
-                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 3);
+                        btn.Content = position.ToString();
+                        //RequeteSQLCount(uneListedeBouton, unDaoSalles, 3);
                         break;
 
                     case "trois":
-                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 4);
+                        btn.Content = position.ToString();
+                        //RequeteSQLCount(uneListedeBouton, unDaoSalles, 4);
                         break;
 
                     case "quatre":
-                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 5);
+                        btn.Content = position.ToString();
+                        //RequeteSQLCount(uneListedeBouton, unDaoSalles, 5);
                         break;
 
                     case "cinq":
-                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 6);
+                        btn.Content = position.ToString();
+                        //RequeteSQLCount(uneListedeBouton, unDaoSalles, 6);
                         break;
 
                     case "six":
-                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 7);
+                        btn.Content = position.ToString();
+                        //RequeteSQLCount(uneListedeBouton, unDaoSalles, 7);
                         break;
 
                     case "sept":
-                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 1);
+                        btn.Content = position.ToString();
+                        //RequeteSQLCount(uneListedeBouton, unDaoSalles, 1);
                         break;
 
                     default:
