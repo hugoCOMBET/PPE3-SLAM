@@ -128,8 +128,8 @@ namespace PPE3_SLAM_Axel
             
             foreach(Button btn in uneListedeBouton)
             {
-                position = btn.Content.ToString().IndexOf('_');
-                extraction = btn.Content.ToString().Substring(0, 2);
+                position = btn.Name.ToString().IndexOf('_');
+                extraction = btn.Name.ToString().Substring(0, position);
                 switch(extraction)
                 {
                     case "un":
@@ -200,8 +200,8 @@ namespace PPE3_SLAM_Axel
             string extraction = "";
             foreach (Button btn in uneListedeBouton)
             {
-                position = btn.Content.ToString().IndexOf('_');
-                extraction = btn.Content.ToString().Substring(position + 1);
+                position = btn.Name.ToString().IndexOf('_');
+                extraction = btn.Name.ToString().Substring(position + 1);
                 switch (extraction)
                 {
                     case "un":
