@@ -13,6 +13,7 @@ namespace AppConsole
         private static Clients monClient;
         static void Main(string[] args)
         {
+            DAOavis daoAvis = new DAOavis();
             Dbal monDbal = new Dbal("LSRGames");
             monClient = new Clients();
             myDaoClient = new DAOclients(monDbal);

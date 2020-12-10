@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="viewModel\viewModelChoixSalles.cs" />
     <Compile Include="viewModel\viewModelAgenda.cs" />
     <Compile Include="viewModel\RelayCommand.cs" />
     <Compile Include="viewModel\viewModelBase.cs" />

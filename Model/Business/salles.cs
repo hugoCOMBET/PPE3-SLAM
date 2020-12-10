@@ -35,5 +35,10 @@ namespace Model.Business
         public string Ville { get => _ville; set => _ville = value; }
         public theme IdTheme { get => _LeTheme; set => _LeTheme = value; }
         #endregion
+
+        public override string ToString()
+        {
+            return "Salle n°"+Convert.ToString(this.IdSalle);
+        }
     }
 }
