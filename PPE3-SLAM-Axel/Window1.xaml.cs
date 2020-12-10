@@ -114,23 +114,18 @@ namespace PPE3_SLAM_Axel
             uneListebouton.Add(sept_neuf);
             uneListebouton.Add(sept_dix);
             uneListebouton.Add(sept_onze);
-            uneListebouton.Add(sept_douze); 
+            uneListebouton.Add(sept_douze);
             #endregion
-            long n = unDaoSalles.SelectCount("idSalle","idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = 5 and hour(DateReservation) = '10 % ');");
-            quatre_un.Content = Convert.ToString(n);
-            if ((string)quatre_un.Content == "3")
-            {
-                quatre_un.Background = Brushes.Yellow;
-                quatre_un.Foreground = Brushes.Black;
-            }
+            InitialiserFenêtre(uneListebouton, unDaoSalles);
 
         }
 
-        public static void InitialiserFenêtre(List<Button> uneListedeBouton)
+        public static void InitialiserFenêtre(List<Button> uneListedeBouton, DAOsalles unDaoSalles)
         {
             //premier chiffre = colonne = jour , deuxième chiffre = ligne = heure
             string extraction;
             int position;
+            
             foreach(Button btn in uneListedeBouton)
             {
                 position = btn.Content.ToString().IndexOf('_');
@@ -138,13 +133,31 @@ namespace PPE3_SLAM_Axel
                 switch(extraction)
                 {
                     case "un":
-                        extraction = btn.Content.ToString().Substring(position+1);
-                        switch(extraction)
-                        {
-                            default:
+                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 2);
+                        break;
 
-                                break;
-                        }
+                    case "deux":
+                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 3);
+                        break;
+
+                    case "trois":
+                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 4);
+                        break;
+
+                    case "quatre":
+                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 5);
+                        break;
+
+                    case "cinq":
+                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 6);
+                        break;
+
+                    case "six":
+                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 7);
+                        break;
+
+                    case "sept":
+                        RequeteSQLCount(uneListedeBouton, unDaoSalles, 1);
                         break;
 
                     default:
@@ -154,6 +167,122 @@ namespace PPE3_SLAM_Axel
             }
 
         }
+
+        public static void ChangerEtat(Button unBouton)
+        {
+            if((string)unBouton.Content=="0")
+            {
+                unBouton.IsEnabled = false;
+            }
+            if ((string)unBouton.Content == "1")
+            {
+                unBouton.Background = Brushes.Red;
+            }
+            if ((string)unBouton.Content == "2")
+            {
+                unBouton.Background = Brushes.Orange;
+            }
+            if ((string)unBouton.Content == "3")
+            {
+                unBouton.Background = Brushes.Yellow;
+            }
+            if ((string)unBouton.Content == "4")
+            {
+                unBouton.Background = Brushes.Green;
+            }
+
+        }
+
+        public static void RequeteSQLCount( List<Button> uneListedeBouton, DAOsalles unDaoSalles,int idJourSQL)
+        {
+            long n = 0;
+            int position = 0;
+            string extraction = "";
+            foreach (Button btn in uneListedeBouton)
+            {
+                position = btn.Content.ToString().IndexOf('_');
+                extraction = btn.Content.ToString().Substring(position + 1);
+                switch (extraction)
+                {
+                    case "un":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = "+idJourSQL+" and hour(DateReservation) = '10 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "deux":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '11 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "trois":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '12 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "quatre":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '13 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "cinq":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '14 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "six":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '15 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "sept":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '16 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+                    case "huit":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '17 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "neuf":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '18 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "dix":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '19 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "onze":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '20 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    case "douze":
+                        n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select sum(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '21 % ');");
+                        btn.Content = Convert.ToString(n);
+                        ChangerEtat(btn);
+                        break;
+
+                    default:
+
+                        break;
+                }
+                break;
+            }
+        }
+
     }
 
     
