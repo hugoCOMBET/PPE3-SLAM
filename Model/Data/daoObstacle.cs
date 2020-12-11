@@ -25,7 +25,7 @@ namespace Model.Data
 
         {
             
-            _DBAL.Insert(" Obstacle values (" + unObstacle.NomObstacle + ", '" + unObstacle.Definition + "','"+unObstacle.Photo +"','" + unObstacle.TypeObstacle+"');");
+            _DBAL.Insert(" Obstacle values ('" + unObstacle.NomObstacle + "', '" + unObstacle.Definition + "','"+unObstacle.Photo +"','" + unObstacle.TypeObstacle+"');");
 
         }
 

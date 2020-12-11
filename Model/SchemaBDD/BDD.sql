@@ -24,7 +24,7 @@ primary key(id)
 create table Obstacle(
 nom varchar(100),
 UneDefinition varchar(255),
-Photo blob,
+Photo varchar(255),
 typeObstacle varchar(75),
 primary key(nom)
 )engine InnoDB;
