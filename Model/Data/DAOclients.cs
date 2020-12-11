@@ -22,27 +22,30 @@ namespace Model.Data
         }
         public void Insert(Clients unClient)
         {
-            string query = " Client VALUES " + "(" + unClient.getIdClient()
-                + ",'" + unClient.getNomClient().Replace("'", "''")
-                + unClient.getPrenomClient().Replace("'", "''")
-                + unClient.getPhotoClient().Replace("'", "''")
-                + unClient.getAdresseClient().Replace("'", "''")
-                + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd")
-                + unClient.getEmailClient().Replace("'", "''") 
-                + unClient.getTelPortableCLient().Replace("'", "''")+"');";
+            string query = " Client (id,nom,prenom,photo,adresse,DateNaissance,Email,TelephonePortable,Credit) VALUES (" + unClient.getIdClient()
+                + ",'" + unClient.getNomClient().Replace("'", "''") + "'"
+                + ",'" + unClient.getPrenomClient().Replace("'", "''") + "'"
+                + ",'" + unClient.getPhotoClient().Replace("'", "''") + "'"
+                + ",'" + unClient.getAdresseClient().Replace("'", "''") + "'"
+                + ",'" + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd") + "'"
+                + ",'" + unClient.getEmailClient().Replace("'", "''") + "'"
+                + ",'" + unClient.getTelPortableCLient().Replace("'", "''") + "'"
+                + ",'" + unClient.getCreditCLient()+"');";
+            
             this._dbal.Insert(query);
         }
         public void Update(Clients unClient)
         {
-            string query = "Client SET id = " + unClient.getIdClient() 
-                + ", nom = '" + unClient.getNomClient().Replace("'", "''")
-                + "prenom = '" + unClient.getPrenomClient().Replace("'", "''")
-                + "photo = '" + unClient.getPhotoClient().Replace("'", "''"
-                + "adresse ='" + unClient.getAdresseClient().Replace("'", "''") 
-                + "DateNaissance ='" + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd")
-                + "Email = '" + unClient.getEmailClient().Replace("'", "''") 
-                + "TelephonePortable = '" + unClient.getTelPortableCLient().Replace("'", "''") 
-                + "' WHERE id = " + unClient.getIdClient() + " ;");
+            string query = "Client SET id = " + unClient.getIdClient()
+                + ", nom = '" + unClient.getNomClient().Replace("'", "''") + "'"
+                + ", prenom = '" + unClient.getPrenomClient().Replace("'", "''") + "'"
+                + ", photo = '" + unClient.getPhotoClient().Replace("'", "''") + "'"
+                + ", adresse ='" + unClient.getAdresseClient().Replace("'", "''") + "'"
+                + ", DateNaissance ='" + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd") + "'"
+                + ", Email = '" + unClient.getEmailClient().Replace("'", "''") + "'"
+                + ", TelephonePortable = '" + unClient.getTelPortableCLient().Replace("'", "''") + "'"
+                + ", Credit = " + unClient.getCreditCLient()
+                + "' WHERE id = " + unClient.getIdClient() + " ;";
             this._dbal.Update(query);
         }
 
@@ -65,7 +68,8 @@ namespace Model.Data
                     (string)r["adresse"],
                     (DateTime)r["DateNaissance"],
                     (string)r["Email"],
-                    (string)r["TelephonePortable"]));
+                    (string)r["TelephonePortable"],
+                    (double)r["Credit"]));
             }
             return listeAll;
         }
@@ -80,7 +84,8 @@ namespace Model.Data
                 (string)r["adresse"],
                 (DateTime)r["DateNaissance"],
                 (string)r["Email"],
-                (string)r["TelephonePortable"]);
+                (string)r["TelephonePortable"],
+                (double)r["Credit"]);
         }
         public Clients SelectById(int id)
         {
@@ -92,7 +97,8 @@ namespace Model.Data
                 (string)r["adresse"],
                 (DateTime)r["DateNaissance"],
                 (string)r["Email"],
-                (string)r["TelephonePortable"]);
+                (string)r["TelephonePortable"],
+                (double)r["Credit"]);
         }
     }
 }

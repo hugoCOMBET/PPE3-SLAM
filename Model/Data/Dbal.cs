@@ -99,13 +99,15 @@ namespace Model.Data
         }
         public void Update(string query)
         {
+            string query2 = "UPDATE " + query + ";";
+            Console.WriteLine(query2);
             //Open connection
             if (this.OpenConnection() == true)
             {
                 //create mysql command
                 MySqlCommand cmd = new MySqlCommand();
                 //Assign the query using CommandText
-                cmd.CommandText = query;
+                cmd.CommandText = query2;
                 //Assign the connection using Connection
                 cmd.Connection = connection;
 
@@ -118,9 +120,10 @@ namespace Model.Data
         }
         public void Delete(string query)
         {
+            string query2 = "DELETE FROM " + query;
             if (this.OpenConnection() == true)
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
             }
@@ -143,6 +146,11 @@ namespace Model.Data
         public DataRow SelectById(string table, int id)
         {
             return this.RQuery("select * from " + table + " where id='" + id + "'").Tables[0].Rows[0];
+        }
+
+        public DataRow SelectCount(string attribut, string table, string fieldTestCondition)
+        {
+            return this.RQuery("select count(" + attribut + ") as NbSalles from " + table + " where " + fieldTestCondition).Tables[0].Rows[0];
         }
     }
 }
