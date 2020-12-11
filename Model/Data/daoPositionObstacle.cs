@@ -13,6 +13,8 @@ namespace Model.Data
     public class daoPositionObstacle
     {
         private Dbal _DBAL;
+        private daoObstacle thedaoobstacle;
+        private daoReservation thedaoreservation;
 
         public daoPositionObstacle(Dbal unDBAL)
         {
@@ -21,26 +23,33 @@ namespace Model.Data
 
         public void Insert(PositionObstacle unePositionObstacle)
         {
-            _DBAL.Insert(" PositionObstacle values ('"+unePositionObstacle.IdPositionObstacle+"','" + unePositionObstacle.NomObstacle + "', " + unePositionObstacle.IdReservation + "," + unePositionObstacle.Position + ");");
+            string query = " PositionObstacle values ('" + unePositionObstacle.IdPositionObstacle + "','" + unePositionObstacle.unObstacle.NomObstacle + "', " + unePositionObstacle.LaReservation.IdReservation + "," + unePositionObstacle.Position + ");";
+            Console.WriteLine(query);
+            _DBAL.Insert(query);
         }
 
         public void Update(PositionObstacle unePositionObstacle)
         {
-            _DBAL.Update("  PositionObstacle SET idPositionObstacle = "+unePositionObstacle.IdPositionObstacle+",nomObstacle = '" + unePositionObstacle.NomObstacle + "', idReservation = " + unePositionObstacle.IdReservation + " , positionObstacle = " + unePositionObstacle.Position + " WHERE nomObstacle = '" + unePositionObstacle.NomObstacle + "';");
+            string query = "  PositionObstacle SET id = " + unePositionObstacle.IdPositionObstacle + ",nomObstacle = '" + unePositionObstacle.unObstacle.NomObstacle + "', idReservation = " + unePositionObstacle.LaReservation.IdReservation + " , positionObstacle = " + unePositionObstacle.Position + " WHERE nomObstacle = '" + unePositionObstacle.unObstacle.NomObstacle + "';";
+            Console.WriteLine(query);
+            _DBAL.Update(query);
         }
 
         public void Delete(PositionObstacle unePositionObstacle)
         {
-            _DBAL.Delete(" PositionObstacle WHERE idPositionObstacle = '" + unePositionObstacle.IdPositionObstacle + "' ;");
+            _DBAL.Delete(" PositionObstacle WHERE id = '" + unePositionObstacle.IdPositionObstacle + "' ;");
         }
 
         public List<PositionObstacle> SelectAll()
         {
+
+            
             List<PositionObstacle> uneListePositionObstacle = new List<PositionObstacle>();
             DataTable uneDataTable = _DBAL.SelectAll("PositionObstacle");
             foreach (DataRow dtr in uneDataTable.Rows)
             {
-                PositionObstacle unePositionObstacle = new PositionObstacle((int)dtr["idPositionObstacle"],(Obstacle)dtr["nomObstacle"],(Reservation)dtr["idReservation"], (int)dtr["positionObstacle"]);
+                Obstacle myObstacle = this.thedaoobstacle.SelectByName((string)dtr["nomObstacle"]);
+                PositionObstacle unePositionObstacle = new PositionObstacle((int)dtr["id"],myObstacle,(Reservation)dtr["idReservation"], (int)dtr["positionObstacle"]);
                 uneListePositionObstacle.Add(unePositionObstacle);
             }
             return uneListePositionObstacle;
@@ -49,7 +58,8 @@ namespace Model.Data
         public PositionObstacle SelectById(int idPositionObstacle)
         {
             DataRow UneDataRow = _DBAL.SelectById("PositionObstacle", idPositionObstacle);
-            PositionObstacle unePositionObstacle = new PositionObstacle((int)UneDataRow["idPositionObstacle"], (Obstacle)UneDataRow["nomObstacle"], (Reservation)UneDataRow["idReservation"], (int)UneDataRow["PositionObstacle"]);
+            Obstacle myObstacle = this.thedaoobstacle.SelectByName((string)UneDataRow["nomObstacle"]);
+            PositionObstacle unePositionObstacle = new PositionObstacle((int)UneDataRow["idPositionObstacle"], myObstacle, (Reservation)UneDataRow["idReservation"], (int)UneDataRow["PositionObstacle"]);
             return unePositionObstacle;
         }
     }

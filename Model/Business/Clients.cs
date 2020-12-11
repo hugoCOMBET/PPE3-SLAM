@@ -17,10 +17,11 @@ namespace Model.Business
         private DateTime _DateNaissance;
         private string _Email;
         private string _TelephonePortable;
+        private double _credit;
         #endregion
 
         #region constructeurs
-        public Clients(int UnIdClient, string UnClient, string UnPrenomClient, string UnePhotoClient, string UneAdresseClient, DateTime UneDateNaissClient, string unEmailClient, string unNumTelephoneClient)
+        public Clients(int UnIdClient, string UnClient, string UnPrenomClient, string UnePhotoClient, string UneAdresseClient, DateTime UneDateNaissClient, string unEmailClient, string unNumTelephoneClient,double uncredit)
         {
             _id = UnIdClient;
             _nom = UnClient;
@@ -30,6 +31,7 @@ namespace Model.Business
             _DateNaissance = UneDateNaissClient;
             _Email = unEmailClient;
             _TelephonePortable = unNumTelephoneClient;
+            _credit = uncredit;
         }
 
         public Clients()
@@ -42,6 +44,7 @@ namespace Model.Business
             _DateNaissance = new DateTime();
             _Email = "";
             _TelephonePortable = "";
+            _credit = 0;
         }
         #endregion
 
@@ -115,6 +118,14 @@ namespace Model.Business
         public void setTelPortableCLient(string unTelPortableClient)
         {
             _TelephonePortable = unTelPortableClient;
+        }
+        public double getCreditCLient()
+        {
+            return _credit;
+        }
+        public void setCreditCLient(double uncredit)
+        {
+            _credit = uncredit;
         }
         #endregion
     }

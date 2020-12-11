@@ -17,7 +17,8 @@ photo varchar(200),
 adresse varchar(150),
 DateNaissance date,
 Email varchar(150),
-TelephonePortable char(10), 
+TelephonePortable char(10),
+Credit double,
 primary key(id)
 ) engine InnoDB;
 

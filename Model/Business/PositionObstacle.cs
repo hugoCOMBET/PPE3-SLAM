@@ -30,8 +30,8 @@ namespace Model.Business
         }
 
         public int IdPositionObstacle { get => _idPositionObstacle; set => _idPositionObstacle = value; }
-        public Obstacle NomObstacle { get => _nomObstacle; set => _nomObstacle = value; }
-        public Reservation IdReservation { get => _idReservation; set => _idReservation = value; }
+        public Obstacle unObstacle { get => _nomObstacle; set => _nomObstacle = value; }
+        public Reservation LaReservation { get => _idReservation; set => _idReservation = value; }
         public int Position { get => _positionObstacle; set => _positionObstacle = value; }
     }
 }
