@@ -26,9 +26,9 @@ namespace PPE3_SLAM_HUGO
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             //C'est ici, dans la méthode Application_Startup, qu'on instancie nos objets Dbal et Dao
-            thedbal = new Dbal("dbclubfromage");
+            thedbal = new Dbal("LSRGames");
             thedaoClient = new DAOclients(thedbal);
-            thedaoTransaction = new DAOtransactions(thedbal);
+            thedaoTransaction = new DAOtransactions(thedbal,thedaoClient);
 
             // Create the startup window
             //là, on lance la fenêtre souhaitée en instanciant la classe de notre fenêtre

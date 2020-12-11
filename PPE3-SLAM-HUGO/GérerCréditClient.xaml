@@ -7,32 +7,33 @@
         mc:Ignorable="d"
         Title="GérerCréditClient" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lst_clients" HorizontalAlignment="Left" Height="288" Margin="10,48,0,0" VerticalAlignment="Top" Width="250"/>
-        <Button x:Name="btn_VoirLesCrédit" Content="Voir les crédit" HorizontalAlignment="Left" Margin="10,351,0,0" VerticalAlignment="Top" Width="120" Height="30"/>
-        <Label Content="Nom &#xA;" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,14,0,371" Background="White" FontSize="14" Height="34" Width="132"/>
-        <Label x:Name="lst_clients1" Content="liste clients :" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,14,0,371" Background="White" FontSize="14" Height="34" Width="132" FontStyle="Italic"/>
-        <Grid x:Name="displayClients" Margin="295,48,22,83" RenderTransformOrigin="0.523,0.493">
+        <ListBox x:Name="lst_clients" HorizontalAlignment="Left" Height="215" Margin="10,121,0,0" VerticalAlignment="Top" Width="250"/>
+        <Button x:Name="btn_VoirLesCrédit" Content="Voir les crédit" HorizontalAlignment="Left" Margin="10,353,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
+        <Label x:Name="lst_clients1" Content="liste clients :" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,82,0,303" Background="White" FontSize="14" Height="34" Width="132" FontStyle="Italic"/>
+        <Grid x:Name="displayClients" Margin="299,48,22,83" RenderTransformOrigin="0.523,0.493">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="31*"/>
                 <ColumnDefinition Width="119*"/>
                 <ColumnDefinition Width="300*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="39*"/>
-                <RowDefinition Height="38*"/>
+                <RowDefinition Height="65*"/>
+                <RowDefinition Height="65*"/>
+                <RowDefinition Height="65*"/>
                 <RowDefinition Height="80*"/>
-                <RowDefinition Height="131*"/>
             </Grid.RowDefinitions>
-            <Label Content="Client :&#xA;" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,6,0,37" Background="White" FontSize="14" Height="34" Width="132" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-            <TextBox x:Name="txtbox_Client" Text="{Binding Name}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,11,10,10" Height="18"/>
-            <Label Content="Crédits actuels :" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,9,0,1" Background="White" FontSize="14" Height="28" Width="124" Grid.ColumnSpan="2"/>
-            <Image x:Name="imageFromage" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="47,20,78,19" Height="0" Width="0" Grid.Column="1"/>
-            <TextBox x:Name="txtbox_crédit" Text="{Binding Name}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="18"/>
-            <Label Content="Crédits à ajouter&#xD;&#xA;ou supprimer :" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,17,0,11" Background="White" FontSize="14" Height="52" Width="121" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="txtbox_créditAAjouterouSupp" Text="{Binding Name}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,31" Height="18"/>
-            <Button x:Name="btn_ajoutCrédit" Content="Ajouter" Grid.Column="2" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="3" VerticalAlignment="Top" Width="130" Height="50"/>
-            <Button x:Name="btn_retirer" Content="Retirer" Grid.Column="2" HorizontalAlignment="Left" Margin="173,38,0,0" Grid.Row="3" VerticalAlignment="Top" Width="130" Height="50"/>
+            <Label Content="Client :&#xA;" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,14,0,9" Background="White" FontSize="14" Height="34" Width="132" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtbox_Client" Text="{Binding Name}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,12,10,24" Height="18"/>
+            <Label Content="Crédits actuels :" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,1,0,5" Background="White" FontSize="14" Height="28" Width="124" Grid.ColumnSpan="2"/>
+            <Image x:Name="imageFromage" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="47,26,78,31" Height="0" Width="0" Grid.Column="1"/>
+            <TextBox x:Name="txtbox_crédit" Text="{Binding Name}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,3,10,13" Height="18"/>
+            <Label Content="Crédits à ajouter&#xD;&#xA;ou supprimer :" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,7,0,7" Background="White" FontSize="14" Height="52" Width="121" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtbox_créditAAjouterouSupp" Text="{Binding Name}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,10,10,26" Height="18"/>
+            <Button x:Name="btn_ajoutCrédit" Content="Ajouter" Grid.Column="2" HorizontalAlignment="Left" Margin="10,24,0,0" Grid.Row="3" VerticalAlignment="Top" Width="130" Height="50"/>
+            <Button x:Name="btn_retirer" Content="Retirer" Grid.Column="2" HorizontalAlignment="Left" Margin="163,24,0,0" Grid.Row="3" VerticalAlignment="Top" Width="130" Height="50"/>
         </Grid>
+        <Button x:Name="btn_gérerClient" Content="Gérer un client" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="btn_gérerClient_Click"/>
+        <Button x:Name="btn_afficherTrans" Content="afficher les transactions" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Top" Width="140" Click="btn_afficherTrans_Click"/>
 
     </Grid>
 </Window>

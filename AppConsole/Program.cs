@@ -55,7 +55,8 @@ namespace AppConsole
 
 
 
-            myDaoClient.Update(monClients);
+            //myDaoClient.Update(monClients);
+            myDaoClient.Delete(monClients);
 
             List<Clients> lesClients = myDaoClient.SelectAll();
             foreach (Clients C in lesClients)

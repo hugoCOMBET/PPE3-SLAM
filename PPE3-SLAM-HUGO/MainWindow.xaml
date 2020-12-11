@@ -11,6 +11,6 @@
         <RadioButton x:Name="Rbtn_gérerClient" Content="Gérer Client" HorizontalAlignment="Left" Margin="328,133,0,0" VerticalAlignment="Top" Height="35" Width="160"/>
         <RadioButton x:Name="Rbtn_GérerCrédit" Content="Gérer crédit client" HorizontalAlignment="Left" Margin="328,179,0,0" VerticalAlignment="Top" Height="35" Width="160"/>
         <RadioButton x:Name="Rbtn_AffichageTransactions" Content="Afficher les transactions" HorizontalAlignment="Left" Margin="328,229,0,0" VerticalAlignment="Top" Height="35" Width="160"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="328,288,0,0" VerticalAlignment="Top" Width="160" Height="35"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="328,288,0,0" VerticalAlignment="Top" Width="160" Height="35" Click="Button_Click"/>
     </Grid>
 </Window>

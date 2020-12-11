@@ -24,5 +24,19 @@ namespace PPE3_SLAM_HUGO
         {
             InitializeComponent();
         }
+
+        private void btn_gérerClient_Click(object sender, RoutedEventArgs e)
+        {
+            GérerCréditClient gererCreditClient = new GérerCréditClient();
+            gererCreditClient.Show();
+            this.Close();
+        }
+
+        private void btn_afficherTrans_Click(object sender, RoutedEventArgs e)
+        {
+            FenetreTransactions Transaction = new FenetreTransactions();
+            Transaction.Show();
+            this.Close();
+        }
     }
 }
