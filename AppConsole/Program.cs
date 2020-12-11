@@ -29,11 +29,13 @@ namespace AppConsole
             //}
             //uneSalle = unDaoSalles.SelectById(2);
             //Console.WriteLine(uneSalle.IdSalle);
-            List<Obstacle> ListObstacle = unDaoObstacle.SelectAll();
-            foreach(Obstacle o in ListObstacle)
-            {
-                Console.WriteLine( o.NomObstacle );
-            }
+            //List<Obstacle> ListObstacle = unDaoObstacle.SelectAll();
+            //foreach(Obstacle o in ListObstacle)
+            //{
+            //    Console.WriteLine( o.NomObstacle );
+            //}
+            unObstacle = unDaoObstacle.SelectByName("Barrière de force");
+            Console.WriteLine(unObstacle.TypeObstacle);
             monClient = new Clients();
             myDaoClient = new DAOclients(monDbal);
 

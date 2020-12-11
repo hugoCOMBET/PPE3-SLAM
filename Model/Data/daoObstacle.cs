@@ -57,7 +57,7 @@ namespace Model.Data
         public Obstacle SelectByName(string nomObstacle)
         {
             
-            DataTable uneDataTable = _DBAL.SelectByField("Obstacle", "nomObstacle = '"+nomObstacle+"';");
+            DataTable uneDataTable = _DBAL.SelectByField("Obstacle", "nom = '"+nomObstacle+"';");
             Obstacle unObstacle = new Obstacle((string)uneDataTable.Rows[0]["nom"], (string)uneDataTable.Rows[0]["UneDefinition"], (string)uneDataTable.Rows[0]["Photo"], (string)uneDataTable.Rows[0]["typeObstacle"]);
             return unObstacle;
         }
