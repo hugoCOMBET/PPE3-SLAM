@@ -42,22 +42,6 @@ namespace Model.Data
                 }
                 return listAvis;
             }
-
-            public avis SelectByName(string avis)
-            {
-                DataRow r = _dbal.SelectByField("avis", "avis like '" + avis + "'").Rows[0];
-                Clients unClient = this._DAOclient.SelectById((int)r["id"]);
-                salle uneSalle = this._DAOsalles.SelectById((int)r["id"]);
-                return new avis((int)r["id"], unClient, uneSalle, (string)r["avis"], (int)r["note"]);
-            }
-
-            public avis SelectById(int idAvis)
-            {
-                DataRow r = _dbal.SelectById("avis", idAvis);
-                Clients unClient = this._DAOclient.SelectById((int)r["id"]);
-                salle uneSalle = this._DAOsalles.SelectById((int)r["id"]);
-                return new avis((int)r["id"], unClient, uneSalle, (string)r["avis"], (int)r["note"]);
-            }
             #endregion
         }
     }

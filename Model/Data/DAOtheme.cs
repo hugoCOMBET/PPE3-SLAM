@@ -44,7 +44,7 @@ namespace Model.Data
         {
             string ThemeUpdate;
 
-            ThemeUpdate = ("pays set id = " + untheme.IdTheme + ", nom = '" + untheme.Theme.Replace("'", "''") + "';");
+            ThemeUpdate = ("themes set id = '" + untheme.IdTheme + "', theme = '" + untheme.Theme.Replace("'", "''") + "' WHERE id = '" + untheme.IdTheme +"';");
             _dbal.Update(ThemeUpdate);
         }
 
@@ -60,7 +60,7 @@ namespace Model.Data
 
         public theme SelectByName(string theme)
         {
-            DataRow r = _dbal.SelectByField("Themes", "nom like '" + theme + "'").Rows[0];
+            DataRow r = _dbal.SelectByField("Themes", "theme like '" + theme + "'").Rows[0];
             return new theme((int)r["id"], (string)r["theme"]);
         }
 

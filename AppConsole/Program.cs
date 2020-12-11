@@ -39,7 +39,7 @@ namespace AppConsole
             myAvis = new avis();
             myDaoAvis = new DAOavis(mydbal, myDaoClient, myDaoSalles);
 
-            myDaoSalles.SelectByName("Annecy");
+            myDaoAvis.SelectAll();
             Console.WriteLine("ok");
             Console.ReadKey();
         }
