@@ -29,36 +29,16 @@ namespace Model.Data
             #endregion
 
             #region Autres méthodes
-            public void insert(avis unavis)
-            {
-                string AvisInsert;
-
-                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.LeClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
-                _dbal.Insert(AvisInsert);
-            }
-
-            public void delete(avis unavis)
-            {
-                string AvisDelete;
-
-                AvisDelete = ("avis where id ='" + unavis.IdAvis + "'");
-                _dbal.Delete(AvisDelete);
-            }
-
-            public void update(avis unavis)
-            {
-                string AvisUpdate;
-
-                AvisUpdate = ("avis set idAvis ='" + unavis.IdAvis + "', idClient = '" + unavis.LeClient + "', idSalle ='" + unavis.IdSalle + "', avis = '" + unavis.Avis.Replace("'", "''") + "'");
-                _dbal.Update(AvisUpdate);
-            }
-
             public List<avis> SelectAll()
             {
                 List<avis> listAvis = new List<avis>();
-                foreach (DataRow r in _dbal.SelectAll("avis").Rows)
+                DataTable myTable = this._dbal.SelectAll("avis");
+
+            foreach (DataRow r in _dbal.SelectAll("avis").Rows)
                 {
-                    listAvis.Add(new avis((int)r["idAvis"], (Clients)r["idClient"], (salles)r["idSalle"], (string)r["avis"]));
+                Clients unClient = this._DAOclient.SelectById((int)r["id"]);
+                salle uneSalle = this._DAOsalles.SelectById((int)r["id"]);
+                listAvis.Add(new avis((int)r["id"], unClient, uneSalle, (string)r["avis"], (int)r["note"]));
                 }
                 return listAvis;
             }
@@ -66,13 +46,17 @@ namespace Model.Data
             public avis SelectByName(string avis)
             {
                 DataRow r = _dbal.SelectByField("avis", "avis like '" + avis + "'").Rows[0];
-                return new avis((int)r["idAvis"], (Clients)r["idClient"], (salles)r["idSalle"], (string)r["avis"]);
+                Clients unClient = this._DAOclient.SelectById((int)r["id"]);
+                salle uneSalle = this._DAOsalles.SelectById((int)r["id"]);
+                return new avis((int)r["id"], unClient, uneSalle, (string)r["avis"], (int)r["note"]);
             }
 
             public avis SelectById(int idAvis)
             {
                 DataRow r = _dbal.SelectById("avis", idAvis);
-                return new avis((int)r["idAvis"], (Clients)r["idClient"], (salles)r["idSalle"], (string)r["avis"]);
+                Clients unClient = this._DAOclient.SelectById((int)r["id"]);
+                salle uneSalle = this._DAOsalles.SelectById((int)r["id"]);
+                return new avis((int)r["id"], unClient, uneSalle, (string)r["avis"], (int)r["note"]);
             }
             #endregion
         }

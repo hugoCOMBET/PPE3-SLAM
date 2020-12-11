@@ -17,13 +17,13 @@ namespace AppDirecteur_PPE3.viewModel
         DAOsalles vmDaoSalle;
         DAOtheme vmDaoTheme;
         daoReservation vmDaoReservation;
-        private ObservableCollection<Avis> listAvis;
+        private ObservableCollection<avis> listAvis;
         private ObservableCollection<theme> listTheme;
-        private ObservableCollection<salles> listSalle;
+        private ObservableCollection<salle> listSalle;
 
-        public ObservableCollection<Avis> ListAvis { get => listAvis; set => listAvis = value; }
+        public ObservableCollection<avis> ListAvis { get => listAvis; set => listAvis = value; }
         public ObservableCollection<theme> ListTheme { get => listTheme; set => listTheme = value; }
-        public ObservableCollection<salles> ListSalle { get => listSalle; set => listSalle = value; }
+        public ObservableCollection<salle> ListSalle { get => listSalle; set => listSalle = value; }
 
         public viewModelAvis(DAOavis thedaoavis, DAOclients thedaoclient, DAOsalles thedaosalle, DAOtheme thedaotheme, daoReservation thedaoreservation)
         {
@@ -31,12 +31,12 @@ namespace AppDirecteur_PPE3.viewModel
             listAvis = new ObservableCollection<avis>(thedaoavis.SelectAll());
 
             vmDaoSalle = thedaosalle;
-            listSalle = new ObservableCollection<salles>(thedaosalle.SelectAll());
+            listSalle = new ObservableCollection<salle>(thedaosalle.SelectAll());
 
             vmDaoTheme = thedaotheme;
             listTheme = new ObservableCollection<theme>(thedaotheme.SelectAll());
 
-            foreach (Avis leAvis in ListAvis)
+            foreach (avis leAvis in ListAvis)
             {
                 //int i = 0;
                 //while (leAvis.salles.Id != listAvis[i].Id)

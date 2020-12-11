@@ -18,11 +18,24 @@ namespace PPE3_SLAM_Thalia
     /// <summary>
     /// Logique d'interaction pour Avis.xaml
     /// </summary>
-    public partial class Avis : Window
+    public partial class FenetreAvis : Window
     {
-        public Avis(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation)
+        private DAOavis undaoavis;
+        private DAOclients undaoclient;
+        private DAOsalles undaosalle;
+        private DAOtheme undaotheme;
+        private daoReservation undaoreservation;
+
+        public FenetreAvis(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation)
         {
             InitializeComponent();
+            undaoavis = avis;
+            undaoclient = client;
+            undaosalle = salle;
+            undaotheme = theme;
+            undaoreservation = reservation;
+
+            FntAvis.DataContext = new AppDirecteur_PPE3.viewModel.viewModelAvis(avis, client, salle, theme, reservation);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -33,6 +46,18 @@ namespace PPE3_SLAM_Thalia
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btn_theme_pAvis_Click(object sender, RoutedEventArgs e)
+        {
+            Theme_Obstacle T_O = new Theme_Obstacle(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
+            T_O.Show();
+        }
+
+        private void btn_Stat_pAvis_Click(object sender, RoutedEventArgs e)
+        {
+            Statistiques Stat = new Statistiques(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
+            Stat.Show();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Model.Data
             DataTable uneDataTable = _DBAL.SelectAll("Reservation");
             foreach(DataRow dtr in uneDataTable.Rows )
             {
-                Reservation uneReservation = new Reservation((int)dtr["idReservation"], (Clients)dtr["idClient"], (salles)dtr["idSalle"], (Transactions)dtr["idTransaction"], (DateTime)dtr["dateReservation"], (int)dtr["nbJoueurs"], (int)dtr["nbObstacles"]);
+                Reservation uneReservation = new Reservation((int)dtr["idReservation"], (Clients)dtr["idClient"], (salle)dtr["idSalle"], (Transactions)dtr["idTransaction"], (DateTime)dtr["dateReservation"], (int)dtr["nbJoueurs"], (int)dtr["nbObstacles"]);
                 uneListeReservation.Add(uneReservation);
             }
             return uneListeReservation;
@@ -52,7 +52,7 @@ namespace Model.Data
         public Reservation SelectById(int idReservation)
         {
             DataRow UneDataRow = _DBAL.SelectById("Reservation", idReservation);
-            Reservation uneReservation = new Reservation((int)UneDataRow["idReservation"], (Clients)UneDataRow["idClient"], (salles)UneDataRow["idSalle"], (Transactions)UneDataRow["idTransaction"], (DateTime)UneDataRow["dateReservation"], (int)UneDataRow["nbJoueurs"], (int)UneDataRow["nbObstacles"]);
+            Reservation uneReservation = new Reservation((int)UneDataRow["idReservation"], (Clients)UneDataRow["idClient"], (salle)UneDataRow["idSalle"], (Transactions)UneDataRow["idTransaction"], (DateTime)UneDataRow["dateReservation"], (int)UneDataRow["nbJoueurs"], (int)UneDataRow["nbObstacles"]);
             return uneReservation;
         }
     }

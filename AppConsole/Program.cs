@@ -9,14 +9,39 @@ namespace AppConsole
 {
     public class Program
     {
+        private static Dbal mydbal;
+
+        private static DAOavis myDaoAvis;
+        private static avis myAvis;
+
+        private static DAOsalles myDaoSalles;
+        private static salle mySalle;
+
+        private static DAOtheme myDaoTheme;
+        private static theme myTheme;
+
         private static DAOclients myDaoClient;
-        private static Clients monClient;
+        private static Clients myClient;
+
         static void Main(string[] args)
         {
-            Dbal monDbal = new Dbal("LSRGames");
-            monClient = new Clients();
-            myDaoClient = new DAOclients(monDbal);
+            mydbal = new Dbal("LSRGames");
 
+            myTheme = new theme(1, "Basique");
+            myDaoTheme = new DAOtheme(mydbal);
+
+            myClient = new Clients();
+            myDaoClient = new DAOclients(mydbal);
+
+            mySalle = new salle(5,"Annecyy", myTheme);
+            myDaoSalles = new DAOsalles(mydbal, myDaoTheme);
+
+            myAvis = new avis();
+            myDaoAvis = new DAOavis(mydbal, myDaoClient, myDaoSalles);
+
+            myDaoSalles.SelectByName("Annecy");
+            Console.WriteLine("ok");
+            Console.ReadKey();
         }
     }
 }

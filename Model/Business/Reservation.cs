@@ -11,7 +11,7 @@ namespace Model.Business
     {
         private int _idReservation;
         private Clients _LeClient;
-        private salles _LaSalle;
+        private salle _LaSalle;
         private Transactions _LaTransaction;
 
         private DateTime _dateReservation;
@@ -22,14 +22,14 @@ namespace Model.Business
         {
             _idReservation = 0;
             _LeClient = new Clients();
-            _LaSalle = new salles();
+            _LaSalle = new salle();
             _LaTransaction = new Transactions();
             _dateReservation = new DateTime();
             _nbJoueurs = 0;
             _nbObstacles = 0;
         }
 
-        public Reservation (int unIdReservation, Clients unIdClient, salles unIdSalle, Transactions unIdTransaction, DateTime uneDateReservation,int unNbJoueurs, int unNbObstacle)
+        public Reservation (int unIdReservation, Clients unIdClient, salle unIdSalle, Transactions unIdTransaction, DateTime uneDateReservation,int unNbJoueurs, int unNbObstacle)
         {
             _idReservation = unIdReservation;
             _LeClient = unIdClient;
@@ -43,7 +43,7 @@ namespace Model.Business
 
         public int IdReservation { get => _idReservation; set => _idReservation = value; }
         public Clients LeClient { get => _LeClient; set => _LeClient = value; }
-        public salles LaSalle { get => _LaSalle; set => _LaSalle = value; }
+        public salle LaSalle { get => _LaSalle; set => _LaSalle = value; }
         public Transactions LaTransaction { get => _LaTransaction; set => _LaTransaction = value; }
         public DateTime DateReservation { get => _dateReservation; set => _dateReservation = value; }
         public int NbJoueurs { get => _nbJoueurs; set => _nbJoueurs = value; }

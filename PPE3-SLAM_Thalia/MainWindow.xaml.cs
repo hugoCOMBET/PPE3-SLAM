@@ -21,9 +21,20 @@ namespace PPE3_SLAM_Thalia
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DAOavis undaoavis;
+        private DAOclients undaoclient;
+        private DAOsalles undaosalle;
+        private DAOtheme undaotheme;
+        private daoReservation undaoreservation;
+
         public MainWindow(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation)
         {
-            InitializeComponent();          
+            InitializeComponent();
+            undaoavis = avis;
+            undaoclient = client;
+            undaosalle = salle;
+            undaotheme = theme;
+            undaoreservation = reservation;
         }
 
         private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
@@ -40,19 +51,19 @@ namespace PPE3_SLAM_Thalia
         {
             if (rdb_stat.IsChecked == true)
             {
-                Statistiques Stat = new Statistiques();
+                Statistiques Stat = new Statistiques(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
                 Stat.Show();
             }
 
             if (rdb_themeObs.IsChecked == true)
             {
-                Theme_Obstacle T_O = new Theme_Obstacle();
+                Theme_Obstacle T_O = new Theme_Obstacle(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
                 T_O.Show();
             }
 
             if (rdb_Avis.IsChecked == true)
             {
-                Avis avis = new Avis() ;
+                FenetreAvis avis = new FenetreAvis(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation) ;
                 avis.Show();
             }
         }

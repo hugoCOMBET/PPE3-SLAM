@@ -26,7 +26,7 @@ namespace PPE3_SLAM_Thalia
             //C'est ici, dans la méthode Application_Startup, qu'on instancie nos objets Dbal et Dao
             thedbal = new Dbal("LSRGames");
             thedaotheme = new DAOtheme(thedbal);
-            thedaosalles = new DAOsalles(thedbal);
+            thedaosalles = new DAOsalles(thedbal, thedaotheme);
             thedaoclient = new DAOclients(thedbal);
             thedaoreservation = new daoReservation(thedbal);
             thedaoavis = new DAOavis(thedbal, thedaoclient, thedaosalles);

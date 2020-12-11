@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.Business
 {
-    public class salles
+    public class salle
     {
         #region Attributs
         private int _idSalle;
@@ -15,14 +15,14 @@ namespace Model.Business
         #endregion
 
         #region Constructeurs
-        public salles(int idSalle, string ville, theme idTheme)
+        public salle(int idSalle, string ville, theme idTheme)
         {
             _idSalle = idSalle;
             _ville = ville;
             _LeTheme = idTheme;
         }
 
-        public salles()
+        public salle()
         {
             _idSalle = -1;
             _ville = "";
@@ -33,7 +33,12 @@ namespace Model.Business
         #region Accesseurs
         public int IdSalle { get => _idSalle; set => _idSalle = value; }
         public string Ville { get => _ville; set => _ville = value; }
-        public theme IdTheme { get => _LeTheme; set => _LeTheme = value; }
+        public theme LeTheme { get => _LeTheme; set => _LeTheme = value; }
         #endregion
+
+        public override string ToString()
+        {
+            return "Salle n°" + Convert.ToString(this.IdSalle);
+        }
     }
 }

@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:PPE3_SLAM_Thalia"
         mc:Ignorable="d"
         Title="avis" Height="474" Width="805" Closing="Window_Closing">
-    <Grid>
-        <Button x:Name="btn_Stat_pAvis" Content="Statistiques" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+    <Grid x:Name="FntAvis">
+        <Button x:Name="btn_Stat_pAvis" Content="Statistiques" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btn_Stat_pAvis_Click"/>
         <Button x:Name="btn_Avis_pAvis" Content="Avis" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="#FFFBFBFB"/>
-        <Button x:Name="btn_theme_pAvis" Content="Thèmes et obstacles" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="btn_theme_pAvis" Content="Thèmes et obstacles" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Width="115" Click="btn_theme_pAvis_Click"/>
         <Label x:Name="lbl_avis" Content="Avis clientèle" HorizontalAlignment="Left" Margin="286,40,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         <RadioButton x:Name="rdb_Annecy" Content="Annecy" HorizontalAlignment="Left" Margin="77,123,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rdb_thonon" Content="Thonon-les-bains" HorizontalAlignment="Left" Margin="247,123,0,0" VerticalAlignment="Top"/>

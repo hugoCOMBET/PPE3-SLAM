@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPE3_SLAM_Thalia"
         mc:Ignorable="d"
-        Title="Statistiques" Height="452" Width="806">
-    <Grid>
-        <Button x:Name="btn_theme_pStat" Content="Thèmes et obstacles" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Width="115"/>
-        <Button x:Name="btn_avis_pStat" Content="Avis" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top" Width="75"/>
+        Title="Statistiques" Height="452" Width="806" Closing="Window_Closing">
+    <Grid x:Name="FntStat">
+        <Button x:Name="btn_theme_pStat" Content="Thèmes et obstacles" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Width="115" Click="btn_theme_pStat_Click"/>
+        <Button x:Name="btn_avis_pStat" Content="Avis" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top" Width="75" Click="btn_avis_pStat_Click"/>
         <Button x:Name="btn_Stat_pStat" Content="Statistiques" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="#FFF7F5F5"/>
         <Label x:Name="lbl_Stat_pStat" Content="Statistiques" HorizontalAlignment="Left" Margin="301,32,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         <RadioButton x:Name="rdb_Annecy" Content="Annecy" HorizontalAlignment="Left" Margin="104,106,0,0" VerticalAlignment="Top"/>

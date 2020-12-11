@@ -28,7 +28,7 @@ namespace Model.Data
         {
             string ThemeInsert;
 
-            ThemeInsert = ("themes (id, theme) values (" + untheme.IdTheme + ",'" + untheme.Theme.Replace("'", "''") + "')");
+            ThemeInsert = ("Themes (id, theme) values (" + untheme.IdTheme + ",'" + untheme.Theme.Replace("'", "''") + "');");
             _dbal.Insert(ThemeInsert);
         }
 
@@ -36,7 +36,7 @@ namespace Model.Data
         {
             string ThemeDelete;
 
-            ThemeDelete = ("theme where id ='" + untheme.IdTheme + "'");
+            ThemeDelete = ("Themes where id =" + untheme.IdTheme + ";");
             _dbal.Delete(ThemeDelete);
         }
 
@@ -44,30 +44,30 @@ namespace Model.Data
         {
             string ThemeUpdate;
 
-            ThemeUpdate = ("pays set id ='" + untheme.IdTheme + "' , nom = '" + untheme.Theme.Replace("'", "''") + "'");
+            ThemeUpdate = ("pays set id = " + untheme.IdTheme + ", nom = '" + untheme.Theme.Replace("'", "''") + "';");
             _dbal.Update(ThemeUpdate);
         }
 
         public List<theme> SelectAll()
         {
             List<theme> listFromage = new List<theme>();
-            foreach (DataRow r in _dbal.SelectAll("theme").Rows)
+            foreach (DataRow r in _dbal.SelectAll("Themes").Rows)
             {
-                listFromage.Add(new theme((int)r["idTheme"], (string)r["theme"]));
+                listFromage.Add(new theme((int)r["id"], (string)r["theme"]));
             }
             return listFromage;
         }
 
         public theme SelectByName(string theme)
         {
-            DataRow r = _dbal.SelectByField("theme", "nom like '" + theme + "'").Rows[0];
-            return new theme((int)r["idTheme"], (string)r["theme"]);
+            DataRow r = _dbal.SelectByField("Themes", "nom like '" + theme + "'").Rows[0];
+            return new theme((int)r["id"], (string)r["theme"]);
         }
 
         public theme SelectById(int idTheme)
         {
-            DataRow r = _dbal.SelectById("theme", idTheme);
-            return new theme((int)r["idTheme"], (string)r["theme"]);
+            DataRow r = _dbal.SelectById("Themes", idTheme);
+            return new theme((int)r["id"], (string)r["theme"]);
         }
         #endregion
     }
