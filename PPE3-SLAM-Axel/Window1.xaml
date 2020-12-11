@@ -59,7 +59,7 @@
             <!--#endregion-->
 
             <!--#region Button -->
-            <Button x:Name="un_un" Grid.Column="1" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
+            <Button x:Name="un_un" Command="{Binding ClickCommand}" Grid.Column="1" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="un_deux" Grid.Column="1" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="un_trois" Grid.Column="1" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
             <Button x:Name="un_quatre" Grid.Column="1" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>
