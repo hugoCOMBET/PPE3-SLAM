@@ -214,72 +214,72 @@ namespace PPE3_SLAM_Axel
             switch (extraction)
             {
                 case "un":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '10%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '10%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "deux":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '11%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '11%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "trois":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '12%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '12%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "quatre":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '13%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '13%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "cinq":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '14%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '14%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "six":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '15%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '15%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "sept":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '16%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '16%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
                 case "huit":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '17%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '17%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "neuf":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '18%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '18%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "dix":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '19%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '19%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "onze":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '20%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '20%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "douze":
-                    n = unDaoSalles.SelectCount("idSalle", "idSalle not in (select count(idSalle) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '21%');");
+                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '21%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;

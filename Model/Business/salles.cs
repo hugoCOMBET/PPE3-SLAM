@@ -33,7 +33,7 @@ namespace Model.Business
         #region Accesseurs
         public int IdSalle { get => _idSalle; set => _idSalle = value; }
         public string Ville { get => _ville; set => _ville = value; }
-        public theme IdTheme { get => _LeTheme; set => _LeTheme = value; }
+        public theme LeTheme { get => _LeTheme; set => _LeTheme = value; }
         #endregion
 
         public override string ToString()
