@@ -18,14 +18,12 @@ namespace PPE3_SLAM_Axel.viewModel
         private daoReservation unDaoReservation;
         private DAOsalles unDaoSalle;
 
-        public static DateTime dateEnFonctionDuBouton(string nomBouton )
+        public static DateTime dateEnFonctionDuBouton(string nomBouton , daoReservation unDaoReservation, DAOsalles unDaoSalle)
         {
-            const int annee = 2020;
-            int position =0;
-            string extraction;
+          
+
             DateTime DateReservation = new DateTime();
-            position = nomBouton.IndexOf('_');
-            extraction = nomBouton.Substring(0, position);
+            ;
             return DateReservation;
         }
 

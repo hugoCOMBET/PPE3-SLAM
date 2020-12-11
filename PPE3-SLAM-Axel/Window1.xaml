@@ -146,5 +146,7 @@
             <!--#endregion-->
 
         </Grid>
+        <DatePicker x:Name="dp_DateJour" HorizontalAlignment="Left" Margin="586,5,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

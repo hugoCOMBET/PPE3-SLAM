@@ -24,6 +24,7 @@ namespace PPE3_SLAM_Axel
 
         //Création d'une liste de bouton
         List<Button> uneListebouton = new List<Button>();
+        DateTime DateJour = new DateTime();
 
 
         public Window1(daoReservation unDaoReservation, DAOsalles unDaoSalles)
@@ -117,6 +118,8 @@ namespace PPE3_SLAM_Axel
             uneListebouton.Add(sept_onze);
             uneListebouton.Add(sept_douze);
             #endregion
+            DateJour = DateTime.Now;
+            dp_DateJour.SelectedDate = DateJour;
             InitialiserFenêtre(uneListebouton, unDaoSalles);
 
         }
