@@ -15,12 +15,14 @@ namespace Model.Data
     {
         #region Attributs
         public Dbal _dbal;
+        public DAOtheme undaoTheme;
         #endregion
 
         #region Constructeurs
-        public DAOsalles(Dbal dbal)
+        public DAOsalles(Dbal dbal, DAOtheme undaoTheme)
         {
             _dbal = dbal;
+            this.undaoTheme = undaoTheme;
         }
         #endregion
 
@@ -46,36 +48,41 @@ namespace Model.Data
         {
             string SalleUpdate;
 
-            SalleUpdate = ("Salle set id = '" + unesalle.IdSalle + "' , ville = '" + unesalle.Ville.Replace("'", "''")+"', idTheme = '" + unesalle.LeTheme.IdTheme + "' WHERE id = " + unesalle.IdSalle );
+            SalleUpdate = ("Salle set id = '" + unesalle.IdSalle + "' , ville = '" + unesalle.Ville.Replace("'", "''") + "', idTheme = '" + unesalle.LeTheme.IdTheme + "' WHERE id = " + unesalle.IdSalle);
             _dbal.Update(SalleUpdate);
         }
 
         public List<salles> SelectAll()
         {
             List<salles> listSalles = new List<salles>();
-            foreach (DataRow r in _dbal.SelectAll("Salle").Rows)
+            DataTable myTable = this._dbal.SelectAll("salle");
+
+            foreach (DataRow r in myTable.Rows)
             {
-                listSalles.Add(new salles((int)r["id"], (string)r["ville"], (theme)r["idTheme"]));
+                theme monTheme = this.undaoTheme.SelectById((int)r["idTheme"]);
+                listSalles.Add(new salles((int)r["id"], (string)r["ville"], monTheme));
             }
             return listSalles;
         }
 
         public salles SelectByName(string salle)
         {
-            DataRow r = _dbal.SelectByField("salles", "nom like '" + salle + "'").Rows[0];
-            return new salles((int)r["id"], (string)r["ville"], (theme)r["idSalle"]);
+            DataRow r = _dbal.SelectByField("salle", "ville like '" + salle + "'").Rows[0];
+            theme monTheme = this.undaoTheme.SelectById((int)r["idTheme"]);
+            return new salles((int)r["id"], (string)r["ville"], monTheme);
         }
 
         public salles SelectById(int idSalle)
         {
             DataRow r = _dbal.SelectById("salle", idSalle);
-            return new salles((int)r["id"], (string)r["ville"], (theme)r["idSalle"]);
+            theme monTheme = this.undaoTheme.SelectById((int)r["idTheme"]);
+            return new salles((int)r["id"], (string)r["ville"], monTheme);
         }
 
-        public long SelectCount(string attribut,string fieldtestcondition)
+        public long SelectCount(string attribut, string fieldtestcondition)
         {
             long i = 0;
-            DataRow uneDataRow = _dbal.SelectCount(attribut,"Salle", fieldtestcondition);
+            DataRow uneDataRow = _dbal.SelectCount(attribut, "Salle", fieldtestcondition);
             i = (long)uneDataRow["NbSalles"];
             return i;
         }

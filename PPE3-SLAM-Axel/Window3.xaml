@@ -10,10 +10,62 @@
         <TabControl HorizontalAlignment="Left" Height="420" Margin="0" VerticalAlignment="Top" Width="800">
             
             <TabItem Header="Infos Client">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid x:Name="SelectionClient" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Label x:Name="lbl_nom" Content="Nom : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                    <Label x:Name="lbl_prenom" Content="Prénom : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                    <Label x:Name="lbl_DateNaissance" Content="Date de Naissance : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+                    <Label x:Name="lbl_telephone" Content="Téléphone : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+                    <Label x:Name="lbl_adresse" Content="Adresse : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+                    <Label x:Name="lbl_email" Content="Email : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+                    <Button x:Name="btn_suivant" Content="Suivant" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Margin="250,10"/>
+
+
+
+
+
+                </Grid>
             </TabItem>
             <TabItem Header="Réservation">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid x:Name="ConfigurationReservation" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                </Grid>
             </TabItem>
         </TabControl>
 

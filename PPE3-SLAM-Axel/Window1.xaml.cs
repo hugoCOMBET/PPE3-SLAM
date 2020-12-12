@@ -119,7 +119,7 @@ namespace PPE3_SLAM_Axel
             uneListebouton.Add(sept_douze);
             #endregion
             DateJour = DateTime.Now;
-            dp_DateJour.SelectedDate = DateJour;
+            dpk_datejour.SelectedDate = DateJour;
             InitialiserFenêtre(uneListebouton, unDaoSalles);
 
         }
@@ -291,9 +291,92 @@ namespace PPE3_SLAM_Axel
 
                     break;
             }
-            
+
 
         }
+         
+        public static DateTime[] RetourneSemaine(DateTime uneDate)
+        {
+            DateTime[] Semaine = new DateTime[7];
+            DayOfWeek jourSemaine = uneDate.DayOfWeek;
+            switch(jourSemaine)
+            {
+                case DayOfWeek.Monday:
+                    Semaine[0] = uneDate;
+                    Semaine[1] = uneDate.AddDays(1);
+                    Semaine[2] = uneDate.AddDays(2);
+                    Semaine[3] = uneDate.AddDays(3);
+                    Semaine[4] = uneDate.AddDays(4);
+                    Semaine[5] = uneDate.AddDays(5);
+                    Semaine[6] = uneDate.AddDays(6);
+                    break;
+
+                case DayOfWeek.Tuesday:
+                    Semaine[0] = uneDate.AddDays(-1);
+                    Semaine[1] = uneDate;
+                    Semaine[2] = uneDate.AddDays(1);
+                    Semaine[3] = uneDate.AddDays(2);
+                    Semaine[4] = uneDate.AddDays(3);
+                    Semaine[5] = uneDate.AddDays(4);
+                    Semaine[6] = uneDate.AddDays(5);
+                    break;
+
+                case DayOfWeek.Wednesday:
+                    Semaine[0] = uneDate.AddDays(-2);
+                    Semaine[1] = uneDate.AddDays(-1);
+                    Semaine[2] = uneDate;
+                    Semaine[3] = uneDate.AddDays(3);
+                    Semaine[4] = uneDate.AddDays(4);
+                    Semaine[5] = uneDate.AddDays(5);
+                    Semaine[6] = uneDate.AddDays(6);
+                    break;
+
+                case DayOfWeek.Thursday:
+                    Semaine[0] = uneDate.AddDays(-3);
+                    Semaine[1] = uneDate.AddDays(-2);
+                    Semaine[2] = uneDate.AddDays(-1);
+                    Semaine[3] = uneDate;
+                    Semaine[4] = uneDate.AddDays(1);
+                    Semaine[5] = uneDate.AddDays(2);
+                    Semaine[6] = uneDate.AddDays(3);
+                    break;
+
+                case DayOfWeek.Friday:
+                    Semaine[0] = uneDate.AddDays(-4);
+                    Semaine[1] = uneDate.AddDays(-3);
+                    Semaine[2] = uneDate.AddDays(-2);
+                    Semaine[3] = uneDate.AddDays(-1);
+                    Semaine[4] = uneDate;
+                    Semaine[5] = uneDate.AddDays(1);
+                    Semaine[6] = uneDate.AddDays(2);
+                    break;
+
+                case DayOfWeek.Saturday:
+                    Semaine[0] = uneDate.AddDays(-5);
+                    Semaine[1] = uneDate.AddDays(-4);
+                    Semaine[2] = uneDate.AddDays(-3);
+                    Semaine[3] = uneDate.AddDays(-2);
+                    Semaine[4] = uneDate.AddDays(-1);
+                    Semaine[5] = uneDate;
+                    Semaine[6] = uneDate.AddDays(1);
+                    break;
+
+                case DayOfWeek.Sunday:
+                    Semaine[0] = uneDate.AddDays(-6);
+                    Semaine[1] = uneDate.AddDays(-5);
+                    Semaine[2] = uneDate.AddDays(-4);
+                    Semaine[3] = uneDate.AddDays(-3);
+                    Semaine[4] = uneDate.AddDays(-2);
+                    Semaine[5] = uneDate.AddDays(-1);
+                    Semaine[6] = uneDate;
+                    break;
+
+                default:
+                    break;
+            }
+            return Semaine;
+        }
+
 
 
     }

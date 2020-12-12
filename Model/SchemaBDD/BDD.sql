@@ -98,7 +98,7 @@ insert into Salle values(4,"Annecy",1);
 
  
 
-insert into Client values (1,"GROUSSAUD","Axel","dhfgvhf","14 rue de la paix","1999-10-27","axel.groussaud@saintmichelannecy.fr","0125489446");
+insert into Client values (1,"GROUSSAUD","Axel","dhfgvhf","14 rue de la paix","1999-10-27","axel.groussaud@saintmichelannecy.fr","0125489446",12);
 
  
 
@@ -106,5 +106,5 @@ insert into Transactions values (1,1,25.50);
  
  insert into Reservation values(1,1,"2020-12-03 10:00:00",5,5,1,1);
  select count(id) from Reservation where dayofweek(DateReservation) = 5 and hour(DateReservation) = '10 % ';
- select count(id) as NbSalles from Salle where idSalle not in (select count(id) from Reservation where dayofweek(DateReservation) = 2 and hour(DateReservation) = '11 % ');
+ select count(id) as NbSalles from Salle where id not in (select count(id) from Reservation where dayofweek(DateReservation) = 2 and hour(DateReservation) = '11 % ');
 select * from Salle;
