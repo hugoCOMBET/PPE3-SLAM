@@ -21,7 +21,7 @@ namespace PPE3_SLAM_Axel
     /// </summary>
     public partial class Window2 : Window
     {
-        public Window2(DAOsalles unDaoSalle, DAOtheme unDaoTheme)
+        public Window2(DAOsalles unDaoSalle, DAOtheme unDaoTheme,DateTime uneDate)
         {
             InitializeComponent();
         }

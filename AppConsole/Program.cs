@@ -96,11 +96,15 @@ namespace AppConsole
         private static Clients monClient;
         static void Main(string[] args)
         {
+            Dbal monDbal = new Dbal("LSRGames");
+            myDaoClient = new DAOclients(monDbal);
+            DAOtransactions dAOtransactions = new DAOtransactions(monDbal, myDaoClient);
             DateTime uneDateNaissance = new DateTime(1999, 10, 27);
             DateTime uneDateReservation = new DateTime(2020, 12, 13, 10, 0, 0);
             Clients unClient = new Clients(1, "GROUSSAUD", "Axel", "dnfjhvh", "14 rue de la paix", uneDateNaissance, "axel.groussaud@saintmichelannecy.fr", "0125489446",12.5);
             Transactions uneTransaction = new Transactions(1, unClient, 25.50);
-            Dbal monDbal = new Dbal("LSRGames");
+            uneTransaction = dAOtransactions.SelectById(1);
+            Console.WriteLine(uneTransaction.getIdTransactions());
             //DAOsalles unDaoSalles = new DAOsalles(monDbal);
             theme untheme = new theme(1, "Basique");
             salles uneSalle = new salles(2,"Annecy",untheme);

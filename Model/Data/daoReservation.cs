@@ -67,6 +67,7 @@ namespace Model.Data
             
             Clients myclient = this._daoClient.SelectById((int)UneDataRow["idClient"]);
             salles mysalle = this._DaoSalle.SelectById((int)UneDataRow["idSalle"]);
+            //int i = (int)UneDataRow["idTransaction"];
             Transactions mytransactions = this._DaoTransactions.SelectById((int)UneDataRow["idTransaction"]);
             Reservation uneReservation = new Reservation((int)UneDataRow["id"], myclient, mysalle, mytransactions, (DateTime)UneDataRow["DateReservation"], (int)UneDataRow["nbJoueurs"], (int)UneDataRow["nbObstacle"]);
             return uneReservation;

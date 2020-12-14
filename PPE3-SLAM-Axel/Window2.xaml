@@ -12,7 +12,7 @@
             <ColumnDefinition Width="1"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="listSallesView" ItemsSource="{Binding ListFromages}" SelectedItem="{Binding SelectedFromage}" IsSynchronizedWithCurrentItem="True" Grid.Column="0" />
+        <ListBox x:Name="listSallesView" ItemsSource="{Binding ListSalles}" SelectedItem="{Binding SelectedSalle}" IsSynchronizedWithCurrentItem="True" Grid.Column="0" />
         <GridSplitter Grid.Column="1"/>
         <Grid x:Name="displaySalle" Grid.Column="2">
             <Grid.ColumnDefinitions>
@@ -32,8 +32,8 @@
             <Label x:Name="nomVille"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
             <Label Content="Thème :" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
             <Label x:Name="dateCreation"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
-            
-            <Button x:Name="Selection" Content="Choisir" Command="{Binding ChoixCommand}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="10"/>
+            <Button x:Name="btn_retour" Content="Retour" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10"/>
+            <Button x:Name="btn_Selection" Content="Choisir" Command="{Binding ChoixCommand}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10"/>
             
         </Grid>
 

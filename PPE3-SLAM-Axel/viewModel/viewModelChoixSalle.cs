@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,12 @@ namespace PPE3_SLAM_Axel.viewModel
         private Dbal thedbal;
         private DAOtheme vmdaotheme;
         private DAOsalles vmdaosalle;
-        private List<salles> uneListeSalles;
+        
 
+        private ObservableCollection<salles> listSalles;
 
+        public ObservableCollection<salles> ListSalles { get => listSalles; set => listSalles = value; }
     }
 
-    
+
 }
