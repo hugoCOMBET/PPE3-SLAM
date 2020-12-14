@@ -36,8 +36,9 @@ namespace AppDirecteur_PPE3.viewModel
             vmDaoTheme = thedaotheme;
             listTheme = new ObservableCollection<theme>(thedaotheme.SelectAll());
 
+            
             foreach (avis leAvis in ListAvis)
-            {
+            {                
                 //int i = 0;
                 //while (leAvis.salles.Id != listAvis[i].Id)
                 //{

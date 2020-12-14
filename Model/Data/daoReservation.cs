@@ -15,35 +15,47 @@ namespace Model.Data
     public class daoReservation
     {
         private Dbal _DBAL;
+        private DAOclients _daoClient;
+        private DAOsalles _DaoSalle;
+        private DAOtransactions _DaoTransactions;
+        private DAOtheme _DaoTheme;
 
         public daoReservation(Dbal unDBAL)
         {
             _DBAL = unDBAL;
+            _DaoTheme = new DAOtheme(_DBAL);
+            _DaoSalle = new DAOsalles(_DBAL, _DaoTheme);
+            _daoClient = new DAOclients(_DBAL);
+            _DaoTransactions = new DAOtransactions(_DBAL, _daoClient);
         }
 
         public void Insert(Reservation uneReservation)
         {
-            _DBAL.Insert(" Reservation VALUES (" + uneReservation.IdReservation + "," + uneReservation.LeClient+","+uneReservation.LaSalle+","+uneReservation.LaTransaction+",'"+uneReservation.DateReservation+"',"+uneReservation.NbJoueurs+","+uneReservation.NbObstacles+");");
+            _DBAL.Insert(" Reservation VALUES (" + uneReservation.IdReservation + "," + uneReservation.LeClient.getIdClient() + ",'" +/*uneReservation.LaSalle.IdSalle*/uneReservation.DateReservation + "'," +/*uneReservation.LaTransaction.getIdTransactions()*/uneReservation.NbJoueurs + "," +/*uneReservation.DateReservation*/uneReservation.NbObstacles + "," + uneReservation.LaSalle.IdSalle + "," + uneReservation.LaTransaction.getIdTransactions() + ");");
         }
 
         public void Update(Reservation uneReservation)
         {
-            _DBAL.Update(" Reservation SET idReservation = "+uneReservation.IdReservation+",idClient = "+uneReservation.LeClient + ",idSalle = "+uneReservation.LaSalle + ",idTransaction = "+uneReservation.LaTransaction + ",dateReservation = " + uneReservation.DateReservation + ", nbJoueurs = " + uneReservation.NbJoueurs + ", nbObstacles = " + uneReservation.NbObstacles + "WHERE idReservation = " + uneReservation.IdReservation + ";");
+            _DBAL.Update(" Reservation SET id = " + uneReservation.IdReservation + ",idClient = " + uneReservation.LeClient.getIdClient() + ",idSalle = " + uneReservation.LaSalle.IdSalle + ",idTransaction = " + uneReservation.LaTransaction.getIdTransactions() + ",DateReservation = '" + uneReservation.DateReservation + "', nbJoueurs = " + uneReservation.NbJoueurs + ", nbObstacle = " + uneReservation.NbObstacles + "  WHERE id = " + uneReservation.IdReservation + ";");
         }
 
 
         public void Delete(Reservation uneReservation)
         {
-            _DBAL.Delete(" Reservation WHERE idReservation = "+uneReservation.IdReservation + ";");
+            _DBAL.Delete(" Reservation WHERE id = " + uneReservation.IdReservation + ";");
         }
 
         public List<Reservation> SelectAll()
         {
             List<Reservation> uneListeReservation = new List<Reservation>();
             DataTable uneDataTable = _DBAL.SelectAll("Reservation");
-            foreach(DataRow dtr in uneDataTable.Rows )
+            foreach (DataRow dtr in uneDataTable.Rows)
             {
-                Reservation uneReservation = new Reservation((int)dtr["idReservation"], (Clients)dtr["idClient"], (salle)dtr["idSalle"], (Transactions)dtr["idTransaction"], (DateTime)dtr["dateReservation"], (int)dtr["nbJoueurs"], (int)dtr["nbObstacles"]);
+
+                Clients myclient = this._daoClient.SelectById((int)dtr["idClient"]);
+                salle mysalle = this._DaoSalle.SelectById((int)dtr["idSalle"]);
+                Transactions mytransactions = this._DaoTransactions.SelectById((int)dtr["idTransaction"]);
+                Reservation uneReservation = new Reservation((int)dtr["id"], myclient, mysalle, mytransactions, (DateTime)dtr["DateReservation"], (int)dtr["nbJoueurs"], (int)dtr["nbObstacle"]);
                 uneListeReservation.Add(uneReservation);
             }
             return uneListeReservation;
@@ -52,7 +64,11 @@ namespace Model.Data
         public Reservation SelectById(int idReservation)
         {
             DataRow UneDataRow = _DBAL.SelectById("Reservation", idReservation);
-            Reservation uneReservation = new Reservation((int)UneDataRow["idReservation"], (Clients)UneDataRow["idClient"], (salle)UneDataRow["idSalle"], (Transactions)UneDataRow["idTransaction"], (DateTime)UneDataRow["dateReservation"], (int)UneDataRow["nbJoueurs"], (int)UneDataRow["nbObstacles"]);
+
+            Clients myclient = this._daoClient.SelectById((int)UneDataRow["idClient"]);
+            salle mysalle = this._DaoSalle.SelectById((int)UneDataRow["idSalle"]);
+            Transactions mytransactions = this._DaoTransactions.SelectById((int)UneDataRow["idTransaction"]);
+            Reservation uneReservation = new Reservation((int)UneDataRow["id"], myclient, mysalle, mytransactions, (DateTime)UneDataRow["DateReservation"], (int)UneDataRow["nbJoueurs"], (int)UneDataRow["nbObstacle"]);
             return uneReservation;
         }
     }

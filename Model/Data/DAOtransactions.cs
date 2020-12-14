@@ -11,64 +11,40 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Model.Data
 {
-    class DAOtransactions
+    public class DAOtransactions
     {
         private Dbal _dbal;
 
-        private DAOclients TheDaoCLient;
+        private DAOclients TheDaoClient;
 
-        public DAOtransactions(Dbal dbal)
+        public DAOtransactions(Dbal dbal, DAOclients unDaoClient)
         {
             _dbal = dbal;
+            this.TheDaoClient = unDaoClient;
         }
 
-        public void Insert(Transactions uneTransaction)
-        {
-            string query = " Transactions VALUES " 
-                + "(" + uneTransaction.getIdTransactions()
-                + ",'" + uneTransaction.getIdClient()
-                + ",'" + uneTransaction.getMontantTransaction();
-            this._dbal.Insert(query);
-        }
-        public void Update(Transactions uneTransaction)
-        {
-            string query = "Transactions SET idTransaction = " 
-                + uneTransaction.getIdTransactions()
-                + ", idClient = '" + uneTransaction.getIdClient()
-                + ", MontantTransaction = '" + uneTransaction.getMontantTransaction()
-                + "' WHERE idTransaction = " + uneTransaction.getIdTransactions();
-            this._dbal.Update(query);
-        }
-
-        public void Delete(Transactions uneTransaction)
-        {
-            string query = "Transactions WHERE idTransaction = " + uneTransaction.getIdTransactions() + ";";
-            this._dbal.Delete(query);
-        }
-        
         public List<Transactions> SelectAll()
         {
-            List<Transactions> listeAll = new List<Transactions>();
-            foreach (DataRow r in _dbal.SelectAll("Transactions").Rows)
+            List<Transactions> listTransaction = new List<Transactions>();
+            DataTable myTable = this._dbal.SelectAll("Transactions");
+
+
+            foreach (DataRow r in myTable.Rows)
             {
-                Clients monClient = this.TheDaoCLient.SelectById((int)r["id"]);
-                listeAll.Add
-                    (new Transactions
-                    ((int)r["idTransaction"],
-                    monClient,
-                    (double)r["MontantTransaction"]));
+                Clients myClient = this.TheDaoClient.SelectById((int)r["idClient"]);
+                listTransaction.Add(new Transactions((int)r["id"], myClient, (double)r["MontantTransaction"]));
             }
-            return listeAll;
+            return listTransaction;
         }
-        
+
         public Transactions SelectById(int id)
-        {    
-            DataRow r = _dbal.SelectById("Utilisateur", id);
-            Clients monClient = this.TheDaoCLient.SelectById((int)r["id"]);
+        {
+            DataRow r = this._dbal.SelectById("Transactions", id);
+            Clients monClient = this.TheDaoClient.SelectById((int)r["id"]);
             return new Transactions
-                ((int)r["idTransaction"],
+                ((int)r["id"],
                 monClient,
-                (double)r["MontantTransaction"]); 
+                (double)r["MontantTransaction"]);
         }
     }
 }
