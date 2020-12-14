@@ -39,13 +39,41 @@ namespace AppDirecteur_PPE3.viewModel
             
             foreach (avis leAvis in ListAvis)
             {                
-                //int i = 0;
-                //while (leAvis.salles.Id != listAvis[i].Id)
-                //{
-                //    i++;
-                //}
-                //lefromage.Origin = listPays[i];
+                int i = 0;
+                while (leAvis.IdSalle.IdSalle != listSalle[i].IdSalle)
+                {
+                    i++;
+                }
+                leAvis.IdSalle = listSalle[i];
+            }
+
+            foreach (salle laSalle in ListSalle)
+            {
+                int i = 0;
+                while (laSalle.LeTheme.IdTheme != ListTheme[i].IdTheme)
+                {
+                    i++;
+                }
+                laSalle.LeTheme = listTheme[i];
             }
         }
+
+        //public avis SelectedAvis
+        //{
+        //    //get => selectedFromage;
+        //    //set
+        //    //{
+        //    //    if (selectedFromage != value)
+        //    //    {
+        //    //        selectedFromage = value;
+        //    //        //création d'un évènement si la propriété Name (bindée dans le XAML) change
+        //    //        OnPropertyChanged("SelectedFromage");
+        //    //        if (selectedFromage != null)
+        //    //        {
+        //    //            ActiveFromage = selectedFromage;
+        //    //        }
+        //    //    }
+        //    //}
+        //}
     }
 }
