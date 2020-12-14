@@ -23,6 +23,7 @@ namespace PPE3_SLAM_HUGO
         public GérerClients()
         {
             InitializeComponent();
+            mainGrid.DataContext = new viewModel.viewModelFromage(thedaopays, thedaofromage);
         }
 
         private void btn_gérerClient_Click(object sender, RoutedEventArgs e)

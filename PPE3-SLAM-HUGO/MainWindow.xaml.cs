@@ -24,7 +24,7 @@ namespace PPE3_SLAM_HUGO
         public MainWindow( DAOtransactions laTransaction,DAOclients lesClient)
         {
             InitializeComponent();
-            AppComptableSecretariat.DataContext = new viewModel.viewModelPPE3Hugo(laTransaction, lesClient);
+            AppComptableSecretariat.DataContext = new viewModel.viewModeleClient(laTransaction, lesClient);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

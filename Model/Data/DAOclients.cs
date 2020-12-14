@@ -30,7 +30,7 @@ namespace Model.Data
                 + ",'" + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd") + "'"
                 + ",'" + unClient.getEmailClient().Replace("'", "''") + "'"
                 + ",'" + unClient.getTelPortableCLient().Replace("'", "''") + "'"
-                + ",'" + unClient.getCreditCLient()+"');";
+                + ",'" + unClient.getCreditClient()+"');";
             
             this._dbal.Insert(query);
         }
@@ -44,7 +44,7 @@ namespace Model.Data
                 + ", DateNaissance ='" + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd") + "'"
                 + ", Email = '" + unClient.getEmailClient().Replace("'", "''") + "'"
                 + ", TelephonePortable = '" + unClient.getTelPortableCLient().Replace("'", "''") + "'"
-                + ", Credit = " + unClient.getCreditCLient()
+                + ", Credit = " + unClient.getCreditClient()
                 + "' WHERE id = " + unClient.getIdClient() + " ;";
             this._dbal.Update(query);
         }

@@ -122,11 +122,11 @@ namespace Model.Business
             _TelephonePortable = unTelPortableClient;
         }
 
-        public double getCreditCLient()
+        public double getCreditClient()
         {
             return _credit;
         }
-        public void setCreditCLient(double uncredit)
+        public void setCreditClient(double uncredit)
         {
             _credit = uncredit;
         }

@@ -66,7 +66,7 @@
     </Compile>
     <Compile Include="viewModel\RelayCommand.cs" />
     <Compile Include="viewModel\viewModelBase.cs" />
-    <Compile Include="viewModel\viewModelPPE3Hugo.cs" />
+    <Compile Include="viewModel\viewModeleClient.cs" />
     <Page Include="GérerClients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
