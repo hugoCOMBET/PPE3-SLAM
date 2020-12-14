@@ -23,8 +23,10 @@ namespace PPE3_SLAM_Axel
     {
 
         //Création d'une liste de bouton
+        
         List<Button> uneListebouton = new List<Button>();
         DateTime DateJour = new DateTime();
+        
 
 
         public Window1(daoReservation unDaoReservation, DAOsalles unDaoSalles)
@@ -118,20 +120,25 @@ namespace PPE3_SLAM_Axel
             uneListebouton.Add(sept_onze);
             uneListebouton.Add(sept_douze);
             #endregion
+            lbl_datejour.Content = lbl_datejour.Content + Convert.ToString(dpk_datejour.SelectedDate);
             DateJour = DateTime.Now;
+            
             dpk_datejour.SelectedDate = DateJour;
-            InitialiserFenêtre(uneListebouton, unDaoSalles);
+            lbl_datejour.Content = lbl_datejour.Content + DateJour.ToString("f");
+            InitialiserFenêtre(uneListebouton, unDaoSalles,(DateTime)dpk_datejour.SelectedDate);
 
         }
 
-        public static void InitialiserFenêtre(List<Button> uneListedeBouton, DAOsalles unDaoSalles)
+        public static void InitialiserFenêtre(List<Button> uneListedeBouton, DAOsalles unDaoSalles,DateTime uneDate)
         {
             //premier chiffre = colonne = jour , deuxième chiffre = ligne = heure
             string extraction;
             int position;
-
+            string debutRequete ;
+            DateTime[] uneListeDate = RetourneSemaine(uneDate);
             foreach (Button btn in uneListedeBouton)
             {
+                
                 position = btn.Name.ToString().IndexOf('_');
                 extraction = btn.Name.ToString().Substring(0, position);
 
@@ -139,37 +146,44 @@ namespace PPE3_SLAM_Axel
                 {
                     case "un":
                         // btn.Content = position.ToString();
-                        RequeteSQLCount(btn, unDaoSalles, 2);
+                        debutRequete = "id not in (select count(id) from Reservation where dayofmonth(DateReservation)= "+uneListeDate[0].Day+" and month(DateReservation) = "+uneListeDate[0].Month+" and year(DateReservation) = "+uneListeDate[0].Year ;
+                        RequeteSQLCount(btn, unDaoSalles, debutRequete);
                         break;
 
                     case "deux":
                         //btn.Content = position.ToString();
-                        RequeteSQLCount(btn, unDaoSalles, 3);
+                        debutRequete = "id not in (select count(id) from Reservation where dayofmonth(DateReservation)= " + uneListeDate[1].Day + " and month(DateReservation) = " + uneListeDate[1].Month + " and year(DateReservation) = " + uneListeDate[1].Year;
+                        RequeteSQLCount(btn, unDaoSalles, debutRequete);
                         break;
 
                     case "trois":
+                        debutRequete = "id not in (select count(id) from Reservation where dayofmonth(DateReservation)= " + uneListeDate[2].Day + " and month(DateReservation) = " + uneListeDate[2].Month + " and year(DateReservation) = " + uneListeDate[3].Year;
                         //btn.Content = position.ToString();
-                        RequeteSQLCount(btn, unDaoSalles, 4);
+                        RequeteSQLCount(btn, unDaoSalles, debutRequete);
                         break;
 
                     case "quatre":
+                        debutRequete = "id not in (select count(id) from Reservation where dayofmonth(DateReservation)= " + uneListeDate[3].Day + " and month(DateReservation) = " + uneListeDate[3].Month + " and year(DateReservation) = " + uneListeDate[3].Year;
                         //btn.Content = position.ToString();
-                        RequeteSQLCount(btn, unDaoSalles, 5);
+                        RequeteSQLCount(btn, unDaoSalles, debutRequete);
                         break;
 
                     case "cinq":
                         //btn.Content = position.ToString();
-                        RequeteSQLCount(btn, unDaoSalles, 6);
+                        debutRequete = "id not in (select count(id) from Reservation where dayofmonth(DateReservation)= " + uneListeDate[4].Day + " and month(DateReservation) = " + uneListeDate[4].Month + " and year(DateReservation) = " + uneListeDate[4].Year;
+                        RequeteSQLCount(btn, unDaoSalles, debutRequete);
                         break;
 
                     case "six":
+                        debutRequete = "id not in (select count(id) from Reservation where dayofmonth(DateReservation)= " + uneListeDate[5].Day + " and month(DateReservation) = " + uneListeDate[5].Month + " and year(DateReservation) = " + uneListeDate[5].Year;
                         //btn.Content = position.ToString();
-                        RequeteSQLCount(btn, unDaoSalles, 7);
+                        RequeteSQLCount(btn, unDaoSalles, debutRequete);
                         break;
 
                     case "sept":
                         //btn.Content = position.ToString();
-                        RequeteSQLCount(btn, unDaoSalles, 1);
+                        debutRequete = "id not in (select count(id) from Reservation where dayofmonth(DateReservation)= " + uneListeDate[6].Day + " and month(DateReservation) = " + uneListeDate[6].Month + " and year(DateReservation) = " + uneListeDate[6].Year;
+                        RequeteSQLCount(btn, unDaoSalles, debutRequete);
                         break;
 
                     default:
@@ -189,10 +203,12 @@ namespace PPE3_SLAM_Axel
             if ((string)unBouton.Content == "1")
             {
                 unBouton.Background = Brushes.Red;
+                unBouton.Foreground = Brushes.White;
             }
             if ((string)unBouton.Content == "2")
             {
                 unBouton.Background = Brushes.Orange;
+                unBouton.Foreground = Brushes.White;
             }
             if ((string)unBouton.Content == "3")
             {
@@ -202,11 +218,12 @@ namespace PPE3_SLAM_Axel
             if ((string)unBouton.Content == "4")
             {
                 unBouton.Background = Brushes.Green;
+                unBouton.Foreground = Brushes.White;
             }
 
         }
 
-        public static void RequeteSQLCount(Button unBouton, DAOsalles unDaoSalles, int idJourSQL)
+        public static void RequeteSQLCount(Button unBouton, DAOsalles unDaoSalles, string debRequete)
         {
             long n = 0;
             int position = 0;
@@ -217,72 +234,72 @@ namespace PPE3_SLAM_Axel
             switch (extraction)
             {
                 case "un":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '10%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '10%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "deux":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '11%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '11%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "trois":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '12%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '12%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "quatre":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '13%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '13%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "cinq":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '14%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '14%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "six":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '15%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '15%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "sept":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '16%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '16%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
                 case "huit":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '17%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '17%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "neuf":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '18%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '18%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "dix":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '19%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '19%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "onze":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '20%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '20%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
 
                 case "douze":
-                    n = unDaoSalles.SelectCount("id", "id not in (select count(id) from Reservation where dayofweek(DateReservation) = " + idJourSQL + " and hour(DateReservation) = '21%');");
+                    n = unDaoSalles.SelectCount("id", debRequete + " and hour(DateReservation) = '21%');");
                     unBouton.Content = Convert.ToString(n);
                     ChangerEtat(unBouton);
                     break;
@@ -294,6 +311,8 @@ namespace PPE3_SLAM_Axel
 
 
         }
+
+
          
         public static DateTime[] RetourneSemaine(DateTime uneDate)
         {
@@ -325,10 +344,10 @@ namespace PPE3_SLAM_Axel
                     Semaine[0] = uneDate.AddDays(-2);
                     Semaine[1] = uneDate.AddDays(-1);
                     Semaine[2] = uneDate;
-                    Semaine[3] = uneDate.AddDays(3);
-                    Semaine[4] = uneDate.AddDays(4);
-                    Semaine[5] = uneDate.AddDays(5);
-                    Semaine[6] = uneDate.AddDays(6);
+                    Semaine[3] = uneDate.AddDays(1);
+                    Semaine[4] = uneDate.AddDays(2);
+                    Semaine[5] = uneDate.AddDays(3);
+                    Semaine[6] = uneDate.AddDays(4);
                     break;
 
                 case DayOfWeek.Thursday:
@@ -377,8 +396,13 @@ namespace PPE3_SLAM_Axel
             return Semaine;
         }
 
-
-
+        private void dpk_datejour_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Dbal thedbal = new Dbal("LSRGames");
+            DAOtheme thedaotheme = new DAOtheme(thedbal);
+            DAOsalles unDaoSalles = new DAOsalles(thedbal, thedaotheme);
+            InitialiserFenêtre(uneListebouton, unDaoSalles, (DateTime)dpk_datejour.SelectedDate);
+        }
     }
 
 

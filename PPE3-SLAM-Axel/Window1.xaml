@@ -146,7 +146,9 @@
             <!--#endregion-->
 
         </Grid>
-        <DatePicker x:Name="dpk_datejour" HorizontalAlignment="Left" Margin="586,5,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpk_datejour"  HorizontalAlignment="Left" Margin="586,5,0,0" VerticalAlignment="Top" SelectedDateChanged="dpk_datejour_SelectedDateChanged"/>
+        <Label x:Name="lbl_datejour" Content="Date du Jour : " HorizontalAlignment="Left" Margin="50,5,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>

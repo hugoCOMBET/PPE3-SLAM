@@ -96,7 +96,10 @@ insert into Salle values(2,"Annecy",1);
 insert into Salle values(3,"Annecy",1);
 insert into Salle values(4,"Annecy",1);
 
- 
+insert Obstacle values ('Piano','une définition du piano','une photo','Instrument');
+ insert Obstacle values ('Barrière de Force','une définition de la barrière de force','une photo','Barrière');
+insert Obstacle values ('Tapis de danse','une définition du tapis de danse','une photo','Tapis');
+
 
 insert into Client values (1,"GROUSSAUD","Axel","dhfgvhf","14 rue de la paix","1999-10-27","axel.groussaud@saintmichelannecy.fr","0125489446",12);
 
@@ -104,7 +107,15 @@ insert into Client values (1,"GROUSSAUD","Axel","dhfgvhf","14 rue de la paix","1
 
 insert into Transactions values (1,1,25.50);
  
- insert into Reservation values(1,1,"2020-12-03 10:00:00",5,5,1,1);
+ insert into Reservation values(4,1,"2020-12-03 10:00:00",5,5,1,null);
+  insert into Reservation values(2,1,"2021-1-03 10:00:00",5,12,1,1);
+ insert into Reservation values(3,1,"2020-12-25 10:00:00",7,5,1,1);
+
+insert into PositionObstacle values (2,"Piano",4,5);
+insert into PositionObstacle values (3,"Barrière de Force",4,3);
+insert into PositionObstacle values (4,"Tapis de danse",4,7);
+
+
  select count(id) from Reservation where dayofweek(DateReservation) = 5 and hour(DateReservation) = '10 % ';
- select count(id) as NbSalles from Salle where id not in (select count(id) from Reservation where dayofweek(DateReservation) = 2 and hour(DateReservation) = '11 % ');
-select * from Salle;
+ select count(id) as NbSalles from Salle where id not in (select count(id) from Reservation where dayofmonth(DateReservation)= 3 and month(DateReservation) = 1 and year(DateReservation) = 2021 and hour(DateReservation) = '10 % ');
+select * from Reservation;

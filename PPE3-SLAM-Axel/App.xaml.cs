@@ -19,12 +19,14 @@ namespace PPE3_SLAM_Axel
         private Dbal thedbal;
         private daoReservation thedaoreservation;
         private DAOsalles thedaosalles;
+        private DAOtheme theDaoTheme;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             thedbal = new Dbal("LSRGames");
             thedaoreservation = new daoReservation(thedbal);
-            thedaosalles = new DAOsalles(thedbal);
+            theDaoTheme = new DAOtheme(thedbal);
+            thedaosalles = new DAOsalles(thedbal,theDaoTheme);
 
             Window1 wnd = new Window1(thedaoreservation, thedaosalles);
             wnd.Show();

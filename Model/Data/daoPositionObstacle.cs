@@ -19,6 +19,8 @@ namespace Model.Data
         public daoPositionObstacle(Dbal unDBAL)
         {
             _DBAL = unDBAL;
+            thedaoobstacle = new daoObstacle(_DBAL);
+            thedaoreservation = new daoReservation(_DBAL);
         }
 
         public void Insert(PositionObstacle unePositionObstacle)
@@ -48,8 +50,10 @@ namespace Model.Data
             DataTable uneDataTable = _DBAL.SelectAll("PositionObstacle");
             foreach (DataRow dtr in uneDataTable.Rows)
             {
+                Reservation myreservation = this.thedaoreservation.SelectById((int)dtr["idReservation"]);
                 Obstacle myObstacle = this.thedaoobstacle.SelectByName((string)dtr["nomObstacle"]);
-                PositionObstacle unePositionObstacle = new PositionObstacle((int)dtr["id"],myObstacle,(Reservation)dtr["idReservation"], (int)dtr["positionObstacle"]);
+                
+                PositionObstacle unePositionObstacle = new PositionObstacle((int)dtr["id"],myObstacle,myreservation, (int)dtr["positionObstacle"]);
                 uneListePositionObstacle.Add(unePositionObstacle);
             }
             return uneListePositionObstacle;

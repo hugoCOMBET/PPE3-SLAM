@@ -105,7 +105,7 @@ namespace AppConsole
             theme untheme = new theme(1, "Basique");
             salles uneSalle = new salles(2,"Annecy",untheme);
             Obstacle unObstacle = new Obstacle("Barrière de lumière", "une barrière avec beaucoup trop de lumière  ", "jhsdbchjdsb", "Barrière");
-            //daoObstacle unDaoObstacle = new daoObstacle(monDbal);
+            daoObstacle unDaoObstacle = new daoObstacle(monDbal);
             //unDaoObstacle.Delete(unObstacle);
             //unDaoSalles.delete(uneSalle);
             //List<salles> ListSalles = unDaoSalles.SelectAll();
@@ -124,7 +124,7 @@ namespace AppConsole
             daoReservation unDaoReservation = new daoReservation(monDbal);
             Reservation uneReservation = new Reservation(5, unClient,uneSalle,uneTransaction,test,3,5);
             //unDaoReservation.Delete(uneReservation);
-            Console.WriteLine(unDaoReservation.SelectById(2).NbObstacles);
+            //Console.WriteLine(unDaoReservation.SelectById(2).NbObstacles);
             //List<Reservation> listReservation = unDaoReservation.SelectAll();
             //foreach(Reservation r in listReservation)
             //{
@@ -134,9 +134,13 @@ namespace AppConsole
             //Console.WriteLine(unObstacle.TypeObstacle);
             //monClient = new Clients();
             //myDaoClient = new DAOclients(monDbal);
-            //daoPositionObstacle unDaoPositionObstacle = new daoPositionObstacle(monDbal);
-            //PositionObstacle unePositionObstacle = new PositionObstacle(1, unObstacle, uneReservation, 6);
-            //List<PositionObstacle> uneListePositionObstacle = unDaoPositionObstacle.SelectAll();
+            daoPositionObstacle unDaoPositionObstacle = new daoPositionObstacle(monDbal);
+            PositionObstacle unePositionObstacle = new PositionObstacle(1, unObstacle, uneReservation, 6);
+            List<PositionObstacle> uneListePositionObstacle = unDaoPositionObstacle.SelectAll();
+            foreach(PositionObstacle po in uneListePositionObstacle)
+            {
+                Console.WriteLine(po.unObstacle.NomObstacle);
+            }
             //unDaoPositionObstacle.Delete(unePositionObstacle);
             //DateTime selectedate = new DateTime(2020,5,27);
             //DayOfWeek jour = selectedate.DayOfWeek;
