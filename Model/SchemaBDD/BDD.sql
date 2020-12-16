@@ -107,7 +107,7 @@ insert into Client values (1,"GROUSSAUD","Axel","dhfgvhf","14 rue de la paix","1
 
 insert into Transactions values (1,1,25.50);
  
- insert into Reservation values(4,1,"2020-12-03 10:00:00",5,5,1,null);
+ insert into Reservation values(4,1,"2020-12-03 10:00:00",5,5,1,1);
   insert into Reservation values(2,1,"2021-1-03 10:00:00",5,12,1,1);
  insert into Reservation values(3,1,"2020-12-25 10:00:00",7,5,1,1);
 
@@ -117,5 +117,5 @@ insert into PositionObstacle values (4,"Tapis de danse",4,7);
 
 
  select count(id) from Reservation where dayofweek(DateReservation) = 5 and hour(DateReservation) = '10 % ';
- select count(id) as NbSalles from Salle where id not in (select count(id) from Reservation where dayofmonth(DateReservation)= 3 and month(DateReservation) = 1 and year(DateReservation) = 2021 and hour(DateReservation) = '10 % ');
+ select * from Salle where id not in (select count(id) from Reservation where dayofmonth(DateReservation)= 3 and month(DateReservation) = 1 and year(DateReservation) = 2021 and hour(DateReservation) = '10 % ');
 select * from Reservation;

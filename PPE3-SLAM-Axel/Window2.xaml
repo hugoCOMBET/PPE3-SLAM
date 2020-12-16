@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPE3_SLAM_Axel"
         mc:Ignorable="d"
-        Title="Choix des salles" Height="450" Width="800">
+        Title="Choix des salles" Height="450" Width="800" >
     <Grid  x:Name="ChoixSallesGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -17,7 +17,7 @@
         <Grid x:Name="displaySalle" Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 
@@ -27,13 +27,13 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label Content="Numéro de la salle :" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
-            <Label x:Name="idSalle" Content="{Binding Name}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
+            <Label x:Name="idSalle" Content="{Binding IdSalle}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26" Width="200"/>
             <Label Content="Ville :" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
-            <Label x:Name="nomVille"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
+            <Label x:Name="nomVille" Content="{Binding LaVille}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
             <Label Content="Thème :" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
-            <Label x:Name="dateCreation"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
-            <Button x:Name="btn_retour" Content="Retour" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10"/>
-            <Button x:Name="btn_Selection" Content="Choisir" Command="{Binding ChoixCommand}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10"/>
+            <Label x:Name="lbl_theme" Content="{Binding LeTheme}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
+            <Button x:Name="btn_retour" Command="{Binding RetourCommand}" Content="Retour" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10" Click="btn_retour_Click"/>
+            <Button x:Name="btn_Selection" Content="Choisir" IsCancel="True" Command="{Binding ChoixCommand}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" />
             
         </Grid>
 

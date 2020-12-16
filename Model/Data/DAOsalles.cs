@@ -86,6 +86,20 @@ namespace Model.Data
             i = (long)uneDataRow["NbSalles"];
             return i;
         }
+
+        public List<salles> SelectAllByFieldTestCondition(string fieldtestcondition)
+        {
+            List<salles> listSalles = new List<salles>();
+            
+            DataTable myTable = this._dbal.SelectByField("salle",fieldtestcondition);
+
+            foreach (DataRow r in myTable.Rows)
+            {
+                theme monTheme = this.undaoTheme.SelectById((int)r["idTheme"]);
+                listSalles.Add(new salles((int)r["id"], (string)r["ville"], monTheme));
+            }
+            return listSalles;
+        }
         #endregion
     }
 }

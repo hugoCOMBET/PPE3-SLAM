@@ -21,9 +21,19 @@ namespace PPE3_SLAM_Axel
     /// </summary>
     public partial class Window2 : Window
     {
+        public Window2()
+        {
+        }
+
         public Window2(DAOsalles unDaoSalle, DAOtheme unDaoTheme,DateTime uneDate)
         {
             InitializeComponent();
+            ChoixSallesGrid.DataContext = new viewModel.viewModelChoixSalle(unDaoTheme, unDaoSalle, uneDate);
+        }
+
+        private void btn_retour_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

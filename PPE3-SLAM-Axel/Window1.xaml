@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPE3_SLAM_Axel"
         mc:Ignorable="d"
-        Title="Agenda" Height="700" Width="1300">
+        Title="Agenda" Height="700" Width="1300" WindowState="Maximized" Activated="Window_Activated">
     <Grid x:Name="agendaGrid">
         <Grid x:Name="grd_agenda" HorizontalAlignment="Left" Height="600" Margin="46,36,0,0" VerticalAlignment="Top" Width="1200">
             <Grid.ColumnDefinitions>
@@ -59,90 +59,90 @@
             <!--#endregion-->
 
             <!--#region Button -->
-            <Button x:Name="un_un" Command="{Binding ClickCommand}" Grid.Column="1" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_deux" Grid.Column="1" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_trois" Grid.Column="1" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_quatre" Grid.Column="1" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_cinq" Grid.Column="1" Grid.Row="5" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_six" Grid.Column="1" Grid.Row="6" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_sept" Grid.Column="1" Grid.Row="7" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_huit" Grid.Column="1" Grid.Row="8" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_neuf" Grid.Column="1" Grid.Row="9" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_dix" Grid.Column="1" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_onze" Grid.Column="1" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="un_douze" Grid.Column="1" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_un" Grid.Column="2" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_deux" Grid.Column="2" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_trois" Grid.Column="2" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_quatre" Grid.Column="2" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_cinq" Grid.Column="2" Grid.Row="5" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_six" Grid.Column="2" Grid.Row="6" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_sept" Grid.Column="2" Grid.Row="7" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_huit" Grid.Column="2" Grid.Row="8" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_neuf" Grid.Column="2" Grid.Row="9" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_dix" Grid.Column="2" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_onze" Grid.Column="2" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="deux_douze" Grid.Column="2" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_un" Grid.Column="3" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_deux" Grid.Column="3" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_trois" Grid.Column="3" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_quatre" Grid.Column="3" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_cinq" Grid.Column="3" Grid.Row="5" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_six" Grid.Column="3" Grid.Row="6" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_sept" Grid.Column="3" Grid.Row="7" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_huit" Grid.Column="3" Grid.Row="8" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_neuf" Grid.Column="3" Grid.Row="9" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_dix" Grid.Column="3" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_onze" Grid.Column="3" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="trois_douze" Grid.Column="3" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_un" Grid.Column="4" Grid.Row="1" Content="4" Background="Green" Foreground="White" />
-            <Button x:Name="quatre_deux" Grid.Column="4" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_trois" Grid.Column="4" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_quatre" Grid.Column="4" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_cinq" Grid.Column="4" Grid.Row="5" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_six" Grid.Column="4" Grid.Row="6" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_sept" Grid.Column="4" Grid.Row="7" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_huit" Grid.Column="4" Grid.Row="8" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_neuf" Grid.Column="4" Grid.Row="9" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_dix" Grid.Column="4" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_onze" Grid.Column="4" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="quatre_douze" Grid.Column="4" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_un" Grid.Column="5" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_deux" Grid.Column="5" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_trois" Grid.Column="5" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_quatre" Grid.Column="5" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_cinq" Grid.Column="5" Grid.Row="5" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_six" Grid.Column="5" Grid.Row="6" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_sept" Grid.Column="5" Grid.Row="7" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_huit" Grid.Column="5" Grid.Row="8" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_neuf" Grid.Column="5" Grid.Row="9" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_dix" Grid.Column="5" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_onze" Grid.Column="5" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="cinq_douze" Grid.Column="5" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_un" Grid.Column="6" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_deux" Grid.Column="6" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_trois" Grid.Column="6" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_quatre" Grid.Column="6" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_cinq" Grid.Column="6" Grid.Row="5" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_six" Grid.Column="6" Grid.Row="6" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_sept" Grid.Column="6" Grid.Row="7" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_huit" Grid.Column="6" Grid.Row="8" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_neuf" Grid.Column="6" Grid.Row="9" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_dix" Grid.Column="6" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_onze" Grid.Column="6" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="six_douze" Grid.Column="6" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_un" Grid.Column="7" Grid.Row="1" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_deux" Grid.Column="7" Grid.Row="2" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_trois" Grid.Column="7" Grid.Row="3" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_quatre" Grid.Column="7" Grid.Row="4" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_cinq" Grid.Column="7" Grid.Row="5" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_six" Grid.Column="7" Grid.Row="6" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_sept" Grid.Column="7" Grid.Row="7" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_huit" Grid.Column="7" Grid.Row="8" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_neuf" Grid.Column="7" Grid.Row="9" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_dix" Grid.Column="7" Grid.Row="10" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_onze" Grid.Column="7" Grid.Row="11" Content="4" Background="Green" Foreground="White"/>
-            <Button x:Name="sept_douze" Grid.Column="7" Grid.Row="12" Content="4" Background="Green" Foreground="White"/>
+            <Button x:Name="un_un" Command="{Binding ClickCommand}" Grid.Column="1" Grid.Row="1" Content="4" Background="Green" Foreground="White" Click="un_un_Click"/>
+            <Button x:Name="un_deux" Grid.Column="1" Grid.Row="2" Content="4" Background="Green" Foreground="White" Click="un_deux_Click"/>
+            <Button x:Name="un_trois" Grid.Column="1" Grid.Row="3" Content="4" Background="Green" Foreground="White" Click="un_trois_Click"/>
+            <Button x:Name="un_quatre" Grid.Column="1" Grid.Row="4" Content="4" Background="Green" Foreground="White" Click="un_quatre_Click"/>
+            <Button x:Name="un_cinq" Grid.Column="1" Grid.Row="5" Content="4" Background="Green" Foreground="White" Click="un_cinq_Click"/>
+            <Button x:Name="un_six" Grid.Column="1" Grid.Row="6" Content="4" Background="Green" Foreground="White" Click="un_six_Click"/>
+            <Button x:Name="un_sept" Grid.Column="1" Grid.Row="7" Content="4" Background="Green" Foreground="White" Click="un_sept_Click"/>
+            <Button x:Name="un_huit" Grid.Column="1" Grid.Row="8" Content="4" Background="Green" Foreground="White" Click="un_huit_Click"/>
+            <Button x:Name="un_neuf" Grid.Column="1" Grid.Row="9" Content="4" Background="Green" Foreground="White" Click="un_neuf_Click"/>
+            <Button x:Name="un_dix" Grid.Column="1" Grid.Row="10" Content="4" Background="Green" Foreground="White" Click="un_dix_Click"/>
+            <Button x:Name="un_onze" Grid.Column="1" Grid.Row="11" Content="4" Background="Green" Foreground="White" Click="un_onze_Click"/>
+            <Button x:Name="un_douze" Grid.Column="1" Grid.Row="12" Content="4" Background="Green" Foreground="White" Click="un_douze_Click"/>
+            <Button x:Name="deux_un" Grid.Column="2" Grid.Row="1" Content="4" Background="Green" Foreground="White" Click="deux_un_Click"/>
+            <Button x:Name="deux_deux" Grid.Column="2" Grid.Row="2" Content="4" Background="Green" Foreground="White" Click="deux_deux_Click"/>
+            <Button x:Name="deux_trois" Grid.Column="2" Grid.Row="3" Content="4" Background="Green" Foreground="White" Click="deux_trois_Click"/>
+            <Button x:Name="deux_quatre" Grid.Column="2" Grid.Row="4" Content="4" Background="Green" Foreground="White" Click="deux_quatre_Click"/>
+            <Button x:Name="deux_cinq" Grid.Column="2" Grid.Row="5" Content="4" Background="Green" Foreground="White" Click="deux_cinq_Click"/>
+            <Button x:Name="deux_six" Grid.Column="2" Grid.Row="6" Content="4" Background="Green" Foreground="White" Click="deux_six_Click"/>
+            <Button x:Name="deux_sept" Grid.Column="2" Grid.Row="7" Content="4" Background="Green" Foreground="White" Click="deux_sept_Click"/>
+            <Button x:Name="deux_huit" Grid.Column="2" Grid.Row="8" Content="4" Background="Green" Foreground="White" Click="deux_huit_Click"/>
+            <Button x:Name="deux_neuf" Grid.Column="2" Grid.Row="9" Content="4" Background="Green" Foreground="White" Click="deux_neuf_Click"/>
+            <Button x:Name="deux_dix" Grid.Column="2" Grid.Row="10" Content="4" Background="Green" Foreground="White" Click="deux_dix_Click"/>
+            <Button x:Name="deux_onze" Grid.Column="2" Grid.Row="11" Content="4" Background="Green" Foreground="White" Click="deux_onze_Click"/>
+            <Button x:Name="deux_douze" Grid.Column="2" Grid.Row="12" Content="4" Background="Green" Foreground="White" Click="deux_douze_Click"/>
+            <Button x:Name="trois_un" Grid.Column="3" Grid.Row="1" Content="4" Background="Green" Foreground="White" Click="trois_un_Click"/>
+            <Button x:Name="trois_deux" Grid.Column="3" Grid.Row="2" Content="4" Background="Green" Foreground="White" Click="trois_deux_Click"/>
+            <Button x:Name="trois_trois" Grid.Column="3" Grid.Row="3" Content="4" Background="Green" Foreground="White" Click="trois_trois_Click"/>
+            <Button x:Name="trois_quatre" Grid.Column="3" Grid.Row="4" Content="4" Background="Green" Foreground="White" Click="trois_quatre_Click"/>
+            <Button x:Name="trois_cinq" Grid.Column="3" Grid.Row="5" Content="4" Background="Green" Foreground="White" Click="trois_cinq_Click"/>
+            <Button x:Name="trois_six" Grid.Column="3" Grid.Row="6" Content="4" Background="Green" Foreground="White" Click="trois_six_Click"/>
+            <Button x:Name="trois_sept" Grid.Column="3" Grid.Row="7" Content="4" Background="Green" Foreground="White" Click="trois_sept_Click"/>
+            <Button x:Name="trois_huit" Grid.Column="3" Grid.Row="8" Content="4" Background="Green" Foreground="White" Click="trois_huit_Click"/>
+            <Button x:Name="trois_neuf" Grid.Column="3" Grid.Row="9" Content="4" Background="Green" Foreground="White" Click="trois_neuf_Click"/>
+            <Button x:Name="trois_dix" Grid.Column="3" Grid.Row="10" Content="4" Background="Green" Foreground="White" Click="trois_dix_Click"/>
+            <Button x:Name="trois_onze" Grid.Column="3" Grid.Row="11" Content="4" Background="Green" Foreground="White" Click="trois_onze_Click"/>
+            <Button x:Name="trois_douze" Grid.Column="3" Grid.Row="12" Content="4" Background="Green" Foreground="White" Click="trois_douze_Click"/>
+            <Button x:Name="quatre_un" Grid.Column="4" Grid.Row="1" Content="4" Background="Green" Foreground="White" Click="quatre_un_Click" />
+            <Button x:Name="quatre_deux" Grid.Column="4" Grid.Row="2" Content="4" Background="Green" Foreground="White" Click="quatre_deux_Click"/>
+            <Button x:Name="quatre_trois" Grid.Column="4" Grid.Row="3" Content="4" Background="Green" Foreground="White" Click="quatre_trois_Click"/>
+            <Button x:Name="quatre_quatre" Grid.Column="4" Grid.Row="4" Content="4" Background="Green" Foreground="White" Click="quatre_quatre_Click"/>
+            <Button x:Name="quatre_cinq" Grid.Column="4" Grid.Row="5" Content="4" Background="Green" Foreground="White" Click="quatre_cinq_Click"/>
+            <Button x:Name="quatre_six" Grid.Column="4" Grid.Row="6" Content="4" Background="Green" Foreground="White" Click="quatre_six_Click"/>
+            <Button x:Name="quatre_sept" Grid.Column="4" Grid.Row="7" Content="4" Background="Green" Foreground="White" Click="quatre_sept_Click"/>
+            <Button x:Name="quatre_huit" Grid.Column="4" Grid.Row="8" Content="4" Background="Green" Foreground="White" Click="quatre_huit_Click"/>
+            <Button x:Name="quatre_neuf" Grid.Column="4" Grid.Row="9" Content="4" Background="Green" Foreground="White" Click="quatre_neuf_Click"/>
+            <Button x:Name="quatre_dix" Grid.Column="4" Grid.Row="10" Content="4" Background="Green" Foreground="White" Click="quatre_dix_Click"/>
+            <Button x:Name="quatre_onze" Grid.Column="4" Grid.Row="11" Content="4" Background="Green" Foreground="White" Click="quatre_onze_Click"/>
+            <Button x:Name="quatre_douze" Grid.Column="4" Grid.Row="12" Content="4" Background="Green" Foreground="White" Click="quatre_douze_Click"/>
+            <Button x:Name="cinq_un" Grid.Column="5" Grid.Row="1" Content="4" Background="Green" Foreground="White" Click="cinq_un_Click"/>
+            <Button x:Name="cinq_deux" Grid.Column="5" Grid.Row="2" Content="4" Background="Green" Foreground="White" Click="cinq_deux_Click"/>
+            <Button x:Name="cinq_trois" Grid.Column="5" Grid.Row="3" Content="4" Background="Green" Foreground="White" Click="cinq_trois_Click"/>
+            <Button x:Name="cinq_quatre" Grid.Column="5" Grid.Row="4" Content="4" Background="Green" Foreground="White" Click="cinq_quatre_Click"/>
+            <Button x:Name="cinq_cinq" Grid.Column="5" Grid.Row="5" Content="4" Background="Green" Foreground="White" Click="cinq_cinq_Click"/>
+            <Button x:Name="cinq_six" Grid.Column="5" Grid.Row="6" Content="4" Background="Green" Foreground="White" Click="cinq_six_Click"/>
+            <Button x:Name="cinq_sept" Grid.Column="5" Grid.Row="7" Content="4" Background="Green" Foreground="White" Click="cinq_sept_Click"/>
+            <Button x:Name="cinq_huit" Grid.Column="5" Grid.Row="8" Content="4" Background="Green" Foreground="White" Click="cinq_huit_Click"/>
+            <Button x:Name="cinq_neuf" Grid.Column="5" Grid.Row="9" Content="4" Background="Green" Foreground="White" Click="cinq_neuf_Click"/>
+            <Button x:Name="cinq_dix" Grid.Column="5" Grid.Row="10" Content="4" Background="Green" Foreground="White" Click="cinq_dix_Click"/>
+            <Button x:Name="cinq_onze" Grid.Column="5" Grid.Row="11" Content="4" Background="Green" Foreground="White" Click="cinq_onze_Click"/>
+            <Button x:Name="cinq_douze" Grid.Column="5" Grid.Row="12" Content="4" Background="Green" Foreground="White" Click="cinq_douze_Click"/>
+            <Button x:Name="six_un" Grid.Column="6" Grid.Row="1" Content="4" Background="Green" Foreground="White" Click="six_un_Click"/>
+            <Button x:Name="six_deux" Grid.Column="6" Grid.Row="2" Content="4" Background="Green" Foreground="White" Click="six_deux_Click"/>
+            <Button x:Name="six_trois" Grid.Column="6" Grid.Row="3" Content="4" Background="Green" Foreground="White" Click="six_trois_Click"/>
+            <Button x:Name="six_quatre" Grid.Column="6" Grid.Row="4" Content="4" Background="Green" Foreground="White" Click="six_quatre_Click"/>
+            <Button x:Name="six_cinq" Grid.Column="6" Grid.Row="5" Content="4" Background="Green" Foreground="White" Click="six_cinq_Click"/>
+            <Button x:Name="six_six" Grid.Column="6" Grid.Row="6" Content="4" Background="Green" Foreground="White" Click="six_six_Click"/>
+            <Button x:Name="six_sept" Grid.Column="6" Grid.Row="7" Content="4" Background="Green" Foreground="White" Click="six_sept_Click"/>
+            <Button x:Name="six_huit" Grid.Column="6" Grid.Row="8" Content="4" Background="Green" Foreground="White" Click="six_huit_Click"/>
+            <Button x:Name="six_neuf" Grid.Column="6" Grid.Row="9" Content="4" Background="Green" Foreground="White" Click="six_neuf_Click"/>
+            <Button x:Name="six_dix" Grid.Column="6" Grid.Row="10" Content="4" Background="Green" Foreground="White" Click="six_dix_Click"/>
+            <Button x:Name="six_onze" Grid.Column="6" Grid.Row="11" Content="4" Background="Green" Foreground="White" Click="six_onze_Click"/>
+            <Button x:Name="six_douze" Grid.Column="6" Grid.Row="12" Content="4" Background="Green" Foreground="White" Click="six_douze_Click"/>
+            <Button x:Name="sept_un" Grid.Column="7" Grid.Row="1" Content="4" Background="Green" Foreground="White" Click="sept_un_Click"/>
+            <Button x:Name="sept_deux" Grid.Column="7" Grid.Row="2" Content="4" Background="Green" Foreground="White" Click="sept_deux_Click"/>
+            <Button x:Name="sept_trois" Grid.Column="7" Grid.Row="3" Content="4" Background="Green" Foreground="White" Click="sept_trois_Click"/>
+            <Button x:Name="sept_quatre" Grid.Column="7" Grid.Row="4" Content="4" Background="Green" Foreground="White" Click="sept_quatre_Click"/>
+            <Button x:Name="sept_cinq" Grid.Column="7" Grid.Row="5" Content="4" Background="Green" Foreground="White" Click="sept_cinq_Click"/>
+            <Button x:Name="sept_six" Grid.Column="7" Grid.Row="6" Content="4" Background="Green" Foreground="White" Click="sept_six_Click"/>
+            <Button x:Name="sept_sept" Grid.Column="7" Grid.Row="7" Content="4" Background="Green" Foreground="White" Click="sept_sept_Click"/>
+            <Button x:Name="sept_huit" Grid.Column="7" Grid.Row="8" Content="4" Background="Green" Foreground="White" Click="sept_huit_Click"/>
+            <Button x:Name="sept_neuf" Grid.Column="7" Grid.Row="9" Content="4" Background="Green" Foreground="White" Click="sept_neuf_Click"/>
+            <Button x:Name="sept_dix" Grid.Column="7" Grid.Row="10" Content="4" Background="Green" Foreground="White" Click="sept_dix_Click"/>
+            <Button x:Name="sept_onze" Grid.Column="7" Grid.Row="11" Content="4" Background="Green" Foreground="White" Click="sept_onze_Click"/>
+            <Button x:Name="sept_douze" Grid.Column="7" Grid.Row="12" Content="4" Background="Green" Foreground="White" Click="sept_douze_Click"/>
             <!--#endregion-->
 
         </Grid>
