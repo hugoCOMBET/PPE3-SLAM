@@ -32,8 +32,8 @@
             <Label x:Name="nomVille" Content="{Binding LaVille}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
             <Label Content="Thème :" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
             <Label x:Name="lbl_theme" Content="{Binding LeTheme}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Height="26"/>
-            <Button x:Name="btn_retour" Command="{Binding RetourCommand}" Content="Retour" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10" Click="btn_retour_Click"/>
-            <Button x:Name="btn_Selection" Content="Choisir" IsCancel="True" Command="{Binding ChoixCommand}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" />
+            <Button x:Name="btn_retour"  Content="Retour" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10" Click="btn_retour_Click"/>
+            <Button x:Name="btn_Selection" Content="Choisir" IsCancel="True"  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" Click="btn_Selection_Click" />
             
         </Grid>
 

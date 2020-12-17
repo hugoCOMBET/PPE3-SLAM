@@ -31,12 +31,12 @@ namespace Model.Data
 
         public void Insert(Reservation uneReservation)
         {
-            _DBAL.Insert(" Reservation VALUES (" + uneReservation.IdReservation + "," + uneReservation.LeClient.getIdClient()+",'"+/*uneReservation.LaSalle.IdSalle*/uneReservation.DateReservation + "',"+/*uneReservation.LaTransaction.getIdTransactions()*/uneReservation.NbJoueurs + ","+/*uneReservation.DateReservation*/uneReservation.NbObstacles + ","+ uneReservation.LaSalle.IdSalle + ","+ uneReservation.LaTransaction.getIdTransactions() + ");");
+            _DBAL.Insert(" Reservation VALUES (" + uneReservation.IdReservation + "," + uneReservation.LeClient.IdClient+",'"+/*uneReservation.LaSalle.IdSalle*/uneReservation.DateReservation + "',"+/*uneReservation.LaTransaction.getIdTransactions()*/uneReservation.NbJoueurs + ","+/*uneReservation.DateReservation*/uneReservation.NbObstacles + ","+ uneReservation.LaSalle.IdSalle + ","+ uneReservation.LaTransaction.getIdTransactions() + ");");
         }
 
         public void Update(Reservation uneReservation)
         {
-            _DBAL.Update(" Reservation SET id = "+uneReservation.IdReservation+",idClient = "+uneReservation.LeClient.getIdClient() + ",idSalle = "+uneReservation.LaSalle.IdSalle + ",idTransaction = "+uneReservation.LaTransaction.getIdTransactions() + ",DateReservation = '" + uneReservation.DateReservation + "', nbJoueurs = " + uneReservation.NbJoueurs + ", nbObstacle = " + uneReservation.NbObstacles + "  WHERE id = " + uneReservation.IdReservation + ";");
+            _DBAL.Update(" Reservation SET id = "+uneReservation.IdReservation+",idClient = "+uneReservation.LeClient.IdClient + ",idSalle = "+uneReservation.LaSalle.IdSalle + ",idTransaction = "+uneReservation.LaTransaction.getIdTransactions() + ",DateReservation = '" + uneReservation.DateReservation + "', nbJoueurs = " + uneReservation.NbJoueurs + ", nbObstacle = " + uneReservation.NbObstacles + "  WHERE id = " + uneReservation.IdReservation + ";");
         }
 
 

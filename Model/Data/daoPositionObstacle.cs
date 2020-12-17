@@ -62,8 +62,9 @@ namespace Model.Data
         public PositionObstacle SelectById(int idPositionObstacle)
         {
             DataRow UneDataRow = _DBAL.SelectById("PositionObstacle", idPositionObstacle);
+            Reservation myreservation = this.thedaoreservation.SelectById((int)UneDataRow["idReservation"]);
             Obstacle myObstacle = this.thedaoobstacle.SelectByName((string)UneDataRow["nomObstacle"]);
-            PositionObstacle unePositionObstacle = new PositionObstacle((int)UneDataRow["idPositionObstacle"], myObstacle, (Reservation)UneDataRow["idReservation"], (int)UneDataRow["PositionObstacle"]);
+            PositionObstacle unePositionObstacle = new PositionObstacle((int)UneDataRow["id"], myObstacle, myreservation, (int)UneDataRow["PositionObstacle"]);
             return unePositionObstacle;
         }
     }

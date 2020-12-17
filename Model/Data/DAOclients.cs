@@ -22,36 +22,36 @@ namespace Model.Data
         }
         public void Insert(Clients unClient)
         {
-            string query = " Client (id,nom,prenom,photo,adresse,DateNaissance,Email,TelephonePortable,Credit) VALUES (" + unClient.getIdClient()
-                + ",'" + unClient.getNomClient().Replace("'", "''") + "'"
-                + ",'" + unClient.getPrenomClient().Replace("'", "''") + "'"
+            string query = " Client (id,nom,prenom,photo,adresse,DateNaissance,Email,TelephonePortable,Credit) VALUES (" + unClient.IdClient
+                + ",'" + unClient.NomClient.Replace("'", "''") + "'"
+                + ",'" + unClient.PrenomClient.Replace("'", "''") + "'"
                 + ",'" + unClient.getPhotoClient().Replace("'", "''") + "'"
-                + ",'" + unClient.getAdresseClient().Replace("'", "''") + "'"
-                + ",'" + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd") + "'"
-                + ",'" + unClient.getEmailClient().Replace("'", "''") + "'"
-                + ",'" + unClient.getTelPortableCLient().Replace("'", "''") + "'"
-                + ",'" + unClient.getCreditCLient() + "');";
+                + ",'" + unClient.AdresseClient.Replace("'", "''") + "'"
+                + ",'" + unClient.DateNaissanceClient.ToString("yyyy-MM-dd") + "'"
+                + ",'" + unClient.EmailClient.Replace("'", "''") + "'"
+                + ",'" + unClient.TelPortableCLient.Replace("'", "''") + "'"
+                + ",'" + unClient.CreditCLient + "');";
 
             this._dbal.Insert(query);
         }
         public void Update(Clients unClient)
         {
-            string query = "Client SET id = " + unClient.getIdClient()
-                + ", nom = '" + unClient.getNomClient().Replace("'", "''") + "'"
-                + ", prenom = '" + unClient.getPrenomClient().Replace("'", "''") + "'"
+            string query = "Client SET id = " + unClient.IdClient
+                + ", nom = '" + unClient.NomClient.Replace("'", "''") + "'"
+                + ", prenom = '" + unClient.PrenomClient.Replace("'", "''") + "'"
                 + ", photo = '" + unClient.getPhotoClient().Replace("'", "''") + "'"
-                + ", adresse ='" + unClient.getAdresseClient().Replace("'", "''") + "'"
-                + ", DateNaissance ='" + unClient.getDateNaissanceClient().ToString("yyyy-MM-dd") + "'"
-                + ", Email = '" + unClient.getEmailClient().Replace("'", "''") + "'"
-                + ", TelephonePortable = '" + unClient.getTelPortableCLient().Replace("'", "''") + "'"
-                + ", Credit = " + unClient.getCreditCLient()
-                + "' WHERE id = " + unClient.getIdClient() + " ;";
+                + ", adresse ='" + unClient.AdresseClient.Replace("'", "''") + "'"
+                + ", DateNaissance ='" + unClient.DateNaissanceClient.ToString("yyyy-MM-dd") + "'"
+                + ", Email = '" + unClient.EmailClient.Replace("'", "''") + "'"
+                + ", TelephonePortable = '" + unClient.TelPortableCLient.Replace("'", "''") + "'"
+                + ", Credit = " + unClient.CreditCLient
+                + "' WHERE id = " + unClient.IdClient + " ;";
             this._dbal.Update(query);
         }
 
         public void Delete(Clients unClient)
         {
-            string query = "Client WHERE ID = " + unClient.getIdClient() + ";";
+            string query = "Client WHERE ID = " + unClient.IdClient + ";";
             this._dbal.Delete(query);
         }
 

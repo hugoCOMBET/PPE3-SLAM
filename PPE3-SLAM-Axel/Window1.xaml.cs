@@ -29,6 +29,7 @@ namespace PPE3_SLAM_Axel
         private DAOtheme thedaotheme;
         private DAOsalles thedaosalles;
         private Dbal thedbal;
+        public DateTime DateChoixSalle;
 
 
         public Window1(daoReservation unDaoReservation, DAOsalles unDaoSalles)
@@ -413,7 +414,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_un", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_un", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_un.BorderBrush = Brushes.Blue;
             un_un.BorderThickness = new Thickness(4);
@@ -426,7 +427,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_deux", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_deux", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_deux.BorderBrush = Brushes.Blue;
             un_deux.BorderThickness = new Thickness(4);
@@ -437,7 +438,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_trois", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_trois", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_trois.BorderBrush = Brushes.Blue;
             un_trois.BorderThickness = new Thickness(4);
@@ -448,7 +449,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_quatre", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_quatre", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_quatre.BorderBrush = Brushes.Blue;
             un_quatre.BorderThickness = new Thickness(4);
@@ -459,7 +460,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_cinq", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_cinq", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_cinq.BorderBrush = Brushes.Blue;
             un_cinq.BorderThickness = new Thickness(4);
@@ -470,7 +471,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_six", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_six", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_six.BorderBrush = Brushes.Blue;
             un_six.BorderThickness = new Thickness(4);
@@ -481,7 +482,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_sept", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_sept", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_sept.BorderBrush = Brushes.Blue;
             un_sept.BorderThickness = new Thickness(4);
@@ -492,7 +493,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_huit", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_huit", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_huit.BorderBrush = Brushes.Blue;
             un_huit.BorderThickness = new Thickness(4);
@@ -503,7 +504,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_neuf", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_neuf", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_neuf.BorderBrush = Brushes.Blue;
             un_neuf.BorderThickness = new Thickness(4);
@@ -514,7 +515,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_dix", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_dix", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_dix.BorderBrush = Brushes.Blue;
             un_dix.BorderThickness = new Thickness(4);
@@ -525,7 +526,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_onze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_onze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_onze.BorderBrush = Brushes.Blue;
             un_onze.BorderThickness = new Thickness(4);
@@ -536,7 +537,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_douze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("un_douze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             un_douze.BorderBrush = Brushes.Blue;
             un_douze.BorderThickness = new Thickness(4);
@@ -547,7 +548,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_un", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_un", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_un.BorderBrush = Brushes.Blue;
             deux_un.BorderThickness = new Thickness(4);
@@ -558,7 +559,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_deux", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_deux", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_deux.BorderBrush = Brushes.Blue;
             deux_deux.BorderThickness = new Thickness(4);
@@ -569,7 +570,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_trois", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_trois", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_trois.BorderBrush = Brushes.Blue;
             deux_trois.BorderThickness = new Thickness(4);
@@ -580,7 +581,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_quatre", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_quatre", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_quatre.BorderBrush = Brushes.Blue;
             deux_quatre.BorderThickness = new Thickness(4);
@@ -591,7 +592,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_cinq", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_cinq", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_cinq.BorderBrush = Brushes.Blue;
             deux_cinq.BorderThickness = new Thickness(4);
@@ -602,7 +603,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_six", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_six", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_six.BorderBrush = Brushes.Blue;
             deux_six.BorderThickness = new Thickness(4);
@@ -613,7 +614,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_sept", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_sept", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_sept.BorderBrush = Brushes.Blue;
             deux_sept.BorderThickness = new Thickness(4);
@@ -624,7 +625,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_huit", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_huit", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_huit.BorderBrush = Brushes.Blue;
             deux_huit.BorderThickness = new Thickness(4);
@@ -635,7 +636,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_neuf", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_neuf", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_neuf.BorderBrush = Brushes.Blue;
             deux_neuf.BorderThickness = new Thickness(4);
@@ -646,7 +647,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_dix", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_dix", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_dix.BorderBrush = Brushes.Blue;
             deux_dix.BorderThickness = new Thickness(4);
@@ -657,7 +658,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_onze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_onze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_onze.BorderBrush = Brushes.Blue;
             deux_onze.BorderThickness = new Thickness(4);
@@ -668,7 +669,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_douze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("deux_douze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             deux_douze.BorderBrush = Brushes.Blue;
             deux_douze.BorderThickness = new Thickness(4);
@@ -679,7 +680,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_un", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_un", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_un.BorderBrush = Brushes.Blue;
             trois_un.BorderThickness = new Thickness(4);
@@ -690,7 +691,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_deux", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_deux", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_deux.BorderBrush = Brushes.Blue;
             trois_deux.BorderThickness = new Thickness(4);
@@ -701,7 +702,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_trois", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_trois", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_trois.BorderBrush = Brushes.Blue;
             trois_trois.BorderThickness = new Thickness(4);
@@ -712,7 +713,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_quatre", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_quatre", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_quatre.BorderBrush = Brushes.Blue;
             trois_quatre.BorderThickness = new Thickness(4);
@@ -723,7 +724,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_cinq", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_cinq", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_cinq.BorderBrush = Brushes.Blue;
             trois_cinq.BorderThickness = new Thickness(4);
@@ -734,7 +735,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_six", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_six", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_six.BorderBrush = Brushes.Blue;
             trois_six.BorderThickness = new Thickness(4);
@@ -745,7 +746,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_sept", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_sept", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_sept.BorderBrush = Brushes.Blue;
             trois_sept.BorderThickness = new Thickness(4);
@@ -756,7 +757,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_huit", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_huit", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_huit.BorderBrush = Brushes.Blue;
             trois_huit.BorderThickness = new Thickness(4);
@@ -767,7 +768,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_neuf", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_neuf", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_neuf.BorderBrush = Brushes.Blue;
             trois_neuf.BorderThickness = new Thickness(4);
@@ -778,7 +779,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_dix", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_dix", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_dix.BorderBrush = Brushes.Blue;
             trois_dix.BorderThickness = new Thickness(4);
@@ -789,7 +790,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_onze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_onze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_onze.BorderBrush = Brushes.Blue;
             trois_onze.BorderThickness = new Thickness(4);
@@ -800,7 +801,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_douze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("trois_douze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             trois_douze.BorderBrush = Brushes.Blue;
             trois_douze.BorderThickness = new Thickness(4);
@@ -811,7 +812,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_un", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_un", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_un.BorderBrush = Brushes.Blue;
             quatre_un.BorderThickness = new Thickness(4);
@@ -822,7 +823,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_deux", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_deux", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_deux.BorderBrush = Brushes.Blue;
             quatre_deux.BorderThickness = new Thickness(4);
@@ -833,7 +834,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_trois", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_trois", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_trois.BorderBrush = Brushes.Blue;
             quatre_trois.BorderThickness = new Thickness(4);
@@ -844,7 +845,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_quatre", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_quatre", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_quatre.BorderBrush = Brushes.Blue;
             quatre_quatre.BorderThickness = new Thickness(4);
@@ -855,7 +856,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_cinq", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_cinq", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_cinq.BorderBrush = Brushes.Blue;
             quatre_cinq.BorderThickness = new Thickness(4);
@@ -866,7 +867,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_six", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_six", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_six.BorderBrush = Brushes.Blue;
             quatre_six.BorderThickness = new Thickness(4);
@@ -877,7 +878,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_sept", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_sept", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_sept.BorderBrush = Brushes.Blue;
             quatre_sept.BorderThickness = new Thickness(4);
@@ -888,7 +889,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_huit", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_huit", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_huit.BorderBrush = Brushes.Blue;
             quatre_huit.BorderThickness = new Thickness(4);
@@ -899,7 +900,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_neuf", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_neuf", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_neuf.BorderBrush = Brushes.Blue;
             quatre_neuf.BorderThickness = new Thickness(4);
@@ -910,7 +911,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_dix", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_dix", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_dix.BorderBrush = Brushes.Blue;
             quatre_dix.BorderThickness = new Thickness(4);
@@ -921,7 +922,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_onze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_onze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_onze.BorderBrush = Brushes.Blue;
             quatre_onze.BorderThickness = new Thickness(4);
@@ -932,7 +933,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_douze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("quatre_douze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             quatre_douze.BorderBrush = Brushes.Blue;
             quatre_douze.BorderThickness = new Thickness(4);
@@ -943,7 +944,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_un", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_un", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_un.BorderBrush = Brushes.Blue;
             cinq_un.BorderThickness = new Thickness(4);
@@ -954,7 +955,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_deux", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_deux", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_deux.BorderBrush = Brushes.Blue;
             cinq_deux.BorderThickness = new Thickness(4);
@@ -965,7 +966,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_trois", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_trois", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_trois.BorderBrush = Brushes.Blue;
             cinq_trois.BorderThickness = new Thickness(4);
@@ -976,7 +977,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_quatre", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_quatre", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_quatre.BorderBrush = Brushes.Blue;
             cinq_quatre.BorderThickness = new Thickness(4);
@@ -987,7 +988,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_cinq", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_cinq", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_cinq.BorderBrush = Brushes.Blue;
             cinq_cinq.BorderThickness = new Thickness(4);
@@ -998,7 +999,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_six", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_six", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_six.BorderBrush = Brushes.Blue;
             cinq_six.BorderThickness = new Thickness(4);
@@ -1009,7 +1010,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_sept", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_sept", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_sept.BorderBrush = Brushes.Blue;
             cinq_sept.BorderThickness = new Thickness(4);
@@ -1020,7 +1021,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_huit", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_huit", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_huit.BorderBrush = Brushes.Blue;
             cinq_huit.BorderThickness = new Thickness(4);
@@ -1031,7 +1032,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_neuf", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_neuf", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_neuf.BorderBrush = Brushes.Blue;
             cinq_neuf.BorderThickness = new Thickness(4);
@@ -1042,7 +1043,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_dix", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_dix", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_dix.BorderBrush = Brushes.Blue;
             cinq_dix.BorderThickness = new Thickness(4);
@@ -1053,7 +1054,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_onze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_onze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_onze.BorderBrush = Brushes.Blue;
             cinq_onze.BorderThickness = new Thickness(4);
@@ -1064,7 +1065,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_douze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("cinq_douze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             cinq_douze.BorderBrush = Brushes.Blue;
             cinq_douze.BorderThickness = new Thickness(4);
@@ -1075,7 +1076,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_un", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_un", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_un.BorderBrush = Brushes.Blue;
             six_un.BorderThickness = new Thickness(4);
@@ -1086,7 +1087,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_deux", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_deux", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_deux.BorderBrush = Brushes.Blue;
             six_deux.BorderThickness = new Thickness(4);
@@ -1097,7 +1098,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_trois", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_trois", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_trois.BorderBrush = Brushes.Blue;
             six_trois.BorderThickness = new Thickness(4);
@@ -1108,7 +1109,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_quatre", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_quatre", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_quatre.BorderBrush = Brushes.Blue;
             six_quatre.BorderThickness = new Thickness(4);
@@ -1119,7 +1120,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_cinq", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_cinq", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_cinq.BorderBrush = Brushes.Blue;
             six_cinq.BorderThickness = new Thickness(4);
@@ -1130,7 +1131,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_six", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_six", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_six.BorderBrush = Brushes.Blue;
             six_six.BorderThickness = new Thickness(4);
@@ -1141,7 +1142,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_sept", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_sept", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_sept.BorderBrush = Brushes.Blue;
             six_sept.BorderThickness = new Thickness(4);
@@ -1152,7 +1153,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_huit", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_huit", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_huit.BorderBrush = Brushes.Blue;
             six_huit.BorderThickness = new Thickness(4);
@@ -1163,7 +1164,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_neuf", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_neuf", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_neuf.BorderBrush = Brushes.Blue;
             six_neuf.BorderThickness = new Thickness(4);
@@ -1174,7 +1175,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_dix", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_dix", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_dix.BorderBrush = Brushes.Blue;
             six_dix.BorderThickness = new Thickness(4);
@@ -1185,7 +1186,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_onze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_onze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_onze.BorderBrush = Brushes.Blue;
             six_onze.BorderThickness = new Thickness(4);
@@ -1196,7 +1197,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_douze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("six_douze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             six_douze.BorderBrush = Brushes.Blue;
             six_douze.BorderThickness = new Thickness(4);
@@ -1207,7 +1208,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_un", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_un", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_un.BorderBrush = Brushes.Blue;
             sept_un.BorderThickness = new Thickness(4);
@@ -1218,7 +1219,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_deux", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_deux", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_deux.BorderBrush = Brushes.Blue;
             sept_deux.BorderThickness = new Thickness(4);
@@ -1229,7 +1230,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_trois", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_trois", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_trois.BorderBrush = Brushes.Blue;
             sept_trois.BorderThickness = new Thickness(4);
@@ -1240,7 +1241,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_quatre", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_quatre", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_quatre.BorderBrush = Brushes.Blue;
             sept_quatre.BorderThickness = new Thickness(4);
@@ -1251,7 +1252,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_cinq", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_cinq", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_cinq.BorderBrush = Brushes.Blue;
             sept_cinq.BorderThickness = new Thickness(4);
@@ -1262,7 +1263,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_six", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_six", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_six.BorderBrush = Brushes.Blue;
             sept_six.BorderThickness = new Thickness(4);
@@ -1273,7 +1274,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_sept", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_sept", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_sept.BorderBrush = Brushes.Blue;
             sept_sept.BorderThickness = new Thickness(4);
@@ -1284,7 +1285,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_huit", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_huit", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_huit.BorderBrush = Brushes.Blue;
             sept_huit.BorderThickness = new Thickness(4);
@@ -1295,7 +1296,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_neuf", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_neuf", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_neuf.BorderBrush = Brushes.Blue;
             sept_neuf.BorderThickness = new Thickness(4);
@@ -1306,7 +1307,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_dix", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_dix", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_dix.BorderBrush = Brushes.Blue;
             sept_dix.BorderThickness = new Thickness(4);
@@ -1317,7 +1318,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_onze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_onze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_onze.BorderBrush = Brushes.Blue;
             sept_onze.BorderThickness = new Thickness(4);
@@ -1328,7 +1329,7 @@ namespace PPE3_SLAM_Axel
         {
             
             DateTime[] tabDate = RetourneSemaine((DateTime)dpk_datejour.SelectedDate);
-            DateTime DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_douze", tabDate);
+            DateChoixSalle = retourneDateSelonNomBoutonetTabDate("sept_douze", tabDate);
             Window2 wnd = new Window2(thedaosalles, thedaotheme, DateChoixSalle);
             sept_douze.BorderBrush = Brushes.Blue;
             sept_douze.BorderThickness = new Thickness(4);

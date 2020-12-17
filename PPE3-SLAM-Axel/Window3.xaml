@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPE3_SLAM_Axel"
         mc:Ignorable="d"
-        Title="Réservation" Height="450" Width="800">
+        Title="Réservation" Height="650" Width="750">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="420" Margin="0" VerticalAlignment="Top" Width="800">
+        <TabControl x:Name="tabReservation" HorizontalAlignment="Left" Height="620" Margin="0" VerticalAlignment="Top" Width="800">
             
             <TabItem Header="Infos Client">
-                <Grid x:Name="SelectionClient" Background="#FFE5E5E5">
+                <Grid x:Name="SelectionClient" Background="#FFE5E5E5" Height="590">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -24,20 +24,29 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
 
                     </Grid.RowDefinitions>
-                    <Label x:Name="lbl_nom" Content="Nom : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
-                    <Label x:Name="lbl_prenom" Content="Prénom : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
-                    <Label x:Name="lbl_DateNaissance" Content="Date de Naissance : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
-                    <Label x:Name="lbl_telephone" Content="Téléphone : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
-                    <Label x:Name="lbl_adresse" Content="Adresse : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
-                    <Label x:Name="lbl_email" Content="Email : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
-                    <Button x:Name="btn_suivant" Content="Suivant" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Margin="250,10"/>
-
-
-
-
-
+                    <Label x:Name="lbl_id" Content="Identifiant : " Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Label x:Name="lbl_nom" Content="Nom : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                    <Label x:Name="lbl_prenom" Content="Prénom : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+                    <Label x:Name="lbl_DateNaissance" Content="Date de Naissance : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+                    <Label x:Name="lbl_telephone" Content="Téléphone : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+                    <Label x:Name="lbl_adresse" Content="Adresse : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+                    <Label x:Name="lbl_email" Content="Email : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="6"/>
+                    <Button x:Name="btn_suivant" Content="Suivant" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Margin="250,10" Click="btn_suivant_Click"/>
+                    <TextBox x:Name="txt_nom" Text="{Binding Nom}" Grid.Column="1" Grid.Row="1" Width="200" Height="21" HorizontalAlignment="Center" VerticalAlignment="Center" GotFocus="txt_nom_GotFocus" LostFocus="txt_nom_LostFocus"/>
+                    <Label x:Name="lbl_prenom_client" Content="{Binding Prenom}" Grid.Column="1" Grid.Row="2" Width="200" Height="26"/>
+                    <Label x:Name="lbl_DateNaissance_client" Content="{Binding DateNaissance}" Grid.Column="1" Grid.Row="3" Width="200" Height="26"/>
+                    <Label x:Name="lbl_Tel" Content="{Binding Telephone}" Grid.Column="1" Grid.Row="4" Width="200" Height="26"/>
+                    <Label x:Name="lbl_adresse_client" Content="{Binding Adresse}" Grid.Column="1" Grid.Row="5" Width="200" Height="26"/>
+                    <Label x:Name="lbl_email_client" Content="{Binding Email}" Grid.Column="1" Grid.Row="6" Width="200" Height="26"/>
+                    <ListBox x:Name="lst_clients" ItemsSource="{Binding ListClients}" SelectedItem="{Binding SelectedClient}" Grid.Column="1" Grid.RowSpan="4" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Margin="0,57,0,0" Grid.Row="0"/>
+                    <Label x:Name="lbl_id_client" Content="{Binding Id}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="26"/>
+                    <Label x:Name="lbl_credit" Content="Crédit : " Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label x:Name="lbl_credit_client" Content="{Binding Credit}" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="26"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Réservation">
@@ -57,6 +66,9 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
@@ -65,6 +77,52 @@
                         <RowDefinition Height="*"/>
 
                     </Grid.RowDefinitions>
+                    <Label x:Name="lbl_nbJoueur" Content="Nombre de Joueurs : " Grid.Column="0" Grid.Row="0" Width="200" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <ComboBox x:Name="cbx_nbjoueurs" Grid.Column="1" Grid.Row="0" Width="200" Height="26">
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                        <ComboBoxItem Content="5"/>
+                        <ComboBoxItem Content="6"/>
+                        <ComboBoxItem Content="7"/>
+                        
+                    </ComboBox>
+                    <Label x:Name="lbl_obstacle" Content="Obstacle : " Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cbx_position_un" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="3" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_deux" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="4" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_trois" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="5" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_quatre" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="6" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_cinq" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="7" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_six" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="8" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_sept" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="9" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_huit" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="10" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_neuf" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="11" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_dix" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="12" Width="200" Height="26"/>
+                    <ComboBox x:Name="cbx_position_onze" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="13" Width="200" Height="26"/>
+                    <Button x:Name="Valider" Command="{Binding ValiderCommand}" Content="Valider" Grid.Column="0" Grid.Row="16" Grid.ColumnSpan="2" Width="200"/>
+                    <ComboBox x:Name="cbx_position_douze" ItemsSource="{Binding ListObstacles}" Grid.Column="0" Grid.Row="14" Width="200" Height="26"/>
+
+                    <Label Content="Position : " Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="1" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="2" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="3" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="4" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="5" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="6" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="7" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="8" Grid.Column="1" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="9" Grid.Column="1" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="10" Grid.Column="1" Grid.Row="12" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Label Content="11" Grid.Column="1" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="12" Grid.Column="1" Grid.Row="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+
+
+
+
+
                 </Grid>
             </TabItem>
         </TabControl>

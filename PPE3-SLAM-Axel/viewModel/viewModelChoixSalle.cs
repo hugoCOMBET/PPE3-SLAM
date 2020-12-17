@@ -17,6 +17,7 @@ namespace PPE3_SLAM_Axel.viewModel
         
         private DAOtheme vmdaotheme;
         private DAOsalles vmdaosalle;
+        
 
         private salles selectedSalle;
         private ICommand retourCommand;
@@ -121,47 +122,9 @@ namespace PPE3_SLAM_Axel.viewModel
 
 
 
-        public ICommand RetourCommand
-        {
-            get
-            {
-                if (this.retourCommand == null)
-                {
-                    this.retourCommand = new RelayCommand(() => Retour(), () => true);
-                }
-                return this.retourCommand;
-
-            }
-
-        }
-
-        public ICommand ChoixCommand
-        {
-            get
-            {
-                if (this.choixCommand == null)
-                {
-                    this.choixCommand = new RelayCommand(() => Choisir(), () => true);
-                }
-                return this.choixCommand;
-
-            }
-
-        }
-
         
 
-        public static void Retour()
-        {
-            
-            
-        }
-
-        public static void Choisir()
-        {
-            Window3 wnd = new Window3();
-            wnd.Show();
-        }
+        
 
     }
 

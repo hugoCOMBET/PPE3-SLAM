@@ -49,31 +49,10 @@ namespace Model.Business
         #endregion
 
         #region getteurs/setteurs
-        public int getIdClient()
-        {
-            return _id;
-        }
-        public void setIdClient(int unIdClient)
-        {
-            _id = unIdClient;
-        }
-        public string getNomClient()
-        {
-            return _nom;
-        }
-        public void setNomClient(string unNomClient)
-        {
-            _nom = unNomClient;
-        }
+        public int IdClient { get => _id; set => _id = value; }
+        public string NomClient { get => _nom; set => _nom = value; }
 
-        public string getPrenomClient()
-        {
-            return _prenom;
-        }
-        public void setPrenomClient(string unPrenomClient)
-        {
-            _prenom = unPrenomClient;
-        }
+        public string PrenomClient { get => _prenom; set => _prenom = value; }
 
         public string getPhotoClient()
         {
@@ -84,49 +63,20 @@ namespace Model.Business
             _photo = unePhotoClient;
         }
 
-        public string getAdresseClient()
-        {
-            return _adresse;
-        }
-        public void setAdresseClient(string uneAdresseClient)
-        {
-            _adresse = uneAdresseClient;
-        }
+        public string AdresseClient { get => _adresse; set => _adresse = value; }
 
-        public DateTime getDateNaissanceClient()
-        {
-            return _DateNaissance;
-        }
-        public void setDateNaissanceClient(DateTime uneDateNaissClient)
-        {
-            _DateNaissance = uneDateNaissClient;
-        }
+        public DateTime DateNaissanceClient { get => _DateNaissance; set => _DateNaissance = value; }
 
-        public string getEmailClient()
-        {
-            return _Email;
-        }
-        public void setEmailClient(string unEmailClient)
-        {
-            _Email = unEmailClient;
-        }
+        public string EmailClient { get => _Email; set => _Email = value; }
 
-        public string getTelPortableCLient()
-        {
-            return _TelephonePortable;
-        }
-        public void setTelPortableCLient(string unTelPortableClient)
-        {
-            _TelephonePortable = unTelPortableClient;
-        }
-        public double getCreditCLient()
-        {
-            return _credit;
-        }
-        public void setCreditCLient(double uncredit)
-        {
-            _credit = uncredit;
-        }
+        public string TelPortableCLient { get => _TelephonePortable; set => _TelephonePortable = value; }
+
+        public double CreditCLient { get => _credit; set => _credit = value; }
         #endregion
+
+        public override string ToString()
+        {
+            return this.NomClient + " "+this.PrenomClient;
+        }
     }
 }

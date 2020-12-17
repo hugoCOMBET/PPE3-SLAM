@@ -23,6 +23,13 @@ namespace Model.Data
             this.TheDaoClient = unDaoClient;
         }
 
+        public void Insert(Transactions uneTransaction)
+        {
+            string query = "Transactions values ("+uneTransaction.getIdTransactions()+", "+uneTransaction.getIdClient().IdClient+", "+uneTransaction.getMontantTransaction().ToString().Replace(',','.')+");";
+            Console.WriteLine(query);
+            _dbal.Insert(query);
+        }
+
         public List<Transactions> SelectAll()
         {
             List<Transactions> listTransaction = new List<Transactions>();
