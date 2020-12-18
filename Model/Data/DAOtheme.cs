@@ -69,6 +69,28 @@ namespace Model.Data
             DataRow r = _dbal.SelectById("Themes", idTheme);
             return new theme((int)r["id"], (string)r["theme"]);
         }
+
+        public void Insert(theme theTheme)
+        {
+            string query = "Themes (theme) VALUES ('"
+                + theTheme.Theme.Replace("'", "''") + "')";
+            this._dbal.Insert(query);
+        }
+
+        public void Update(theme myTheme)
+        {
+            string query = "Themes SET id = " 
+                + myTheme.IdTheme
+                + ", theme = '" + myTheme.Theme.Replace("'", "''") + "' " 
+                + "WHERE id = " + myTheme.IdTheme;
+            this._dbal.Update(query);
+        }
+
+        public void Delete(theme myTheme)
+        {
+            string query = "Themes where id = '" + myTheme.IdTheme + "'";
+            this._dbal.Delete(query);
+        }
         #endregion
     }
 }

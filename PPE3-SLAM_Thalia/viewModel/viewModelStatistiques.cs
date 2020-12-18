@@ -16,6 +16,7 @@ namespace AppDirecteur_PPE3.viewModel
         DAOclients vmDaoClient;
         DAOsalles vmDaoSalle;
         DAOtheme vmDaoTheme;
+        daoObstacle vmDaoObstacle;
         private ICommand validCommand;
         daoReservation vmDaoReservation;
         private salle selectedSalle = new salle();
@@ -71,7 +72,7 @@ namespace AppDirecteur_PPE3.viewModel
             }
         }
 
-        public viewModelStatistiques(DAOavis thedaoavis, DAOclients thedaoclient, DAOsalles thedaosalle, DAOtheme thedaotheme, daoReservation thedaoreservation)
+        public viewModelStatistiques(DAOavis thedaoavis, DAOclients thedaoclient, DAOsalles thedaosalle, DAOtheme thedaotheme, daoReservation thedaoreservation, daoObstacle thedaoobstacle)
         {         
             vmDaoSalle = thedaosalle;
             listSalle = new ObservableCollection<salle>(thedaosalle.SelectAll());

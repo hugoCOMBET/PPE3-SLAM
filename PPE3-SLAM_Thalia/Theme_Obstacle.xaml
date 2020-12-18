@@ -17,13 +17,16 @@
         <Label x:Name="lbl_theme_actuelle" Content="Thème :" HorizontalAlignment="Left" Margin="209,182,0,0" VerticalAlignment="Top" Width="57"/>
         <Label x:Name="lbl_obs" Content="Obstacles" HorizontalAlignment="Left" Margin="294,236,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="list_obs"  ItemsSource="{Binding ListObstacle}" SelectedItem="{Binding SelectedObstacle}" HorizontalAlignment="Left" Height="100" Margin="266,267,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txt_choix_theme" HorizontalAlignment="Left" Height="23" Margin="266,205,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_choix_theme" Text="{Binding NomTheme}" HorizontalAlignment="Left" Height="23" Margin="266,205,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lbl_ajoutmanuel_theme" Content="Ajout manuel" HorizontalAlignment="Left" Margin="192,205,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FFAA9292"/>
-        <TextBox x:Name="txtb_choix_obs" HorizontalAlignment="Left" Height="23" Margin="266,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtb_choix_obs" Text="{Binding NomObstacle}" HorizontalAlignment="Left" Height="23" Margin="266,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lbl_ajout_obs" Content="Ajout manuel" HorizontalAlignment="Left" Margin="191,367,0,0" VerticalAlignment="Top" Foreground="#FFAA9292" FontSize="10" RenderTransformOrigin="1.159,0.739"/>
-        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="472,221,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btn_supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="472,252,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_ajouter" Content="Ajouter" Command="{Binding AddCommandTh}" HorizontalAlignment="Left" Margin="437,205,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_supprimer" Content="Supprimer" Command="{Binding DeleteCommandTh}" HorizontalAlignment="Left" Margin="517,205,0,0" VerticalAlignment="Top" Width="75"/>
         <ComboBox x:Name="cmb_theme" ItemsSource="{Binding ListTheme}" SelectedItem="{Binding SelectedTheme}" HorizontalAlignment="Left" Margin="266,183,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btn_modifier" Content="Modifier" HorizontalAlignment="Left" Margin="472,286,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_modifier" Content="Modifier" Command="{Binding UpdateCommandTh}" HorizontalAlignment="Left" Margin="597,206,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Ajouter" Command="{Binding AddCommandObs}" HorizontalAlignment="Left" Margin="437,367,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Supprimer" Command="{Binding DeleteCommandObs}" HorizontalAlignment="Left" Margin="517,367,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Modifier" Command="{Binding UpdateCommandObs}" HorizontalAlignment="Left" Margin="597,367,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

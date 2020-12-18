@@ -34,14 +34,20 @@ namespace Model.Data
                 List<avis> listAvis = new List<avis>();
                 DataTable myTable = this._dbal.SelectAll("avis");
 
-            foreach (DataRow r in _dbal.SelectAll("avis").Rows)
+                foreach (DataRow r in _dbal.SelectAll("avis").Rows)
                 {
-                Clients unClient = this._DAOclient.SelectById((int)r["id"]);
-                salle uneSalle = this._DAOsalles.SelectById((int)r["id"]);
+                Clients unClient = this._DAOclient.SelectById((int)r["idClient"]);
+                salle uneSalle = this._DAOsalles.SelectById((int)r["idSalle"]);
                 listAvis.Add(new avis((int)r["id"], unClient, uneSalle, (string)r["avis"], (int)r["note"]));
                 }
                 return listAvis;
             }
-            #endregion
+
+        public DataRow SelectAvg(string table, int note)
+        {
+            DataRow r = _dbal.SelectAvg(table, note);
+            return r;
         }
+        #endregion
     }
+}

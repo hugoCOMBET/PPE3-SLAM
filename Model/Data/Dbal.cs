@@ -17,7 +17,7 @@ namespace Model.Data
         private string password;
 
         //Constructor
-        public Dbal(string database = "LSRGames", string uid = "root", string password = "thalia", string server = "localhost")
+        public Dbal(string database = "LSRGames", string uid = "root", string password = "5MichelAnnecy", string server = "localhost")
         {
             Initialize(database, uid, password, server);
         }
@@ -156,6 +156,11 @@ namespace Model.Data
         public DataRow SelectCount(string attribut, string table, string fieldTestCondition)
         {
             return this.RQuery("select count(" + attribut + ") as NbSalles from " + table + " where " + fieldTestCondition).Tables[0].Rows[0];
+        }
+
+        public DataRow SelectAvg(string table, int note)
+        {
+            return this.RQuery("select avg(" + note + ") as 'Moyenne' from " + table).Tables[0].Rows[0];
         }
     }
 }

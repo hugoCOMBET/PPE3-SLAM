@@ -20,6 +20,7 @@ namespace PPE3_SLAM_Thalia
         private DAOsalles thedaosalles;
         private DAOclients thedaoclient;
         private daoReservation thedaoreservation;
+        private daoObstacle thedaoobstacle;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
@@ -29,12 +30,13 @@ namespace PPE3_SLAM_Thalia
             thedaosalles = new DAOsalles(thedbal, thedaotheme);
             thedaoclient = new DAOclients(thedbal);
             thedaoreservation = new daoReservation(thedbal);
+            thedaoobstacle = new daoObstacle(thedbal);
             thedaoavis = new DAOavis(thedbal, thedaoclient, thedaosalles);
 
 
             // Create the startup window
             //là, on lance la fenêtre souhaitée en instanciant la classe de notre fenêtre
-            MainWindow wnd = new MainWindow(thedaoavis,thedaoclient, thedaosalles, thedaotheme, thedaoreservation);
+            MainWindow wnd = new MainWindow(thedaoavis,thedaoclient, thedaosalles, thedaotheme, thedaoreservation, thedaoobstacle);
             //et on utilise la méthode Show() de notre objet fenêtre pour afficher la fenêtre
             //exemple: MainWindow lafenetre = new MainWindow(); (et on y passe en paramètre Dbal et Dao au besoin)
             wnd.Show();

@@ -17,9 +17,13 @@ namespace AppDirecteur_PPE3.viewModel
         DAOclients vmDaoClient;
         DAOsalles vmDaoSalle;
         DAOtheme vmDaoTheme;
-        private ICommand updateCommand;
-        private ICommand deleteCommand;
-        private ICommand addCommand;
+        daoObstacle vmDaoObstacle;
+        private ICommand updateCommandTh;
+        private ICommand deleteCommandTh;
+        private ICommand addCommandTh;
+        private ICommand updateCommandObs;
+        private ICommand deleteCommandObs;
+        private ICommand addCommandObs;
         daoReservation vmDaoReservation;
         private salle selectedSalle = new salle();
         private salle activeSalle = new salle();
@@ -34,13 +38,16 @@ namespace AppDirecteur_PPE3.viewModel
         public ObservableCollection<salle> ListSalle { get => listSalle; set => listSalle = value; }
         public ObservableCollection<theme> ListTheme { get => listTheme; set => listTheme = value; }
 
-        public viewModelThemeObstacles(DAOavis thedaoavis, DAOclients thedaoclient, DAOsalles thedaosalle, DAOtheme thedaotheme, daoReservation thedaoreservation)
+        public viewModelThemeObstacles(DAOavis thedaoavis, DAOclients thedaoclient, DAOsalles thedaosalle, DAOtheme thedaotheme, daoReservation thedaoreservation, daoObstacle thedaoobstacle)
         {
             vmDaoSalle = thedaosalle;
             listSalle = new ObservableCollection<salle>(thedaosalle.SelectAll());
 
             vmDaoTheme = thedaotheme;
             listTheme = new ObservableCollection<theme>(thedaotheme.SelectAll());
+
+            vmDaoObstacle = thedaoobstacle;
+            listObstacle = new ObservableCollection<Obstacle>(thedaoobstacle.SelectAll());
 
 
             foreach (salle laSalle in ListSalle)
@@ -76,6 +83,20 @@ namespace AppDirecteur_PPE3.viewModel
                 if (activeTheme.Theme != value)
                 {
                     activeTheme.Theme = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("Ville");
+                }
+            }
+        }
+
+        public string NomObstacle
+        {
+            get => activeObstacle.NomObstacle;
+            set
+            {
+                if (activeObstacle.NomObstacle != value)
+                {
+                    activeObstacle.NomObstacle = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("Ville");
                 }
@@ -170,45 +191,82 @@ namespace AppDirecteur_PPE3.viewModel
                 if (activeObstacle != value)
                 {
                     activeObstacle = value;
-                    OnPropertyChanged("NomTheme");
+                    OnPropertyChanged("NomObstacle");
                 }
             }
         }
 
-        public ICommand UpdateCommand
+        public ICommand UpdateCommandTh
         {
             get
             {
-                if (this.updateCommand == null)
+                if (this.updateCommandTh == null)
                 {
-                    this.updateCommand = new RelayCommand(() => UpdateFromage(), () => true);
+                    this.updateCommandTh = new RelayCommand(() => UpdateTheme(), () => true);
                 }
-                return this.updateCommand;
+                return this.updateCommandTh;
             }
 
         }
 
-        public ICommand DeleteCommand
+        public ICommand DeleteCommandTh
         {
             get
             {
-                if (this.deleteCommand == null)
+                if (this.deleteCommandTh == null)
                 {
-                    this.deleteCommand = new RelayCommand(() => DeleteFromage(), () => true);
+                    this.deleteCommandTh = new RelayCommand(() => DeleteTheme(), () => true);
                 }
-                return this.deleteCommand;
+                return this.deleteCommandTh;
             }
         }
 
-        public ICommand AddCommand
+        public ICommand AddCommandTh
         {
             get
             {
-                if (this.addCommand == null)
+                if (this.addCommandTh == null)
                 {
-                    this.addCommand = new RelayCommand(() => AddFromage(), () => true);
+                    this.addCommandTh = new RelayCommand(() => AddTheme(), () => true);
                 }
-                return this.addCommand;
+                return this.addCommandTh;
+            }
+        }
+
+        public ICommand UpdateCommandObs
+        {
+            get
+            {
+                if (this.updateCommandObs == null)
+                {
+                    this.updateCommandObs = new RelayCommand(() => UpdateObstacle(), () => true);
+                }
+                return this.updateCommandObs;
+            }
+
+        }
+
+        public ICommand DeleteCommandObs
+        {
+            get
+            {
+                if (this.deleteCommandObs == null)
+                {
+                    this.deleteCommandObs = new RelayCommand(() => DeleteObstacle(), () => true);
+                }
+                return this.deleteCommandObs;
+            }
+        }
+
+        public ICommand AddCommandObs
+        {
+            get
+            {
+                if (this.addCommandObs == null)
+                {
+                    this.addCommandObs = new RelayCommand(() => AddObstacle(), () => true);
+                }
+                return this.addCommandObs;
             }
         }
 
@@ -228,21 +286,53 @@ namespace AppDirecteur_PPE3.viewModel
         private void AddTheme()
         {
             theme select = new theme();
-            this.vmDaoTheme.Insert(this.ActiveTheme();
-            listFromages.Add(this.ActiveFromage);
-            select = this.ActiveFromage;
-            SelectedFromage = select;
-            MessageBox.Show("Fromage ajouté");
+            this.vmDaoTheme.Insert(this.ActiveTheme);
+            listTheme.Add(this.ActiveTheme);
+            select = this.ActiveTheme;
+            SelectedTheme = select;
+            MessageBox.Show("Thème ajouté");
         }
 
         private void DeleteTheme()
         {
-            Fromage backup = new Fromage();
-            backup = ActiveFromage;
-            this.vmDaoFromage.Delete(this.ActiveFromage);
-            int a = listFromages.IndexOf(SelectedFromage);
-            listFromages.RemoveAt(a);
-            MessageBox.Show("Fromage supprimé");
+            theme backup = new theme();
+            backup = ActiveTheme;
+            this.vmDaoTheme.Delete(this.ActiveTheme);
+            int a = listTheme.IndexOf(SelectedTheme);
+            listTheme.RemoveAt(a);
+            MessageBox.Show("Thème supprimé");
+        }
+
+        private void UpdateObstacle()
+        {
+            Obstacle backup = new Obstacle();
+            backup = ActiveObstacle;
+            this.vmDaoObstacle.Update(this.ActiveObstacle);
+            int a = listObstacle.IndexOf(SelectedObstacle);
+            listObstacle.Insert(a, ActiveObstacle);
+            listObstacle.RemoveAt(a + 1);
+            SelectedObstacle = backup;
+            MessageBox.Show("Mis à jour réussis");
+        }
+
+        private void AddObstacle()
+        {
+            Obstacle select = new Obstacle();
+            this.vmDaoObstacle.Insert(this.ActiveObstacle);
+            listObstacle.Add(this.ActiveObstacle);
+            select = this.ActiveObstacle;
+            SelectedObstacle = select;
+            MessageBox.Show("Obstacle ajouté");
+        }
+
+        private void DeleteObstacle()
+        {
+            Obstacle backup = new Obstacle();
+            backup = ActiveObstacle;
+            this.vmDaoObstacle.Delete(this.ActiveObstacle);
+            int a = listObstacle.IndexOf(SelectedObstacle);
+            listObstacle.RemoveAt(a);
+            MessageBox.Show("Obstacle supprimé");
         }
     }
 }

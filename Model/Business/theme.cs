@@ -34,7 +34,7 @@ namespace Model.Business
 
         public override string ToString()
         {
-            return Convert.ToString(this.IdTheme) + " : " + this.Theme;
+            return Convert.ToString(this.Theme);
         }
     }
 }

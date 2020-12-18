@@ -19,10 +19,16 @@ namespace AppDirecteur_PPE3.viewModel
         DAOclients vmDaoClient;
         DAOsalles vmDaoSalle;
         DAOtheme vmDaoTheme;
+        daoObstacle vmDaoObstacle;
         daoReservation vmDaoReservation;
+        private ICommand validCommand;
         private salle activeSalle = new salle();
         private theme activeTheme = new theme();
+        private avis activeAvis = new avis();
         private avis selectedAvis = new avis();
+        private theme selectedTheme = new theme();
+        private salle selectedSalle = new salle();
+
         private ObservableCollection<avis> listAvis;
         private ObservableCollection<theme> listTheme;
         private ObservableCollection<salle> listSalle;
@@ -31,7 +37,7 @@ namespace AppDirecteur_PPE3.viewModel
         public ObservableCollection<theme> ListTheme { get => listTheme; set => listTheme = value; }
         public ObservableCollection<salle> ListSalle { get => listSalle; set => listSalle = value; }
 
-        public viewModelAvis(DAOavis thedaoavis, DAOclients thedaoclient, DAOsalles thedaosalle, DAOtheme thedaotheme, daoReservation thedaoreservation)
+        public viewModelAvis(DAOavis thedaoavis, DAOclients thedaoclient, DAOsalles thedaosalle, DAOtheme thedaotheme, daoReservation thedaoreservation, daoObstacle thedaoobstacle)
         {
             vmDaoAvis = thedaoavis;
             listAvis = new ObservableCollection<avis>(thedaoavis.SelectAll());
@@ -77,8 +83,25 @@ namespace AppDirecteur_PPE3.viewModel
                     OnPropertyChanged("SelectedAvis");
                     if (selectedAvis != null)
                     {
-                       // ActiveTheme = selectedAvis;
-                        //ActiveSalle = selectedAvis;
+                       ActiveAvis = selectedAvis;
+                    }
+                }
+            }
+        }
+
+        public salle SelectedSalle
+        {
+            get => selectedSalle;
+            set
+            {
+                if (selectedSalle != value)
+                {
+                    selectedSalle = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("SelectedSalle");
+                    if (selectedAvis != null)
+                    {
+                        ActiveSalle = selectedSalle;
                     }
                 }
             }
@@ -93,9 +116,6 @@ namespace AppDirecteur_PPE3.viewModel
                 {
                     activeTheme = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
-                    OnPropertyChanged("");
-                    OnPropertyChanged("Origin");
-                    OnPropertyChanged("Creation");
                 }
             }
         }
@@ -109,11 +129,38 @@ namespace AppDirecteur_PPE3.viewModel
                 {
                     activeSalle = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
-                    OnPropertyChanged("Name");
-                    OnPropertyChanged("Origin");
-                    OnPropertyChanged("Creation");
                 }
             }
+        }
+
+        public avis ActiveAvis
+        {
+            get => activeAvis;
+            set
+            {
+                if (activeAvis != value)
+                {
+                    activeAvis = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                }
+            }
+        }
+
+        public ICommand ValidCommand
+        {
+            get
+            {
+                if (this.validCommand == null)
+                {
+                    this.validCommand = new RelayCommand(() => ValidInfo(), () => true);
+                }
+                return this.validCommand;
+            }
+        }
+
+        private void ValidInfo()
+        {
+
         }
     }
 }

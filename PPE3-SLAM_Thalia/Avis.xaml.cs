@@ -25,8 +25,9 @@ namespace PPE3_SLAM_Thalia
         private DAOsalles undaosalle;
         private DAOtheme undaotheme;
         private daoReservation undaoreservation;
+        private daoObstacle undaoobstacle;
 
-        public FenetreAvis(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation)
+        public FenetreAvis(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation, daoObstacle obstacle)
         {
             InitializeComponent();
             undaoavis = avis;
@@ -34,8 +35,9 @@ namespace PPE3_SLAM_Thalia
             undaosalle = salle;
             undaotheme = theme;
             undaoreservation = reservation;
+            undaoobstacle = obstacle;
 
-            FntAvis.DataContext = new AppDirecteur_PPE3.viewModel.viewModelAvis(avis, client, salle, theme, reservation);
+            FntAvis.DataContext = new AppDirecteur_PPE3.viewModel.viewModelAvis(avis, client, salle, theme, reservation, obstacle);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -50,13 +52,13 @@ namespace PPE3_SLAM_Thalia
 
         private void btn_theme_pAvis_Click(object sender, RoutedEventArgs e)
         {
-            Theme_Obstacle T_O = new Theme_Obstacle(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
+            Theme_Obstacle T_O = new Theme_Obstacle(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation, undaoobstacle);
             T_O.Show();
         }
 
         private void btn_Stat_pAvis_Click(object sender, RoutedEventArgs e)
         {
-            Statistiques Stat = new Statistiques(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
+            Statistiques Stat = new Statistiques(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation, undaoobstacle);
             Stat.Show();
         }
     }

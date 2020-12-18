@@ -44,5 +44,10 @@ namespace Model.Business
         public string Avis { get => _avis; set => _avis = value; }
         public int Note { get => _note; set => _note = value; }
         #endregion
+
+        public override string ToString()
+        {
+            return Convert.ToString(this.Avis);
+        }
     }
 }

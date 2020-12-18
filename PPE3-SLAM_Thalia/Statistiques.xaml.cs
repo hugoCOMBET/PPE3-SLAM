@@ -25,8 +25,9 @@ namespace PPE3_SLAM_Thalia
         private DAOsalles undaosalle;
         private DAOtheme undaotheme;
         private daoReservation undaoreservation;
+        private daoObstacle undaoobstacle;
 
-        public Statistiques(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation)
+        public Statistiques(DAOavis avis, DAOclients client, DAOsalles salle, DAOtheme theme, daoReservation reservation, daoObstacle obstacle)
         {
             InitializeComponent();
 
@@ -35,19 +36,20 @@ namespace PPE3_SLAM_Thalia
             undaosalle = salle;
             undaotheme = theme;
             undaoreservation = reservation;
+            undaoobstacle = obstacle;
             //on associe la grid principal mainGrid du XAML en initialisant son DataContext avec un objet viewModelFromage
-            FntStat.DataContext = new AppDirecteur_PPE3.viewModel.viewModelStatistiques(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
+            FntStat.DataContext = new AppDirecteur_PPE3.viewModel.viewModelStatistiques(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation, undaoobstacle);
         }
 
         private void btn_theme_pStat_Click(object sender, RoutedEventArgs e)
         {
-            Theme_Obstacle T_O = new Theme_Obstacle(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
+            Theme_Obstacle T_O = new Theme_Obstacle(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation, undaoobstacle);
             T_O.Show();
         }
 
         private void btn_avis_pStat_Click(object sender, RoutedEventArgs e)
         {
-            FenetreAvis avis = new FenetreAvis(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
+            FenetreAvis avis = new FenetreAvis(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation, undaoobstacle);
             avis.Show();
         }
 

@@ -16,7 +16,7 @@
         <Label x:Name="lbl_creneau" Content="Créneaux horaires d'utilisation" HorizontalAlignment="Left" Margin="95,196,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="Date_choixDate" HorizontalAlignment="Left" Margin="373,155,0,0" VerticalAlignment="Top" Width="161"/>
         <Label x:Name="lbl_precision" Content="Les salles et créneaux sont rangés du plus demandé au moins demandé." HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top" FontStyle="Italic" Background="White" Foreground="#FFA49292"/>
-        <Button x:Name="btn_valider" Content="Valider" HorizontalAlignment="Left" Margin="613,157,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.107,0.5"/>
+        <Button x:Name="btn_valider" Content="Valider" Command="{Binding ValidCommand}" HorizontalAlignment="Left" Margin="613,157,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.107,0.5"/>
         <Label x:Name="lbl_nbutilisation" Content="Nombre d'utilisation de la salle par jour :" HorizontalAlignment="Left" Margin="373,227,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_nb" Content="      " HorizontalAlignment="Left" Margin="603,227,0,0" VerticalAlignment="Top" Background="#FFE4E4E4"/>
         <ListBox x:Name="list_creneau" HorizontalAlignment="Left" Height="121" Margin="95,235,0,0" VerticalAlignment="Top" Width="176"/>

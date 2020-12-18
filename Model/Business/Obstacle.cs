@@ -36,5 +36,10 @@ namespace Model.Business
         public string Photo { get => _photo; set => _photo = value; }
 
         public string TypeObstacle { get => _typeObstacle; set => _typeObstacle = value; }
+
+        public override string ToString()
+        {
+            return Convert.ToString(this.NomObstacle);
+        }
     }
 }
