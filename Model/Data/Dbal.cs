@@ -17,7 +17,7 @@ namespace Model.Data
         private string password;
 
         //Constructor
-        public Dbal(string database, string uid = "root", string password = "", string server = "localhost")
+        public Dbal(string database, string uid = "root", string password = "5MichelAnnecy", string server = "localhost")
         {
             Initialize(database, uid, password, server);
         }

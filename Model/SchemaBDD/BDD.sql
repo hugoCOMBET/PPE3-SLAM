@@ -87,35 +87,110 @@ foreign key(idReservation) references Reservation(id) on update cascade on delet
 )engine InnoDB;
 
 
-insert into Themes values(1,"basique");
+-- INSERT CLIENT
+
+insert into Client values(1, 'SAHED', 'Thalïa', "une photo", "45 avenue des champs Elysées, 74000, Annecy", "1999-06-19", 'thalia.sahed@saintmichelannecy.fr', '0000000000', 200);
+
+insert into Client values(2, 'COMBET', 'Hugo', "une photo", "45 avenue des champs Elysées, 74000, Annecy", "2000-01-01", 'hugo.combet@saintmichelannecy.fr', '0000000000', 300);
+
+insert into Client values(3, 'GROUSSAUD', 'Axel', "une photo", "45 avenue des champs Elysées, 74000, Annecy", "1999-01-01", 'axel.groussaud@saintmichelannecy.fr', '0000000000', 200);
+
+insert into Client values(4, 'MANCEAU', 'Erwan', "une photo", "45 avenue des champs Elysées, 74000, Annecy", "1994-12-31", 'erwan.manceau@saintmichelannecy.fr', '0000000000', 400);
+
+insert into Client values(5, 'HORTH', 'William', "une photo", "45 avenue des champs Elysées, 74000, Annecy", "1999-10-01", 'william.horth@saintmichelannecy.fr', '0000000000', 100);
 
  
 
-insert into Salle values(1,"Annecy",1);
-insert into Salle values(2,"Annecy",1);
-insert into Salle values(3,"Annecy",1);
-insert into Salle values(4,"Annecy",1);
+-- INSERT OBSTACLES
 
-insert Obstacle values ('Piano','une définition du piano','une photo','Instrument');
- insert Obstacle values ('Barrière de Force','une définition de la barrière de force','une photo','Barrière');
-insert Obstacle values ('Tapis de danse','une définition du tapis de danse','une photo','Tapis');
+insert into Obstacle values('barrière', 'Ralentit le joueur, il doit la déverouiller', "une photo barrière", "barrière");  
 
+insert into Obstacle values('laser', 'Le joueur ne doit pas toucher les lasers', "une photo laser", "projectile");  
 
-insert into Client values (1,"GROUSSAUD","Axel","dhfgvhf","14 rue de la paix","1999-10-27","axel.groussaud@saintmichelannecy.fr","0125489446",12);
+insert into Obstacle values('coffre-fort', 'Le joueur doit trouver un code pour le déverouiller', "une photo coffre fort", "énigme");  
+
+insert into Obstacle values('Double-porte', 'Le joueur doit trouver une clef qui la déverouillera', "une photo double porte", "hasard");  
+
+insert into Obstacle values('Trappe', 'Le joueur doit trouver la trappe et attrapper un indice dedans', "une photo trappe", "barrière");  
 
  
 
-insert into Transactions values (1,1,25.50);
+-- INSERT THEMES
+
+insert into Themes values(1, 'Harry-Potter');
+
+insert into Themes values(2, 'Football');
+
+insert into Themes values(3, 'Jungle');
+
+insert into Themes values(4, 'Sherlock Holmes');
+
+insert into Themes values(5, 'Forêt enchantée');
+
  
- insert into Reservation values(4,1,"2020-12-03 10:00:00",5,5,1,1);
-  insert into Reservation values(2,1,"2021-1-03 10:00:00",5,12,1,1);
- insert into Reservation values(3,1,"2020-12-25 10:00:00",7,5,1,1);
 
-insert into PositionObstacle values (2,"Piano",4,5);
-insert into PositionObstacle values (3,"Barrière de Force",4,3);
-insert into PositionObstacle values (4,"Tapis de danse",4,7);
+-- INSERT SALLE
 
+insert into Salle values(1, 'Annecy', 1);
 
- select count(id) from Reservation where dayofweek(DateReservation) = 5 and hour(DateReservation) = '10 % ';
- select * from Salle where id not in (select count(id) from Reservation where dayofmonth(DateReservation)= 3 and month(DateReservation) = 1 and year(DateReservation) = 2021 and hour(DateReservation) = '10 % ');
-select * from Reservation;
+insert into Salle values(2, 'Bonneville', 2);
+
+insert into Salle values(3, 'Thonon-les-Bains', 3);
+
+insert into Salle values(4, 'Chamonix', 4);
+
+ 
+
+-- INSERT Transactions
+
+insert into Transactions values(1, 1, 50);
+
+insert into Transactions values(2, 2, 70);
+
+insert into Transactions values(3, 3, 30);
+
+insert into Transactions values(4, 4, 80);
+
+insert into Transactions values(5, 5, 70);
+
+ 
+
+-- INSERT RESERVATIONS
+
+insert into Reservation values(1, 1, "2019-01-01 10:00:00", 7, 12, 1, 1);
+
+insert into Reservation values(2, 2, "2020-01-25 11:00:00", 5, 2, 2, 2);
+
+insert into Reservation values(3, 3, "2020-05-15 15:00:00", 5, 7, 3, 3);
+
+insert into Reservation values(4, 4, "2021-11-30 14:00:00", 6, 9, 4, 4);
+
+insert into Reservation values(5, 5, "2021-12-05 21:00:00", 7, 11, 1, 5);
+
+ 
+
+-- INSERT AVIS
+
+insert into Avis values(1, 1, 1, "Excellent thème, je reviendrais !");
+
+insert into Avis values(2, 2, 2, "Il faut s'y connaître pour pouvoir jouer...");
+
+insert into Avis values(3, 3, 3, "Totalement immergé dans le thème mais 2 obstacles en panne !");
+
+insert into Avis values(4, 4, 4, "Je recommande à 100%");
+
+insert into Avis values(5, 4, 1, "Parfait pour faire participer les enfants aux jeux.");
+
+ 
+
+-- INSERT POSITION OBS
+
+insert into PositionObstacle values(1, "barrière", 1, 10);
+
+insert into PositionObstacle values(2, "laser", 2, 12);
+
+insert into PositionObstacle values(3, "coffre-fort", 3, 4);
+
+insert into PositionObstacle values(4, "Double-porte", 4, 2);
+
+insert into PositionObstacle values(5, "Trappe", 5, 7);
