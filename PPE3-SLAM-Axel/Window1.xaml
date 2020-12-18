@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPE3_SLAM_Axel"
         mc:Ignorable="d"
-        Title="Agenda" Height="700" Width="1300" WindowState="Maximized" Activated="Window_Activated">
+        Title="Agenda" Height="700" Width="1300" Activated="Window_Activated">
     <Grid x:Name="agendaGrid">
         <Grid x:Name="grd_agenda" HorizontalAlignment="Left" Height="600" Margin="46,36,0,0" VerticalAlignment="Top" Width="1200">
             <Grid.ColumnDefinitions>
