@@ -38,7 +38,7 @@ namespace Model.Business
 
         public override string ToString()
         {
-            return "Salle n°" + Convert.ToString(this.IdSalle);
+            return Convert.ToString(this.IdSalle) + " : " + this.Ville;
         }
     }
 }

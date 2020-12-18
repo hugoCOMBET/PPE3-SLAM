@@ -17,7 +17,7 @@ namespace Model.Data
         private string password;
 
         //Constructor
-        public Dbal(string database, string uid = "root", string password = "5MichelAnnecy", string server = "localhost")
+        public Dbal(string database = "LSRGames", string uid = "root", string password = "thalia", string server = "localhost")
         {
             Initialize(database, uid, password, server);
         }
@@ -145,7 +145,7 @@ namespace Model.Data
         }
         public DataRow SelectById(string table, int id)
         {
-            return this.RQuery("select * from " + table + " where id = '" + id + "'").Tables[0].Rows[0];
+            return this.RQuery("select * from " + table + " where id='" + id + "'").Tables[0].Rows[0];
         }
 
         public DataRow SelectByName(string table, string ville)

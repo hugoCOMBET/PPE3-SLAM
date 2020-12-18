@@ -36,7 +36,7 @@ namespace PPE3_SLAM_Thalia
             undaotheme = theme;
             undaoreservation = reservation;
             //on associe la grid principal mainGrid du XAML en initialisant son DataContext avec un objet viewModelFromage
-            FntStat.DataContext = new AppDirecteur_PPE3.viewModel.viewModelStatistiques();
+            FntStat.DataContext = new AppDirecteur_PPE3.viewModel.viewModelStatistiques(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation);
         }
 
         private void btn_theme_pStat_Click(object sender, RoutedEventArgs e)

@@ -31,5 +31,10 @@ namespace Model.Business
             public int IdTheme { get => _id; set => _id = value; }
             public string Theme { get => _theme; set => _theme = value; }
         #endregion
+
+        public override string ToString()
+        {
+            return Convert.ToString(this.IdTheme) + " : " + this.Theme;
+        }
     }
 }

@@ -74,9 +74,12 @@ namespace Model.Data
 
         public salle SelectById(int idSalle)
         {
-            DataRow r = _dbal.SelectById("salle", idSalle);
-            theme monTheme = this.undaoTheme.SelectById((int)r["idTheme"]);
-            return new salle((int)r["id"], (string)r["ville"], monTheme);
+                DataRow r = _dbal.SelectById("salle", idSalle);
+                theme monTheme = this.undaoTheme.SelectById((int)r["idTheme"]);
+                return new salle
+                ((int)r["id"],
+                (string)r["ville"],
+                monTheme);
         }
 
         public long SelectCount(string attribut, string fieldtestcondition)

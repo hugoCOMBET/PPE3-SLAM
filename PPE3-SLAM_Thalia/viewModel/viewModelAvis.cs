@@ -77,8 +77,8 @@ namespace AppDirecteur_PPE3.viewModel
                     OnPropertyChanged("SelectedAvis");
                     if (selectedAvis != null)
                     {
-                        ActiveTheme = selectedAvis;
-                        ActiveSalle = selectedAvis;
+                       // ActiveTheme = selectedAvis;
+                        //ActiveSalle = selectedAvis;
                     }
                 }
             }
@@ -93,7 +93,7 @@ namespace AppDirecteur_PPE3.viewModel
                 {
                     activeTheme = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
-                    OnPropertyChanged("Name");
+                    OnPropertyChanged("");
                     OnPropertyChanged("Origin");
                     OnPropertyChanged("Creation");
                 }

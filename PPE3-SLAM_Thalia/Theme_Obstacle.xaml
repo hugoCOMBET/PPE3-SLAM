@@ -7,32 +7,23 @@
         mc:Ignorable="d"
         Title="Themes" Height="474.15" Width="808" Closing="Window_Closing">
     <Grid x:Name="FntT_O">
-       
+
         <Button x:Name="btn_avis_pTheme" Content="Avis" HorizontalAlignment="Left" Margin="191,0,0,0" VerticalAlignment="Top" Width="75" Background="#FFD8D8D8" Click="btn_avis_pTheme_Click"/>
         <Button x:Name="btn_theme_pTheme" Content="Thèmes et obstacles" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Width="116" Background="#FFF9F5F5" BorderBrush="#FFFDFDFD"/>
         <Button x:Name="btn_stat_pTheme" Content="Statistiques" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btn_stat_pTheme_Click"/>
         <Label x:Name="lbl_theme_obstacles" Content="Thèmes et obstacles des salles" HorizontalAlignment="Left" Margin="135,39,0,0" VerticalAlignment="Top" Width="520" FontSize="36" FontWeight="Bold"/>
-        <RadioButton x:Name="rdb_Annecy" Content="Annecy" HorizontalAlignment="Left" Margin="101,122,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rdb_thonon" Content="Thonon-les-bains" HorizontalAlignment="Left" Margin="238,122,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rdb_bonneville" Content="Bonneville" HorizontalAlignment="Left" Margin="440,122,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rdb_chamonix" Content="Chamonix" HorizontalAlignment="Left" Margin="613,122,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cmb_salle" HorizontalAlignment="Left" Margin="165,186,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lbl_salle" Content="Salle :" HorizontalAlignment="Left" Margin="119,182,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_theme_actuelle" Content="Thème :" HorizontalAlignment="Left" Margin="101,226,0,0" VerticalAlignment="Top" Width="57"/>
-        <Label x:Name="lbl_obs" Content="Obstacles" HorizontalAlignment="Left" Margin="191,276,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="list_obs" HorizontalAlignment="Left" Height="100" Margin="147,304,0,0" VerticalAlignment="Top" Width="161"/>
-        <Rectangle x:Name="rtc_modif" Fill="#FFE0E0EA" HorizontalAlignment="Left" Height="269" Margin="378,159,0,0" Stroke="Black" VerticalAlignment="Top" Width="381"/>
-        <Label x:Name="lbl_choix_theme" Content="Choix du thème :" HorizontalAlignment="Left" Margin="403,208,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_modif" Content="Modification" HorizontalAlignment="Left" Margin="512,157,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <ComboBox x:Name="cmb_choix_theme" HorizontalAlignment="Left" Margin="523,212,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txt_choix_theme" HorizontalAlignment="Left" Height="23" Margin="523,234,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lbl_ajoutmanuel_theme" Content="Ajout manuel" HorizontalAlignment="Left" Margin="434,230,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FFAA9292"/>
-        <TextBox x:Name="txtb_choix_obs" HorizontalAlignment="Left" Height="23" Margin="523,376,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ListBox x:Name="list_choix_obs" HorizontalAlignment="Left" Height="100" Margin="523,276,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lbl_choix_obs" Content="Choix des obstacles :" HorizontalAlignment="Left" Margin="383,276,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_ajout_obs" Content="Ajout manuel" HorizontalAlignment="Left" Margin="434,376,0,0" VerticalAlignment="Top" Foreground="#FFAA9292" FontSize="10"/>
-        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="668,276,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btn_supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="668,307,0,0" VerticalAlignment="Top" Width="75"/>
-        <ComboBox HorizontalAlignment="Left" Margin="165,230,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmb_salle" ItemsSource="{Binding ListSalle}" SelectedItem="{Binding SelectedSalle}" HorizontalAlignment="Left" Margin="266,156,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lbl_salle" Content="Salle :" HorizontalAlignment="Left" Margin="221,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.1,0.192"/>
+        <Label x:Name="lbl_theme_actuelle" Content="Thème :" HorizontalAlignment="Left" Margin="209,182,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label x:Name="lbl_obs" Content="Obstacles" HorizontalAlignment="Left" Margin="294,236,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="list_obs"  ItemsSource="{Binding ListObstacle}" SelectedItem="{Binding SelectedObstacle}" HorizontalAlignment="Left" Height="100" Margin="266,267,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_choix_theme" HorizontalAlignment="Left" Height="23" Margin="266,205,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lbl_ajoutmanuel_theme" Content="Ajout manuel" HorizontalAlignment="Left" Margin="192,205,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FFAA9292"/>
+        <TextBox x:Name="txtb_choix_obs" HorizontalAlignment="Left" Height="23" Margin="266,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lbl_ajout_obs" Content="Ajout manuel" HorizontalAlignment="Left" Margin="191,367,0,0" VerticalAlignment="Top" Foreground="#FFAA9292" FontSize="10" RenderTransformOrigin="1.159,0.739"/>
+        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="472,221,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="472,252,0,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox x:Name="cmb_theme" ItemsSource="{Binding ListTheme}" SelectedItem="{Binding SelectedTheme}" HorizontalAlignment="Left" Margin="266,183,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_modifier" Content="Modifier" HorizontalAlignment="Left" Margin="472,286,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

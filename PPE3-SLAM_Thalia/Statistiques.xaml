@@ -11,11 +11,7 @@
         <Button x:Name="btn_avis_pStat" Content="Avis" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top" Width="75" Click="btn_avis_pStat_Click"/>
         <Button x:Name="btn_Stat_pStat" Content="Statistiques" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="#FFF7F5F5"/>
         <Label x:Name="lbl_Stat_pStat" Content="Statistiques" HorizontalAlignment="Left" Margin="301,32,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
-        <RadioButton x:Name="rdb_Annecy" Content="Annecy" HorizontalAlignment="Left" Margin="104,106,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rdb_Thonon" Content="Thonon-les-Bains" HorizontalAlignment="Left" Margin="257,106,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rdb_bonneville" Content="Bonneville" HorizontalAlignment="Left" Margin="460,106,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rdb_chamonix" Content="Chamonix" HorizontalAlignment="Left" Margin="629,106,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_salle" HorizontalAlignment="Left" Margin="135,155,0,0" VerticalAlignment="Top" Width="146" Height="26"/>
+        <ComboBox x:Name="cb_salle" ItemsSource="{Binding ListSalle, Mode=OneTime}" SelectedItem="{Binding Ville}" HorizontalAlignment="Left" Margin="135,155,0,0" VerticalAlignment="Top" Width="146" Height="26"/>
         <Label x:Name="lbl_choixSalle" Content="Salle :" HorizontalAlignment="Left" Margin="75,153,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_creneau" Content="Créneaux horaires d'utilisation" HorizontalAlignment="Left" Margin="95,196,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="Date_choixDate" HorizontalAlignment="Left" Margin="373,155,0,0" VerticalAlignment="Top" Width="161"/>
@@ -24,6 +20,5 @@
         <Label x:Name="lbl_nbutilisation" Content="Nombre d'utilisation de la salle par jour :" HorizontalAlignment="Left" Margin="373,227,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_nb" Content="      " HorizontalAlignment="Left" Margin="603,227,0,0" VerticalAlignment="Top" Background="#FFE4E4E4"/>
         <ListBox x:Name="list_creneau" HorizontalAlignment="Left" Height="121" Margin="95,235,0,0" VerticalAlignment="Top" Width="176"/>
-        <Button x:Name="btn_modifier" Content="Modifier" HorizontalAlignment="Left" Margin="588,336,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

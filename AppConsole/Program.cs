@@ -34,12 +34,12 @@ namespace AppConsole
             //myDaoClient = new DAOclients(mydbal);
 
             //mySalle = new salle(5,"Annecyy", myTheme);
-            //myDaoSalles = new DAOsalles(mydbal, myDaoTheme);
+            myDaoSalles = new DAOsalles(mydbal, myDaoTheme);
 
             //myAvis = new avis();
             //myDaoAvis = new DAOavis(mydbal, myDaoClient, myDaoSalles);
 
-            //myDaoAvis.SelectAll();
+            myDaoSalles.SelectById(1);
 
             Console.WriteLine("ok");
             Console.ReadKey();
