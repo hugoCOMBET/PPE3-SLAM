@@ -23,7 +23,7 @@
         <Label x:Name="lbl_ajout_obs" Content="Ajout manuel" HorizontalAlignment="Left" Margin="191,367,0,0" VerticalAlignment="Top" Foreground="#FFAA9292" FontSize="10" RenderTransformOrigin="1.159,0.739"/>
         <Button x:Name="btn_ajouter" Content="Ajouter" Command="{Binding AddCommandTh}" HorizontalAlignment="Left" Margin="437,205,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btn_supprimer" Content="Supprimer" Command="{Binding DeleteCommandTh}" HorizontalAlignment="Left" Margin="517,205,0,0" VerticalAlignment="Top" Width="75"/>
-        <ComboBox x:Name="cmb_theme" ItemsSource="{Binding ListTheme}" SelectedItem="{Binding SelectedTheme}" HorizontalAlignment="Left" Margin="266,183,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmb_theme" ItemsSource="{Binding ListTheme}" SelectedItem="{Binding Theme}" HorizontalAlignment="Left" Margin="266,183,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btn_modifier" Content="Modifier" Command="{Binding UpdateCommandTh}" HorizontalAlignment="Left" Margin="597,206,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Ajouter" Command="{Binding AddCommandObs}" HorizontalAlignment="Left" Margin="437,367,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Supprimer" Command="{Binding DeleteCommandObs}" HorizontalAlignment="Left" Margin="517,367,0,0" VerticalAlignment="Top" Width="75"/>
