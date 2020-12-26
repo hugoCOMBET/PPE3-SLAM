@@ -93,8 +93,8 @@ namespace AppDirecteur_PPE3.viewModel
                     selectedSalle = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("SelectedSalle");
-                    OnPropertyChanged("SelectedTheme");
-                    OnPropertyChanged("ListObstacle");
+                    OnPropertyChanged("Theme");
+                    OnPropertyChanged("listObstacle");
                     //if (selectedSalle != null)
                     //{
                     //    ActiveSalle = selectedSalle;
@@ -126,6 +126,7 @@ namespace AppDirecteur_PPE3.viewModel
                     selectedTheme = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("SelectedTheme");
+                    OnPropertyChanged("Salle");
                     if (selectedTheme != null)
                     {
                         ActiveTheme = selectedTheme;
