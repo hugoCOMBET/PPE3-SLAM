@@ -66,7 +66,7 @@ namespace AppDirecteur_PPE3.viewModel
         {
             get
             {
-                if (selectedSalle != null)
+                if (selectedObstacle != null)
                     return selectedSalle.LeTheme;
                 else
                     return null;
@@ -95,26 +95,10 @@ namespace AppDirecteur_PPE3.viewModel
                     OnPropertyChanged("SelectedSalle");
                     OnPropertyChanged("Theme");
                     OnPropertyChanged("listObstacle");
-                    //if (selectedSalle != null)
-                    //{
-                    //    ActiveSalle = selectedSalle;
-                    //}
                 }
             }
         }
 
-        //public salle ActiveSalle
-        //{
-        //    get => activeSalle;
-        //    set
-        //    {
-        //        if (activeSalle != value)
-        //        {
-        //            activeSalle = value;
-        //            OnPropertyChanged("Ville");
-        //        }
-        //    }
-        //}
 
         public theme SelectedTheme
         {

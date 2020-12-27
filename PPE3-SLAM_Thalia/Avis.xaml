@@ -16,7 +16,7 @@
         <ListBox x:Name="list_avis" ItemsSource="{Binding ListAvis}" SelectedItem="{Binding SelectedAvis}" IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Left" Height="187" Margin="75,141,0,0" VerticalAlignment="Top" Width="647"/>
         <Label x:Name="lbl_liste" Content="Avis des clients :" HorizontalAlignment="Left" Margin="75,115,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_moyenne" Content="Moyenne des notes :" HorizontalAlignment="Left" Margin="561,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.017,0.385"/>
-        <Label x:Name="lbl_avg_note" Content="{Binding Note}" HorizontalAlignment="Left" Margin="686,110,0,0" VerticalAlignment="Top" Background="#FFE8E0E0"/>
+        <Label x:Name="lbl_avg_note" Content="" HorizontalAlignment="Left" Margin="686,110,0,0" VerticalAlignment="Top" Background="#FFE8E0E0" Height="26" Width="36"/>
         <Label x:Name="lbl_Theme" Content="{Binding Theme}" HorizontalAlignment="Left" Margin="409,352,0,0" VerticalAlignment="Top" Height="27" Width="115"/>
         <Label x:Name="lbl_Salle" Content="{Binding Salle}" HorizontalAlignment="Left" Margin="120,353,0,0" VerticalAlignment="Top" Width="109" Height="30"/>
 

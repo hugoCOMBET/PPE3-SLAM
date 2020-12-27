@@ -17,29 +17,36 @@ namespace AppDirecteur_PPE3.viewModel
         DAOsalles vmDaoSalle;
         DAOtheme vmDaoTheme;
         daoObstacle vmDaoObstacle;
-        private ICommand validCommand;
         daoReservation vmDaoReservation;
+        private Reservation activeReservation = new Reservation();
         private salle selectedSalle = new salle();
-        private salle activeSalle = new salle();
+        private Reservation selectedReservation = new Reservation();
         private ObservableCollection<salle> listSalle;
         private ObservableCollection<theme> listTheme;
+        private ObservableCollection<Reservation> listReservation;
         public ObservableCollection<salle> ListSalle { get => listSalle; set => listSalle = value; }
         public ObservableCollection<theme> ListTheme { get => listTheme; set => listTheme = value; }
+        public ObservableCollection<Reservation> ListReservation { get => listReservation; set => listReservation = value; }
 
-        public string Ville
+        public salle Salle
         {
-            get => activeSalle.Ville;
+            get
+            {
+                if (selectedReservation != null)
+                    return selectedReservation.LaSalle;
+                else
+                    return null;
+            }
             set
             {
-                if (activeSalle.Ville != value)
+                if (selectedReservation.LaSalle != value)
                 {
-                    activeSalle.Ville = value;
+                    selectedReservation.LaSalle = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
-                    OnPropertyChanged("Ville");
+                    OnPropertyChanged("Salle");
                 }
             }
         }
-
 
         public salle SelectedSalle
         {
@@ -51,23 +58,39 @@ namespace AppDirecteur_PPE3.viewModel
                     selectedSalle = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("SelectedSalle");
-                    if (selectedSalle != null)
+                }
+            }
+        }
+
+        public Reservation SelectedReservation
+        {
+            get => selectedReservation;
+            set
+            {
+                if (selectedReservation != value)
+                {
+                    selectedReservation = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("SelectedReservation");
+                    OnPropertyChanged("Salle");
+                    if (selectedReservation != null)
                     {
-                        ActiveSalle = selectedSalle;
+                        ActiveReservation = selectedReservation;
                     }
                 }
             }
         }
 
-        public salle ActiveSalle
+        public Reservation ActiveReservation
         {
-            get => activeSalle;
+            get => activeReservation;
             set
             {
-                if (activeSalle != value)
+                if (activeReservation != value)
                 {
-                    activeSalle = value;
-                    OnPropertyChanged("Ville");
+                    activeReservation = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("Salle");
                 }
             }
         }
@@ -80,6 +103,9 @@ namespace AppDirecteur_PPE3.viewModel
             vmDaoTheme = thedaotheme;
             listTheme = new ObservableCollection<theme>(thedaotheme.SelectAll());
 
+            vmDaoReservation = thedaoreservation;
+            listReservation = new ObservableCollection<Reservation>(thedaoreservation.SelectAll());
+
 
             foreach (salle laSalle in ListSalle)
             {
@@ -90,23 +116,16 @@ namespace AppDirecteur_PPE3.viewModel
                 }
                 laSalle.LeTheme = listTheme[i];
             }
-        }
 
-        public ICommand ValidCommand
-        {
-            get
+            foreach (Reservation laReservation in ListReservation)
             {
-                if (this.validCommand == null)
+                int i = 0;
+                while (laReservation.LaSalle.IdSalle != listSalle[i].IdSalle)
                 {
-                    this.validCommand = new RelayCommand(() => ValidInfo(), () => true);
+                    i++;
                 }
-                return this.validCommand;
+                laReservation.LaSalle = listSalle[i];
             }
-        }
-
-        private void ValidInfo()
-        {
-           
         }
     }
 }

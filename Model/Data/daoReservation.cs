@@ -45,6 +45,13 @@ namespace Model.Data
             _DBAL.Delete(" Reservation WHERE id = " + uneReservation.IdReservation + ";");
         }
 
+        public string SelectCount()
+        {
+            DataRow r = _DBAL.SelectCount("id", "Reservation", "Reservation.idSalle = id");
+            string rt = Convert.ToString(r);
+            return rt;
+        }
+
         public List<Reservation> SelectAll()
         {
             List<Reservation> uneListeReservation = new List<Reservation>();

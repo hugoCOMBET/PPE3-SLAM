@@ -49,10 +49,5 @@ namespace Model.Business
         {
             return Convert.ToString(this.Avis);
         }
-
-        public int ToInt()
-        {
-            return Convert.ToInt32(this.Note);
-        }
     }
 }

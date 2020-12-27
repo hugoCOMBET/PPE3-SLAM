@@ -48,5 +48,10 @@ namespace Model.Business
         public DateTime DateReservation { get => _dateReservation; set => _dateReservation = value; }
         public int NbJoueurs { get => _nbJoueurs; set => _nbJoueurs = value; }
         public int NbObstacles { get => _nbObstacles; set => _nbObstacles = value; }
+
+        public override string ToString()
+        {
+            return Convert.ToString(this.DateReservation);
+        }
     }
 }

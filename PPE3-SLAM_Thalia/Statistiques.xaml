@@ -11,14 +11,11 @@
         <Button x:Name="btn_avis_pStat" Content="Avis" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top" Width="75" Click="btn_avis_pStat_Click"/>
         <Button x:Name="btn_Stat_pStat" Content="Statistiques" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="#FFF7F5F5"/>
         <Label x:Name="lbl_Stat_pStat" Content="Statistiques" HorizontalAlignment="Left" Margin="301,32,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
-        <ComboBox x:Name="cb_salle" ItemsSource="{Binding ListSalle, Mode=OneTime}" SelectedItem="{Binding Ville}" HorizontalAlignment="Left" Margin="135,155,0,0" VerticalAlignment="Top" Width="146" Height="26"/>
-        <Label x:Name="lbl_choixSalle" Content="Salle :" HorizontalAlignment="Left" Margin="75,153,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_creneau" Content="Créneaux horaires d'utilisation" HorizontalAlignment="Left" Margin="95,196,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="Date_choixDate" HorizontalAlignment="Left" Margin="373,155,0,0" VerticalAlignment="Top" Width="161"/>
-        <Label x:Name="lbl_precision" Content="Les salles et créneaux sont rangés du plus demandé au moins demandé." HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top" FontStyle="Italic" Background="White" Foreground="#FFA49292"/>
-        <Button x:Name="btn_valider" Content="Valider" Command="{Binding ValidCommand}" HorizontalAlignment="Left" Margin="613,157,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.107,0.5"/>
-        <Label x:Name="lbl_nbutilisation" Content="Nombre d'utilisation de la salle par jour :" HorizontalAlignment="Left" Margin="373,227,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_nb" Content="      " HorizontalAlignment="Left" Margin="603,227,0,0" VerticalAlignment="Top" Background="#FFE4E4E4"/>
-        <ListBox x:Name="list_creneau" HorizontalAlignment="Left" Height="121" Margin="95,235,0,0" VerticalAlignment="Top" Width="176"/>
+        <Label x:Name="lbl_choixSalle" Content="Salle :" HorizontalAlignment="Left" Margin="394,216,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_creneau" Content="Créneaux horaires d'utilisation" HorizontalAlignment="Left" Margin="157,154,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_nbutilisation" Content="Nombre d'utilisation de la salle par jour " HorizontalAlignment="Left" Margin="394,247,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_nb" Content="" HorizontalAlignment="Left" Margin="481,278,0,0" VerticalAlignment="Top" Background="#FFE4E4E4" Height="25"/>
+        <ListBox x:Name="list_creneau" ItemsSource="{Binding ListReservation, Mode=OneTime}" SelectedItem="{Binding SelectedReservation}" HorizontalAlignment="Left" Height="121" Margin="157,185,0,0" VerticalAlignment="Top" Width="176"/>
+        <Label x:Name="lbl_salle" Content="{Binding Salle}" HorizontalAlignment="Left" Margin="439,215,0,0" VerticalAlignment="Top" Height="32" Width="120"/>
     </Grid>
 </Window>

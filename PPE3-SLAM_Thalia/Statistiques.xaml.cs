@@ -39,6 +39,7 @@ namespace PPE3_SLAM_Thalia
             undaoobstacle = obstacle;
             //on associe la grid principal mainGrid du XAML en initialisant son DataContext avec un objet viewModelFromage
             FntStat.DataContext = new AppDirecteur_PPE3.viewModel.viewModelStatistiques(undaoavis, undaoclient, undaosalle, undaotheme, undaoreservation, undaoobstacle);
+            lbl_nb.Content = undaoreservation.SelectCount();
         }
 
         private void btn_theme_pStat_Click(object sender, RoutedEventArgs e)
