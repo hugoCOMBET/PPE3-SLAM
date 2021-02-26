@@ -160,7 +160,24 @@ namespace AppDirecteur_PPE3.viewModel
 
         private void ValidInfo()
         {
+            salle LaSalle = this.ActiveSalle;
+            theme LeTheme = this.ActiveTheme;
 
+            foreach (salle laSalle in ListSalle)
+            {
+                if (LeTheme.IdTheme != laSalle.LeTheme.IdTheme)
+                {
+                    listSalle.Remove(laSalle);
+                }
+            }
+
+            foreach (avis leAvis in ListAvis)
+            {
+                if (LaSalle.IdSalle != leAvis.IdSalle.IdSalle)
+                {
+                    listAvis.Remove(leAvis);
+                }
+            }
         }
     }
 }
