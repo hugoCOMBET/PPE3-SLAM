@@ -11,15 +11,14 @@
         <Button x:Name="btn_Avis_pAvis" Content="Avis" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="#FFFBFBFB"/>
         <Button x:Name="btn_theme_pAvis" Content="Thèmes et obstacles" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Width="115" Click="btn_theme_pAvis_Click"/>
         <Label x:Name="lbl_avis" Content="Avis clientèle" HorizontalAlignment="Left" Margin="286,40,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
-        <Button x:Name="btn_valider" Content="Valider" HorizontalAlignment="Left" Margin="649,164,0,0" VerticalAlignment="Top" Width="75"/>
-        <ComboBox x:Name="cmb_choix_salle" ItemsSource="{Binding ListSalle}" SelectedItem="{Binding SelectedSalle}" HorizontalAlignment="Left" Margin="167,164,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cmb_choix_theme" ItemsSource="{Binding ListTheme}" SelectedItem="{Binding SelectedTheme}" HorizontalAlignment="Left" Margin="438,164,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lbl_choix_salle" Content="Salle :" HorizontalAlignment="Left" Margin="113,164,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_choix_theme" Content="Thème :" HorizontalAlignment="Left" Margin="381,164,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="list_avis" ItemsSource="{Binding ListAvis}" SelectedItem="{Binding SelectedAvis}" IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Left" Height="187" Margin="77,236,0,0" VerticalAlignment="Top" Width="647"/>
-        <Label x:Name="lbl_liste" Content="Avis des clients :" HorizontalAlignment="Left" Margin="77,210,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_moyenne" Content="Moyenne des notes :" HorizontalAlignment="Left" Margin="551,210,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_avg_note" Content="        " HorizontalAlignment="Left" Margin="676,205,0,0" VerticalAlignment="Top" Background="#FFE8E0E0"/>
+        <Label x:Name="lbl_choix_salle" Content="Salle :" HorizontalAlignment="Left" Margin="75,353,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_choix_theme" Content="Thème :" HorizontalAlignment="Left" Margin="352,353,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="list_avis" ItemsSource="{Binding ListAvis}" SelectedItem="{Binding SelectedAvis}" IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Left" Height="187" Margin="75,141,0,0" VerticalAlignment="Top" Width="647"/>
+        <Label x:Name="lbl_liste" Content="Avis des clients :" HorizontalAlignment="Left" Margin="75,115,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_moyenne" Content="Moyenne des notes :" HorizontalAlignment="Left" Margin="561,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.017,0.385"/>
+        <Label x:Name="lbl_avg_note" Content="" HorizontalAlignment="Left" Margin="686,110,0,0" VerticalAlignment="Top" Background="#FFE8E0E0" Height="26" Width="36"/>
+        <Label x:Name="lbl_Theme" Content="{Binding Theme}" HorizontalAlignment="Left" Margin="409,352,0,0" VerticalAlignment="Top" Height="27" Width="115"/>
+        <Label x:Name="lbl_Salle" Content="{Binding Salle}" HorizontalAlignment="Left" Margin="120,353,0,0" VerticalAlignment="Top" Width="109" Height="30"/>
 
     </Grid>
 </Window>

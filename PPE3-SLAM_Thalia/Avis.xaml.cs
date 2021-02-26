@@ -38,6 +38,7 @@ namespace PPE3_SLAM_Thalia
             undaoobstacle = obstacle;
 
             FntAvis.DataContext = new AppDirecteur_PPE3.viewModel.viewModelAvis(avis, client, salle, theme, reservation, obstacle);
+            lbl_avg_note.Content = Convert.ToString(this.undaoavis.SelectAvg());
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

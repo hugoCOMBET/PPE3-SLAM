@@ -61,47 +61,27 @@ namespace AppDirecteur_PPE3.viewModel
             }
         }
 
-        public string Ville
+
+        public theme Theme
         {
-            get => activeSalle.Ville;
+            get
+            {
+                if (selectedObstacle != null)
+                    return selectedSalle.LeTheme;
+                else
+                    return null;
+            }
             set
             {
-                if (activeSalle.Ville != value)
+                if (selectedSalle.LeTheme != value)
                 {
-                    activeSalle.Ville = value;
+                    selectedSalle.LeTheme = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
-                    OnPropertyChanged("Ville");
+                    OnPropertyChanged("Theme");
                 }
             }
         }
 
-        public string NomTheme
-        {
-            get => activeTheme.Theme;
-            set
-            {
-                if (activeTheme.Theme != value)
-                {
-                    activeTheme.Theme = value;
-                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
-                    OnPropertyChanged("Ville");
-                }
-            }
-        }
-
-        public string NomObstacle
-        {
-            get => activeObstacle.NomObstacle;
-            set
-            {
-                if (activeObstacle.NomObstacle != value)
-                {
-                    activeObstacle.NomObstacle = value;
-                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
-                    OnPropertyChanged("Ville");
-                }
-            }
-        }
 
         public salle SelectedSalle
         {
@@ -113,26 +93,12 @@ namespace AppDirecteur_PPE3.viewModel
                     selectedSalle = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("SelectedSalle");
-                    if (selectedSalle != null)
-                    {
-                        ActiveSalle = selectedSalle;
-                    }
+                    OnPropertyChanged("Theme");
+                    OnPropertyChanged("listObstacle");
                 }
             }
         }
 
-        public salle ActiveSalle
-        {
-            get => activeSalle;
-            set
-            {
-                if (activeSalle != value)
-                {
-                    activeSalle = value;
-                    OnPropertyChanged("Ville");
-                }
-            }
-        }
 
         public theme SelectedTheme
         {
@@ -144,6 +110,7 @@ namespace AppDirecteur_PPE3.viewModel
                     selectedTheme = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("SelectedTheme");
+                    OnPropertyChanged("Salle");
                     if (selectedTheme != null)
                     {
                         ActiveTheme = selectedTheme;
@@ -159,8 +126,8 @@ namespace AppDirecteur_PPE3.viewModel
             {
                 if (activeTheme != value)
                 {
-                    activeTheme= value;
-                    OnPropertyChanged("NomTheme");
+                    activeTheme = value;
+                    OnPropertyChanged("Theme");
                 }
             }
         }
