@@ -43,10 +43,11 @@ namespace Model.Data
                 return listAvis;
             }
 
-            public DataRow SelectAvg(string table, int note)
+            public string SelectAvg(string table)
             {
-                DataRow r = _dbal.SelectAvg(table, note);
-                return r;
+                DataRow r = _dbal.SelectAvg(table);
+                string note = Convert.ToString(r);
+                return note;
             }
             #endregion
     }

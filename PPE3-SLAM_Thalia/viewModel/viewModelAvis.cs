@@ -70,6 +70,45 @@ namespace AppDirecteur_PPE3.viewModel
             }
         }
 
+        public theme Theme
+        {
+            get
+            {
+                if (selectedAvis != null)
+                    return selectedAvis.IdSalle.LeTheme;
+                else
+                    return null;
+            }
+            set
+            {
+                if (selectedAvis.IdSalle.LeTheme != value)
+                {
+                    selectedAvis.IdSalle.LeTheme = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("Theme");
+                }
+            }
+        }
+
+        public salle Salle
+        {
+            get
+            {
+                if (selectedAvis != null)
+                    return selectedAvis.IdSalle;
+                else
+                    return null;
+            }
+            set
+            {
+                if (selectedAvis.IdSalle != value)
+                {
+                    selectedAvis.IdSalle = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("Salle");
+                }
+            }
+        }
 
         public avis SelectedAvis
         {
@@ -81,6 +120,8 @@ namespace AppDirecteur_PPE3.viewModel
                     selectedAvis = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("SelectedAvis");
+                    OnPropertyChanged("Theme");
+                    OnPropertyChanged("Salle");
                     if (selectedAvis != null)
                     {
                        ActiveAvis = selectedAvis;
