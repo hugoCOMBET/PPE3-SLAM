@@ -46,7 +46,7 @@ namespace Model.Data
             public string SelectAvg(string table)
             {
                 DataRow r = _dbal.SelectAvg(table);
-                string note = Convert.ToString(r);
+                string note = Convert.ToString(r[0]);
                 return note;
             }
             #endregion

@@ -48,7 +48,7 @@ namespace Model.Data
         public string SelectCount()
         {
             DataRow r = _DBAL.SelectCount("id", "Reservation", "Reservation.idSalle = id");
-            string rt = Convert.ToString(r);
+            string rt = Convert.ToString(r[0]);
             return rt;
         }
 

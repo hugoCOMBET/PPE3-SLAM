@@ -13,8 +13,8 @@
         <Label x:Name="lbl_Stat_pStat" Content="Statistiques" HorizontalAlignment="Left" Margin="301,32,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         <Label x:Name="lbl_choixSalle" Content="Salle :" HorizontalAlignment="Left" Margin="394,216,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_creneau" Content="Créneaux horaires d'utilisation" HorizontalAlignment="Left" Margin="157,154,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_nbutilisation" Content="Nombre d'utilisation de la salle par jour " HorizontalAlignment="Left" Margin="394,247,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_nb" Content="" HorizontalAlignment="Left" Margin="481,278,0,0" VerticalAlignment="Top" Background="#FFE4E4E4" Height="25"/>
+        <Label x:Name="lbl_nbutilisation" Content="Nombre d'utilisation de la salle par jour :" HorizontalAlignment="Left" Margin="394,247,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_nb" Content="" HorizontalAlignment="Left" Margin="621,247,0,0" VerticalAlignment="Top" Background="#FFE4E4E4" Height="25" Width="61"/>
         <ListBox x:Name="list_creneau" ItemsSource="{Binding ListReservation, Mode=OneTime}" SelectedItem="{Binding SelectedReservation}" HorizontalAlignment="Left" Height="121" Margin="157,185,0,0" VerticalAlignment="Top" Width="176"/>
         <Label x:Name="lbl_salle" Content="{Binding Salle}" HorizontalAlignment="Left" Margin="439,215,0,0" VerticalAlignment="Top" Height="32" Width="120"/>
     </Grid>

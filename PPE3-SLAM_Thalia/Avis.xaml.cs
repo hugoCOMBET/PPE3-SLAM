@@ -39,7 +39,7 @@ namespace PPE3_SLAM_Thalia
             string table = "avis";
 
             FntAvis.DataContext = new AppDirecteur_PPE3.viewModel.viewModelAvis(avis, client, salle, theme, reservation, obstacle);
-            lbl_avg_note.Content = Convert.ToString(this.undaoavis.SelectAvg(table));
+            lbl_avg_note.Content = this.undaoavis.SelectAvg(table);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
