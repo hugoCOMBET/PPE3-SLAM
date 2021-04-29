@@ -476,6 +476,7 @@ namespace PPE3_SLAM_Axel
             un_six.BorderBrush = Brushes.Blue;
             un_six.BorderThickness = new Thickness(4);
             wnd.ShowDialog();
+            
         }
 
         private void un_sept_Click(object sender, RoutedEventArgs e)

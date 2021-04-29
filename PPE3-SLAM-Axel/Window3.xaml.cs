@@ -24,7 +24,8 @@ namespace PPE3_SLAM_Axel
 
         private List<ComboBox> uneListeComboBox;
         public int NBobstacles;
-        public Window3(DAOclients unDaoClient, daoObstacle unDaoObstacle)
+        public int NbJoueur;
+        public Window3(DAOclients unDaoClient, daoObstacle unDaoObstacle, DateTime uneDate, salles uneSalle)
         {
             InitializeComponent();
             uneListeComboBox = new List<ComboBox>();
@@ -40,13 +41,16 @@ namespace PPE3_SLAM_Axel
             uneListeComboBox.Add(cbx_position_dix);
             uneListeComboBox.Add(cbx_position_onze);
             uneListeComboBox.Add(cbx_position_douze);
-            NBobstacles = RetourneNbObstacle(uneListeComboBox);
             
             
-
-            SelectionClient.DataContext = new viewModel.viewModelSelectionClient(unDaoClient);
+           
+            
+            
+            
+            
+            SelectionClient.DataContext = new viewModel.viewModelSelectionClient(unDaoObstacle,unDaoClient,uneDate,uneSalle,NbJoueur,NBobstacles);
             lst_clients.Visibility = Visibility.Hidden;
-            ConfigurationReservation.DataContext = new viewModel.viewModelPositionObstacle(unDaoObstacle);
+            ConfigurationReservation.DataContext = SelectionClient.DataContext;
         }
 
         private void txt_nom_GotFocus(object sender, RoutedEventArgs e)

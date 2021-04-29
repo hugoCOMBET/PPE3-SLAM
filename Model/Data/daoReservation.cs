@@ -31,7 +31,7 @@ namespace Model.Data
 
         public void Insert(Reservation uneReservation)
         {
-            _DBAL.Insert(" Reservation VALUES (" + uneReservation.IdReservation + "," + uneReservation.LeClient.IdClient+",'"+/*uneReservation.LaSalle.IdSalle*/uneReservation.DateReservation + "',"+/*uneReservation.LaTransaction.getIdTransactions()*/uneReservation.NbJoueurs + ","+/*uneReservation.DateReservation*/uneReservation.NbObstacles + ","+ uneReservation.LaSalle.IdSalle + ","+ uneReservation.LaTransaction.getIdTransactions() + ");");
+            _DBAL.Insert(" Reservation VALUES (" + uneReservation.IdReservation + "," + uneReservation.LeClient.IdClient+",'"+uneReservation.DateReservation + "'," + uneReservation.NbJoueurs + ","+uneReservation.NbObstacles + ","+ uneReservation.LaSalle.IdSalle + ","+ uneReservation.LaTransaction.getIdTransactions() + ");");
         }
 
         public void Update(Reservation uneReservation)

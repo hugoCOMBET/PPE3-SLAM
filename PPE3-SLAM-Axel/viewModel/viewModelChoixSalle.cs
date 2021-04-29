@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Model.Business;
 using Model.Data;
+using System.Windows;
 
 
 
@@ -17,10 +18,10 @@ namespace PPE3_SLAM_Axel.viewModel
         
         private DAOtheme vmdaotheme;
         private DAOsalles vmdaosalle;
-        
 
+        private DateTime laDateReservation;
         private salles selectedSalle;
-        private ICommand retourCommand;
+        
         private ICommand choixCommand;
 
         private ObservableCollection<salles> listSalles;
@@ -29,6 +30,7 @@ namespace PPE3_SLAM_Axel.viewModel
 
         public viewModelChoixSalle(DAOtheme unDaoTheme, DAOsalles unDaoSalle, DateTime LaDate)
         {
+            laDateReservation = LaDate;
             vmdaotheme = unDaoTheme;
             vmdaosalle = unDaoSalle;
             listSalles = new ObservableCollection<salles>(unDaoSalle.SelectAllByFieldTestCondition("id not in (select count(id) from Reservation where dayofmonth(DateReservation)= "+LaDate.Day+" and month(DateReservation) = "+LaDate.Month+" and year(DateReservation) = "+LaDate.Year+" and hour(DateReservation) = '"+LaDate.Hour+"%');"));
@@ -120,11 +122,43 @@ namespace PPE3_SLAM_Axel.viewModel
             }
         }
 
+        public ICommand ChoisirCommand
+        {
+            get
+            {
+                if (this.choixCommand == null)
+                {
+                    this.choixCommand = new RelayCommand(() => Choisir(), () => true);
+                }
+                return this.choixCommand;
+
+            }
+
+        }
+
+        public void Choisir()
+        {
+            Dbal thedbal = new Dbal("LSRGames");
+            DAOclients thedaoclients = new DAOclients(thedbal);
+            daoObstacle thedaoobstacle = new daoObstacle(thedbal);
+            MessageBoxResult msg;
+            Window3 wnd = new Window3(thedaoclients, thedaoobstacle, laDateReservation, SelectedSalle);
+            if (SelectedSalle != null)
+            {
+                wnd.Show();
+            }
+            else
+            {
+                msg = MessageBox.Show("Vous n'avez pas sélectionner de salle");
+
+            }
+        }
 
 
-        
 
-        
+
+
+
 
     }
 

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Model.Business;
 using Model.Data;
 
@@ -14,16 +15,28 @@ namespace PPE3_SLAM_Axel.viewModel
     {
 
         private DAOclients vmdaoclient;
-
+        private daoObstacle vmdaoobstacle;
+        private ICommand validerCommand;
+        private ObservableCollection<Obstacle> listObstacles;
         private Clients selectedClient = new Clients();
         private ObservableCollection<Clients> listClients;
+        private salles laSalle;
+        private DateTime DateReservation;
+        private int nbJoueurs;
+        private int nbObstacles;
 
         public ObservableCollection<Clients> ListClients { get => listClients; set => listClients = value; }
-
-        public viewModelSelectionClient( DAOclients unDaoClient)
+        public ObservableCollection<Obstacle> ListObstacles { get => listObstacles; set => listObstacles = value; }
+        public viewModelSelectionClient( daoObstacle unDaoObstacle,DAOclients unDaoClient,DateTime laDateReservation,salles uneSalle,int unNbJoueur, int unNbObstacle)
         {
             vmdaoclient = unDaoClient;
             listClients = new ObservableCollection<Clients>(vmdaoclient.SelectAll());
+            vmdaoobstacle = unDaoObstacle;
+            listObstacles = new ObservableCollection<Obstacle>(vmdaoobstacle.SelectAll());
+            DateReservation = laDateReservation;
+            laSalle = uneSalle;
+            nbJoueurs = unNbJoueur;
+            nbObstacles = unNbObstacle;
         }
 
         public Clients SelectedClient
@@ -228,6 +241,41 @@ namespace PPE3_SLAM_Axel.viewModel
                     OnPropertyChanged("Credit");
                 }
             }
+        }
+
+        public ICommand ValiderCommand
+        {
+            get
+            {
+                if (this.validerCommand == null)
+                {
+                    this.validerCommand = new RelayCommand(() => Valider(), () => true);
+                }
+                return this.validerCommand;
+
+            }
+
+        }
+
+
+        public void Valider()
+        {
+            int n = 24;
+            Dbal thedbal = new Dbal("LSRGames");
+            
+            
+            daoReservation thedaoreservation = new daoReservation(thedbal);
+           
+            DAOtransactions thedaotransactions = new DAOtransactions(thedbal, vmdaoclient);
+            
+            Clients leClient = SelectedClient;
+            
+            Transactions uneTransaction = new Transactions(n, leClient, 5.25);
+            
+            thedaotransactions.Insert(uneTransaction);
+            n = n + 1;
+            Reservation uneReservation = new Reservation(42, leClient, laSalle, uneTransaction, DateReservation, nbJoueurs, nbObstacles);
+            thedaoreservation.Insert(uneReservation);
         }
 
     }
